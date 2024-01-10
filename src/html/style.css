@@ -1,0 +1,86 @@
+.container
+{
+  background-image: url(background.svg);
+}
+.all
+{
+    
+    background-position:center;
+    display: flex;
+    align-items: end;
+    
+}
+select {
+   
+    background: #808080;
+    color: #fff;
+    margin: 10px;
+    size: 10px,40px;
+    
+  }
+  time
+  {
+color: peru;
+padding-left: 5%;
+}
+.temp1
+{
+  padding-left: 10px;
+  font-size: large;
+color: #fff;
+}
+  
+  .temp
+  {padding-left: 5px;
+   font-size: large;
+    color: #fff;
+    
+  }
+ .sticks{
+  padding-left:10px;
+  font-size: xx-large;
+  color: #fff;
+ }
+ 
+ .humi
+ {padding-left: 5px;
+   display: inline-block;
+   color: #fff;
+   font-size: large;
+   
+ }
+
+ .block2
+ {display: flex;
+  align-items: end;
+  padding-top: 5px;
+ 
+ }
+ .times
+ {
+  padding-left: 5px;
+ }
+
+
+.first
+{
+  padding-left: 70px;
+  color: #fff;
+}
+.smallstick
+{
+  padding-left: 40px;
+  color: #fff;
+}
+.image
+{
+  padding-left: 50px;
+}
+.image1
+{
+  padding-left: 130px;
+}
+.image2
+{
+  padding-left: 120px;
+}
