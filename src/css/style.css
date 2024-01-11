@@ -1,0 +1,194 @@
+body{
+  margin: 0;
+}
+*
+{
+  transition: all .3s ease;
+}
+
+.all
+{
+    background-image: url(background.svg);
+    background-size: cover;
+    min-width: 600px;
+    background-position:center;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    
+}
+.flex-columns
+{
+    flex-direction: column;
+}
+
+select {
+   
+    background: #808080;
+    color: #fff;
+    width: 140px;
+    height: 30px;
+    
+    
+  }
+  .flex-columns{
+    font-size: larger;
+    align-self: center;
+  }
+.time
+  {
+color: peru;
+font-size: x-large;
+}
+.date
+{
+    font-size: large;
+    color: #fff;
+}
+.temp1
+{
+ 
+  font-size: large;
+color: #fff;
+flex-direction: column;
+}
+
+  .justify-center
+  {
+    justify-items: center;
+  }
+  .temp
+  {
+   font-size: large;
+    color: #fff;
+    
+  }
+  .pad
+  {
+    padding-block-start: 5px ;
+  }
+ .sticks{
+ 
+  color: #fff;
+  font-size: xx-large;
+ }
+ 
+ .humi
+ {
+   display: inline-block;
+   color: #fff;
+   font-size: large;
+   
+ }
+ .align-center
+ {
+align-items: center;
+ }
+.gap-bw
+{
+    gap: 10px;
+    display: inline-flex;
+}
+ .block2
+ {display: flex;
+  align-items: end;
+  justify-content: space-around;
+  padding-top: 5px;
+ 
+ }
+ .first-image
+ {  margin-top: 5px;
+    align-self:flex-start;
+ }
+ .sel
+ {
+flex-direction: column;
+ }
+.big-sticks
+{
+    width:1.5px;
+ height: 40px;
+ background-color: #fff;
+}
+
+.first
+{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.smallstick
+{
+ width:1.5px;
+ height: 20px;
+ background-color: #fff;
+
+}
+.smallsticks
+{
+ width:1.5px;
+ height: 20px;
+ background-color: #fff;
+ margin-bottom: 20px;
+}
+.cel{
+    font-size: larger;
+    text-align: center;
+    font-weight: 200;
+}
+@media  screen and  (width<=800px)
+{
+.first
+{
+  font-size: 14px;
+}
+.temp1
+{
+  font-size: 14px;
+}
+.humi
+
+{
+  font-size: 14px;
+}
+.temp
+{
+  font-size: 14px;
+}
+
+.smallsticks
+{
+  display: none;
+}
+.first-image
+{
+  width:40px;
+  height: 40px;
+}
+.amimage
+{
+  width:40px;
+  height: 40px;
+}
+.time{
+  font-size: 14px;
+}
+.date
+{
+  font-size: 14px;
+}
+.big-sticks
+{
+display: none;
+}
+select
+{
+  width: 80px;
+}
+}
