@@ -5,7 +5,6 @@ body{
 {
   transition: all .3s ease;
 }
-
 .all
 {
     background-image: url(background.svg);
@@ -141,6 +140,11 @@ flex-direction: column;
     font-size: larger;
     text-align: center;
     font-weight: 200;
+}
+.container2
+{
+  background-color: black;
+  border-radius: 80%;
 }
 @media  screen and  (width<=800px)
 {
