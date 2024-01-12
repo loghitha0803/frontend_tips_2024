@@ -31,7 +31,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
         {
             display: grid;
         }
-    is used to create the layout pased on rows and columns  
+    is used to create the layout based on rows and columns  
 ![This is an image of display:grid!](grid.PNG)
 
         .grid-container 
@@ -39,10 +39,13 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
             display: inline-grid;
         }
     ![This is an image of display:inline-grid!](inline-grid.PNG)
-
     is used to make an inline grid container
+
+|Grid  | Inline-Grid | 
+| :---        |    :----:   |
+|Grid is used to create layout based on rows and columns|Inline grid is used to create smaller, more compact layouts that are contained within a single line of text|
 ### 2. Grid-Items
-- Grid:Column
+- Grid-Column
     
     grid-column property  is to specify on which column to place an item, and how many columns the item will span.
 
@@ -54,7 +57,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
       
 - grid-row
     
-    grid-row property to specify on which row to place an item, and how many row the item will span.
+    grid-row property is to specify on which row to place an item, and how many row the item will span.
 
         .item1 
         {
@@ -64,25 +67,25 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
     ---
     
 ### 3. Grid-Lines
-- Grid-Template-columns
+- Grid-Template-column
     
-    grid-template-columns property to define the number of columns in the grid layout.This grid layout has four columns 
+    grid-template-column property to define the number of columns in the grid layout.This grid layout has four columns 
         
         .grid-container 
         {
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-column: auto auto auto auto;
         }
-    ![This is an image of grid-template-columns](grid-t-c.PNG)
+    ![This is an image of grid-template-column](grid-t-c.PNG)
 
-- Grid-Template-rows
+- Grid-Template-row
     
-    grid-template-rows property to define the size of the rows in a grid layout.The first row in this grid is 100px high, and the second row is 300px high.
+    grid-template-row property to define the size of the rows in a grid layout.The first row in this grid is 100px high, and the second row is 300px high.
         
         .grid-container 
         {
             display: grid;
-            grid-template-rows: 100px 300px;
+            grid-template-row: 100px 300px;
         }
     ![This is an image of grid-template-rows](grid-t-r.PNG)
     ---
