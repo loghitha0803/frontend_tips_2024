@@ -7,7 +7,7 @@
 4. grid-areas
 5. grid-gap
 6. grid-auto
-7. Properties
+7. Other Properties
 -  justify and align 
 -  place
 -  Values and their Properties
@@ -33,13 +33,13 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
             display: grid;
         }
     is used to create the layout based on rows and columns  
-![This is an image of display:grid!](grid.PNG)
+![This is an image of display:grid!](../docs/assets/Images/readme/grid.PNG)
 
         .grid-container 
         {
             display: inline-grid;
         }
-    ![This is an image of display:inline-grid!](inline-grid.PNG)
+    ![This is an image of display:inline-grid!](../docs/assets/Images/readme/inline-grid.PNG)
     
     is used to make an inline grid container
 
@@ -55,7 +55,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
         {
         grid-column: 1 / span 2;
         }
-    ![This is an image of grid-column](grid-column.PNG)
+    ![This is an image of grid-column](../docs/assets/Images/readme/grid-column.PNG)
       
 - grid-row
     
@@ -65,7 +65,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
         {
           grid-row: 1 / span 2;
         }
-    ![This is an image of grid-row](grid-row.PNG)
+    ![This is an image of grid-row](../docs/assets/Images/readme/grid-row.PNG)
     ---
     
 ### 3. grid-lines
@@ -78,7 +78,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
             display: grid;
             grid-template-columns: auto auto auto auto;
         }
-    ![This is an image of grid-template-column](grid-t-c.PNG)
+    ![This is an image of grid-template-column](../docs/assets/Images/readme/grid-t-c.PNG)
 
 - grid-template-rows
     
@@ -89,7 +89,7 @@ Grid containers consist of grid items, placed inside columns and rows.To make an
             display: grid;
             grid-template-rows: 100px 300px;
         }
-    ![This is an image of grid-template-rows](grid-t-r.PNG)
+    ![This is an image of grid-template-rows](../docs/assets/Images/readme/grid-t-r.PNG)
     ---
 ### 4. grid areas
 grid-areas
@@ -101,7 +101,7 @@ grid-areas
        grid-area: 2 / 1 / span 2 / span 3;
     }
     
-![This is an image of grid-areas](grid-a.PNG)
+![This is an image of grid-areas](../docs/assets/Images/readme/grid-a.PNG)
 ### 5. Grid gap
 - grid-gap
 
@@ -111,7 +111,7 @@ grid-areas
         {
             grid-gap: 50px;
         }
-    ![This is an image of grid-gap](grid-g.PNG)
+    ![This is an image of grid-gap](../docs/assets/Images/readme/grid-g.PNG)
 - grid-row-gap
 
     grid-row-gap property to specify the size of the gap between the rows.This grid has a 50px gap between rows 
@@ -120,7 +120,7 @@ grid-areas
         {
             grid-row-gap: 50px;
         }
-    ![This is an image of grid-row-gap](grid-rg.PNG)
+    ![This is an image of grid-row-gap](../docs/assets/Images/readme/grid-rg.PNG)
 - grid-column-gap
 
     grid-column-gap property to specify the size of the gap between the rows.This grid has a 50px gap between **columns**
@@ -129,7 +129,7 @@ grid-areas
         {
             grid-column-gap: 50px;
         }
-    ![This is an image of grid-column-gap](grid-cg.PNG)
+    ![This is an image of grid-column-gap](../docs/assets/Images/readme/grid-cg.PNG)
 ---
 ### 6.grid-auto
 - grid-auto-flow
@@ -141,7 +141,7 @@ grid-areas
             display: grid;
             grid-auto-flow: column;
         }
-    ![This is an image of grid-autoflow](grid-af.PNG)
+    ![This is an image of grid-autoflow](../docs/assets/Images/readme/grid-af.PNG)
 - grid-auto-columns
     
     grid-auto-columns property to set a default size (width) for all columns.Set the size to 50 pixels per column
@@ -152,35 +152,35 @@ grid-areas
             grid-auto-columns: 50px;
         }
     **NOTE: grid-template-columns overrides this property**
-    ![This is an image of grid-auto-columns](grid-ac.PNG)
+    ![This is an image of grid-auto-columns](../docs/assets/Images/readme/grid-ac.PNG)
 - Justify and Align
 
 |Common | Axis | Aligns|Applies to|
-| :---        |    :----  | :---|:---:
+| :---        |    :----  | :---|:---|
 |justify-content <br> align-content | inline(x-axis) <br> block(y-axis) | content within element(effectively adjusts padding)|block containers,flex containers and grid containers
 |justify-self<br><br> align-self| inline <br> <br>block | element within parent (effectively adjusts margin)|block level boxes,absolutely positioned boxes and grid items<br> absolutely positioned boxes,flex-items,grid-items
 |justify-items <br> align-items | inline <br> block | items inside box (controls child items)|block containers and grid containers <br> flex-containers and grid-containers
 ---
 
 |justify-content|justify-items|
-|:---|:---|
+|:---:|:---:|
 |This property aligns the grid along the row axis|Aligns the content inside a grid item along the row axis|
-![This is an image of grid-auto-columns](jusc.PNG)|![This is an image of grid-auto-columns](jusi.PNG)
+![This is an image of grid-auto-columns](../docs/assets/Images/readme/jusc.PNG)|![This is an image of grid-auto-columns](../docs/assets/Images/readme/jusi.PNG)
 ---
 |align-content|align-items|
-|:---|:---|
+|:---:|:---:|
 |This property aligns the grid along the column axis|Aligns the content inside a grid item along the column axis|
-![This is an image of grid-auto-columns](alicon.PNG)|![This is an image of grid-auto-columns](aliite.PNG)
+![This is an image of grid-auto-columns](../docs/assets/Images/readme/alicon.PNG)|![This is an image of grid-auto-columns](../docs/assets/Images/readme/aliite.PNG)
 ---
 - place
 
 |place-content |place-items| place-self|
-| :---        |    :---- | :---|
+| :---:       |    :----:| :---:|
 |Specify the flex lines to align towards the bottom of the flex container, and align the flex items with the same space between them horizontally|place each <div> element at the start of its grid cell in the inline and block directions|Align an individual grid item at the end in the block and inline directions|
 -  Values and their Properties
 
 |Values  | Properties | 
-| :---        |    :----:   |
+| :---        |   :---- |
 |stretch|fills the whole height of the cell (this is the default)|
 |start|aligns items to be flush with the start edge of their cell|
 |end|aligns items to be flush with the start edge of their cell|
@@ -200,7 +200,7 @@ space-evenly| places an even amount of space between each grid item, including t
 | Shifting of items in a grid is possible as there are vacant space in a row. |    Shifting of items in a grid is not  possible.  |
 ---
 |Properties   | Description | 
-| :---        |    :----:   |
+| :---        |    :----  |
 |grid-column-start  |grid-column-start property to   specify on which column to start displaying the item |
 | grid-column-end |grid-column-end property to specify on which column to stop displaying the item (or how many columns the item will span)| 
 |grid-row-start  | grid-row-start property to specify on which row to start displaying the item |
@@ -224,7 +224,7 @@ Flex items are placed in the flex container.Think of flex items as primarily lay
     {
     flex-direction: row | row-reverse | column | column-reverse;
     }
-![This is an image of flex-direction](fd.svg)
+![This is an image of flex-direction](../docs/assets/Images/readme/fd.svg)
 |Values  | Properties | 
 | :---        |    :----:   |
 |row (default)|left to right in ltr; right to left in rtl|
@@ -238,7 +238,7 @@ Flex items are placed in the flex container.Think of flex items as primarily lay
     {
     flex-wrap: nowrap | wrap | wrap-reverse;
     }
-![This is an image of flex-direction](fw.png)    
+![This is an image of flex-direction](../docs/assets/Images/readme/fw.png)    
 |Values  | Properties | 
 | :---        |    :----:   |
 |no-wrap|all flex items will be on one line|
@@ -259,7 +259,7 @@ This defines the alignment along the main axis. It helps distribute extra free s
     {
       justify-content: flex-start | flex-end |  center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
     }
-![This is an image of flex-direction](jc.svg) 
+![This is an image of flex-direction](../docs/assets/Images/readme/jc.svg) 
 |Properties   | Description | 
 | :---        |    :----:   |
 |flex-start (default)| items are packed toward the start of the flex-direction|
@@ -279,9 +279,9 @@ This defines the default behavior for how flex items are laid out along the cros
     .container {
      align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start |  unsafe;
     }
-![This is an image of flex-direction](ai.svg) 
+![This is an image of flex-direction](../docs/assets/Images/readme/ai.svg) 
 |Properties   | Description | 
-| :---        |    :----:   |
+| :---:       |    :----:   |
 |Baseline|align items along text baseline. There are modifiers to baseline - first baseline and last baseline which will use the baseline from the first or last line in the case of multi-line text.
 
 Apart from this baseline all the values applies as same as the justify-content
@@ -291,7 +291,7 @@ By default, flex items are laid out in the source order. However, the order prop
     .item {
      order: 5; /* default is 0 */
     }
-![This is an image of flex-direction](order.svg) 
+![This is an image of flex-direction](../docs/assets/Images/readme/order.svg) 
 ### 8.flex-grow and shrink
 - Flex-grow
     This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, that child would take up twice as much of the space either one of the others (or it will try, at least).
@@ -301,6 +301,6 @@ By default, flex items are laid out in the source order. However, the order prop
          }
 - Flex-shrink
     This defines the ability for a flex item to shrink if necessary.
-![This is an image of flex-direction](fs.png) 
+![This is an image of flex-direction](../docs/assets/Images/readme/fs.png) 
 **Negative numbers are invalid.**
 
