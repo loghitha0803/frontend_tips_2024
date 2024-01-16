@@ -225,6 +225,7 @@ width:30px;
 padding-right: 25px;
   padding-left: 25px;
   overflow-x: scroll;
+  gap:40px;
 
 }
 
@@ -316,97 +317,6 @@ color: #fff;
   font-weight:lighter;
 }
 
-.lastcontainer
-{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.lastcontainerbox
-{
-  display: flex;
-  margin: 5px;
-  justify-content: space-between;
-  width: 100%;
-
-}
-
-.textbottom
-{ margin-left: 70px;
-  place-self: flex-start flex-start;
-}
-
-.updownarrow
-{ margin-right: 70px;
-  justify-self: flex-end;
-  font-weight: lighter;
-}
-
-.arrow
-{
-  width:15px;
-  height: 12px;
-}
-
-.citygrid
-{
-display: flex;
-flex-wrap: wrap;
-padding-left: 75px;
-padding-right: 75px;
-padding-bottom: 25px;
-
-}
-
-.citybox
-{
-  background-color:#808080;
-  width:366px;
-  height: 50px;
-  padding: 10px;
-  display: flex;
-  
-}
-
-.connamecity
-{
-  display: flex;
-  flex-direction: column;
-}
-
-.continentname
-{
-color: #FFF461;
-font-size: medium;
-align-self: flex-start;
-padding-top: 5px;
-}
-
-.cityname
-{
-  color: #fff;
-  font-size: medium;
-  align-self: flex-end;
-}
-
-.tempstatus
-{
-  display: flex;
-  flex-direction: column;
-  justify-self: flex-end;
-  padding-left: 200px;
-}
-
-.temperature
-{
-  text-align: end;
-}
-
-.weathericoncity
-{
-  width:30px;
-  height: 20px;
-}
 
 @media screen and (width<=1000px)
  {
@@ -424,7 +334,7 @@ padding-top: 5px;
   
 }
 
-.imageneed
+.imgneed
 {
   width:75px;
   height: 185px;
