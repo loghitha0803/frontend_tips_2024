@@ -247,6 +247,7 @@ align-self: flex-start;
 flex-direction: column;
 margin-left: 8px;
 margin-top: 8px;
+width:100px
 
 }
 
@@ -269,7 +270,7 @@ margin-top: 8px;
 
 .imgneed
 {
-  width: 240px;
+  width: 140px;
 }
 
 .weats
@@ -444,8 +445,7 @@ font-weight: bold;
 
 .imgneed
 {
-  width:135px;
-  height: 130px;;
+  width:140px;
 }
 
 .weathericon
