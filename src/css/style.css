@@ -45,7 +45,7 @@ select {
   padding-right: 10px;
 }
 
-.amimage {
+.am-image {
   width: 40px;
   height: 32px;
 }
@@ -94,7 +94,7 @@ select {
   display: inline-flex;
 }
 
-.gap-bws {
+.gap-between {
   gap: 20px;
   display: inline-flex;
 }
@@ -132,13 +132,13 @@ select {
   place-items: center center;
 }
 
-.smallstick {
+.small-stick {
   width: 1.5px;
   height: 15px;
   background-color: var(--primary-white);
 }
 
-.smallsticks {
+.small-sticks {
   width: 1.5px;
   height: 15px;
   background-color: var(--primary-white);
@@ -219,7 +219,7 @@ select {
   color: var(--primary-white);
 }
 
-.chooseoption {
+.option {
   background-color: var(--bg-grey-tile);
   width: 30px;
   color: var(--primary-white);
@@ -227,7 +227,7 @@ select {
   text-align: center;
 }
 
-.botcontainer2 {
+.botcontainer {
   margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +282,7 @@ select {
   align-self: flex-end;
 }
 
-.imgneed {
+.img-top-inside {
   width: 140px;
 }
 
@@ -296,11 +296,11 @@ select {
   padding-right: 2px;
 }
 
-.fc {
+.font-color {
   color: var(--primary-white);
 }
 
-.fsm {
+.font-size-medium {
   font-size: medium;
   font-weight: bold;
 }
@@ -324,7 +324,7 @@ select {
   gap: 2px;
 }
 
-.fss {
+.font-size-small {
   font-size: medium;
   font-weight: lighter;
 }
@@ -334,7 +334,7 @@ select {
     font-size: 14px;
   }
 
-  .amimage {
+  .am-image {
     width: 20px;
     height: 20px;
   }
@@ -351,7 +351,7 @@ select {
     font-size: 14px;
   }
 
-  .smallsticks {
+  .small-sticks {
     display: none;
   }
 
@@ -394,12 +394,12 @@ select {
     height: 200px;
   }
 
-  .fsm {
+  .font-size-medium {
     font-size: 12px;
     font-weight: bold;
   }
 
-  .fss {
+  .font-size-small {
     font-size: smaller;
   }
 
@@ -408,7 +408,7 @@ select {
     height: 5px;
   }
 
-  .imgneed {
+  .img-top-inside {
     width: 140px;
   }
 
@@ -435,7 +435,7 @@ select {
     padding-bottom: 25px;
   }
 
-  .fss {
+  .font-size-small {
     font-size: smaller;
   }
 
@@ -444,7 +444,7 @@ select {
     height: 5px;
   }
 
-  .imgneed {
+  .img-top-inside {
     width: 140px;
   }
 
