@@ -1,5 +1,4 @@
 @import url("../../Assets/files/vars.css");
-
 body {
   margin: 0;
 }
@@ -8,7 +7,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.container1 {
+.topcontainer {
   background-image: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
     url("../../Assets/General Images & Icons/background.svg");
   background-size: cover;
@@ -56,7 +55,7 @@ select {
   color: var(--primary-white);
 }
 
-.temp1 {
+.temperaturediff {
   font-size: large;
   color: var(--primary-white);
   flex-direction: column;
@@ -109,11 +108,12 @@ select {
 
 .first-image {
   width: 70px;
-  height: 85px;
   align-self: flex-start;
+  position: relative;
+  bottom: -1vh;
 }
 
-.sel1 {
+.selectors {
   display: flex;
   flex-direction: column;
   padding-top: 35px;
@@ -157,15 +157,15 @@ select {
   display: flex;
 }
 
-.container-2 {
+.middlecontainer {
   background-color: var(--primary-black);
   background-size: cover;
   border-radius: 7vh 7vh 0 0;
   margin-top: -7vh;
-  min-width: 827px;
+  min-width: 810px;
 }
 
-.topcontainer2 {
+.middletopsection {
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -189,7 +189,7 @@ select {
   display: flex;
   flex-wrap: nowrap;
   font-size: smaller;
-  padding-right: 17vw;
+  padding-right: 5vw;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -339,7 +339,7 @@ select {
     height: 20px;
   }
 
-  .temp1 {
+  .temperaturediff {
     font-size: 14px;
   }
 
@@ -397,6 +397,42 @@ select {
   .fsm {
     font-size: 12px;
     font-weight: bold;
+  }
+
+  .fss {
+    font-size: smaller;
+  }
+
+  .weat {
+    width: 5px;
+    height: 5px;
+  }
+
+  .imgneed {
+    width: 140px;
+  }
+
+  .weathericon {
+    width: 10px;
+    height: 40px;
+  }
+
+  .citygrid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 17vw;
+    padding-right: 17vw;
+    padding-bottom: 25px;
+  }
+}
+
+@media screen and (width<=600px) {
+  .citygrid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    padding-bottom: 25px;
   }
 
   .fss {
