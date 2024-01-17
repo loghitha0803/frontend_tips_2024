@@ -11,13 +11,13 @@ body{
 
 .container1
 {
-    background-image: url("../../Assets/General Images & Icons/background.svg");
+    background-image: linear-gradient(rgb(0 0 0 / 50%),rgb(0 0 0 / 50%)),url("../../Assets/General Images & Icons/background.svg");
     background-size: cover;
     background-position:center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 75px 7.2vw ;
+    padding:6vh 3vw 8vh;
     min-width: 780px;
 }
 
@@ -29,8 +29,7 @@ body{
 select
 {
   width: 160px;
-  height: 50px;
-  border-radius: 10px;
+  height: 40px;
   background-color: var(--bg-grey-tile);
   color: var(--primary-white);
   font-size: x-large;
@@ -39,7 +38,23 @@ select
 .time
   {
 color: var(--pale-yellow-text);
-font-size: x-large;
+font-size: xx-large;
+display: flex;
+padding-top: 20px;
+}
+
+.image
+{
+  width: 10px;
+  height: 10px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+
+.amimage
+{
+  width: 40px;
+  height: 32px;
 }
 
 .date
@@ -111,13 +126,16 @@ align-items: center;
  }
 
  .first-image
- {  margin-top: 5px;
+ {width :70px;
+  height: 85px;
     align-self:flex-start;
  }
 
  .sel1
  {
+  display: flex;
 flex-direction: column;
+padding-top: 35px;
  }
 
 .big-sticks
@@ -138,7 +156,7 @@ flex-direction: column;
 .smallstick
 {
  width:1.5px;
- height: 20px;
+ height: 15px;
  background-color:var(--primary-white);
 
 }
@@ -146,15 +164,22 @@ flex-direction: column;
 .smallsticks
 {
  width:1.5px;
- height: 20px;
+ height: 15px;
  background-color:var(--primary-white);
- margin-bottom: 20px;
+ margin-bottom: 30px;
 }
 
 .celsius{
     font-size: larger;
-    text-align: center;
+    text-align:left;
     font-weight: 200;
+    display: flex;
+}
+
+.weather-notation
+{
+  align-content: baseline;
+  display: flex;
 }
 
 .container-2
@@ -163,7 +188,7 @@ flex-direction: column;
   background-size: cover;
   border-radius: 7vh 7vh 0 0;
   margin-top: -7vh;
-  min-width:852px;
+  min-width:827px;
   
 }
 
@@ -209,7 +234,7 @@ margin-bottom: 5px;
 display: block;
 content: " ";
 width: 0;
-height: 3px;
+height: 2px;
 background-color: var( --bg-selection-blue);
 }
 
@@ -263,6 +288,7 @@ text-align: center;
   display: flex;
   background-color: var(--bg-dark-grey-tile);
   background-size: cover;
+  padding:1vw;
 }
 
 .firstcontainer:hover
@@ -276,7 +302,9 @@ align-self: flex-start;
 flex-direction: column;
 margin-left: 8px;
 margin-top: 8px;
-width:100px
+width:100px;
+gap: 4px;
+display: inline-flex;
 
 }
 
@@ -285,6 +313,8 @@ width:100px
   display: flex;
   flex-direction: column;
   justify-self: end;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .toptemp
@@ -311,7 +341,7 @@ width:100px
 {
   width: 20px;
   height: 20px;
-  margin: 5px;
+  padding-right: 2px;
 }
 
 .fc
@@ -336,9 +366,15 @@ color:var(--primary-white);
 
 .weathericon
 {
-  width: 40px;
-  height: 20px;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
 
+.iconsweather
+{
+  display: flex;
+  gap: 2px;
 }
 
 .fss
@@ -352,6 +388,12 @@ color:var(--primary-white);
 .first
 {
   font-size: 14px;
+}
+
+.amimage
+{
+  width:20px;
+  height: 20px;
 }
 
 .temp1
@@ -381,14 +423,11 @@ color:var(--primary-white);
   height: 40px;
 }
 
-.amimage
-{
-  width:40px;
-  height: 40px;
-}
+
 
 .time{
-  font-size: 14px;
+  font-size: 20px;
+  height: 20px;
 }
 
 .citybox

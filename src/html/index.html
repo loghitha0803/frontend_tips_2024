@@ -11,8 +11,7 @@
     <body>
         <div class="container">
             <div class="container1">
-                <img class="first-image" src="../../Assets/Icons for cities/anadyr.svg" alt="brokenhill image"
-                    width="120px" height="120px">
+                <img class="first-image" src="../../Assets/Icons for cities/anadyr.svg" alt="brokenhill image">
                 <div class="sel1">
                     <select>
                         <option> newyork</option>
@@ -22,9 +21,12 @@
                         <div class="times flexcolumns">
                             <div class="time">
                                 <span>10:10</span>
-                                <small>:40</small>
-                                <img class="amimage" src="../../Assets/General Images & Icons/amState.svg"
-                                    alt="amstateimage" width="50px" height="50px">
+                                <div class="seconds">
+                                    <small>:40</small>
+                                </div>
+                                <div class="amimage">
+                                    <img class="amimage"
+                                        src="../../Assets/General Images & Icons/amState.svg" alt="amstateimage"></div>
                                 <br>
                             </div>
                             <div class="date">
@@ -64,7 +66,10 @@
                         <span>Humidity</span>
                         <br>
                         <div class="celsius">
-                            <span>25%</span>
+                            <span>25</span>
+                            <div class="percent">
+                                <span>%</span>
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -85,7 +90,9 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/humidityIconBlack.svg" alt="humidityIconBlack">
+                        <img src="../../Assets/Weather Icons/humidityIconBlack.svg" alt="humidityIconBlack" width="20px"
+                            height="20px">
+                        <br>
                         <br>
                     </div>
                     <div>
@@ -101,7 +108,8 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/rainyIconBlack.svg" alt="rainyIcon">
+                        <img src="../../Assets/Weather Icons/rainyIconBlack.svg" alt="rainyIcon" width="20px" height="20px">
+                        <br>
                         <br>
                     </div>
                     <div>
@@ -117,7 +125,8 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/sunnyIconBlack.svg" alt="sunnyIcon">
+                        <img src="../../Assets/Weather Icons/sunnyIconBlack.svg" alt="sunnyIcon" width="20px" height="20px">
+                        <br>
                         <br>
                     </div>
                     <div>
@@ -133,7 +142,9 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/precipitationIconBlack.svg" alt="precipitationIcon">
+                        <img src="../../Assets/Weather Icons/precipitationIconBlack.svg" alt="precipitationIcon"
+                            width="20px" height="20px">
+                        <br>
                         <br>
                     </div>
                     <div>
@@ -149,7 +160,8 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/rainyIconBlack.svg" alt="rainyIcon">
+                        <img src="../../Assets/Weather Icons/rainyIconBlack.svg" alt="rainyIcon" width="20px" height="20px">
+                        <br>
                         <br>
                     </div>
                     <div>
@@ -166,8 +178,8 @@
                     </div>
                     <br>
                     <div class="image">
-                        <img src="../../Assets/Weather Icons/precipitationIconBlack.svg" alt="cloudyIcon">
-                        <br>
+                        <img src="../../Assets/Weather Icons/precipitationIconBlack.svg" alt="cloudyIcon" width="20px"
+                            height="20px">
                     </div>
                     <div>
                         <span>6</span>
@@ -200,32 +212,29 @@
                         <div class="firstcontainer">
                             <div class="textcon fc ">
                                 <span class="fsm">New-delhi</span>
-                                <br>
                                 <span class="fsm">10:00 AM</span>
-                                <br>
                                 <div class="spacebelow">
                                     <span>02-MAR-2020</span>
                                 </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
                                 </div>
-                                <br>
                             </div>
                             <div class="imagecon">
                                 <div class="toptemp">
-                                    <span class="fss fc">
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
                                     <br>
                                 </div>
                                 <div class="imginside">
@@ -236,68 +245,29 @@
                         <div class="firstcontainer">
                             <div class="textcon fc ">
                                 <span class="fsm">New-delhi</span>
-                                <br>
                                 <span class="fsm">10:00 AM</span>
-                                <br>
                                 <div class="spacebelow">
                                     <span>02-MAR-2020</span>
                                 </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
                                 </div>
-                                <br>
                             </div>
                             <div class="imagecon">
                                 <div class="toptemp">
-                                    <span class="fss fc">
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
-                                    <br>
-                                </div>
-                                <div class="imginside">
-                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="" anadyr>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="firstcontainer">
-                            <div class="textcon fc ">
-                                <span class="fsm">New-delhi</span>
-                                <br>
-                                <span class="fsm">10:00 AM</span>
-                                <br>
-                                <div class="spacebelow">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="imagecon">
-                                <div class="toptemp">
-                                    <span class="fss fc">
-                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
                                     <br>
                                 </div>
                                 <div class="imginside">
@@ -308,32 +278,29 @@
                         <div class="firstcontainer">
                             <div class="textcon fc ">
                                 <span class="fsm">New-delhi</span>
-                                <br>
                                 <span class="fsm">10:00 AM</span>
-                                <br>
                                 <div class="spacebelow">
                                     <span>02-MAR-2020</span>
                                 </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
                                 </div>
-                                <br>
                             </div>
                             <div class="imagecon">
                                 <div class="toptemp">
-                                    <span class="fss fc">
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
                                     <br>
                                 </div>
                                 <div class="imginside">
@@ -344,32 +311,194 @@
                         <div class="firstcontainer">
                             <div class="textcon fc ">
                                 <span class="fsm">New-delhi</span>
-                                <br>
                                 <span class="fsm">10:00 AM</span>
-                                <br>
                                 <div class="spacebelow">
                                     <span>02-MAR-2020</span>
                                 </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
                                 </div>
-                                <br>
                             </div>
                             <div class="imagecon">
                                 <div class="toptemp">
-                                    <span class="fss fc">
+                                    <div class="iconsweather">
                                         <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
+                                    <br>
+                                </div>
+                                <div class="imginside">
+                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firstcontainer">
+                            <div class="textcon fc ">
+                                <span class="fsm">New-delhi</span>
+                                <span class="fsm">10:00 AM</span>
+                                <div class="spacebelow">
+                                    <span>02-MAR-2020</span>
+                                </div>
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="imagecon">
+                                <div class="toptemp">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
+                                    <br>
+                                </div>
+                                <div class="imginside">
+                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firstcontainer">
+                            <div class="textcon fc ">
+                                <span class="fsm">New-delhi</span>
+                                <span class="fsm">10:00 AM</span>
+                                <div class="spacebelow">
+                                    <span>02-MAR-2020</span>
+                                </div>
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="imagecon">
+                                <div class="toptemp">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
+                                    <br>
+                                </div>
+                                <div class="imginside">
+                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firstcontainer">
+                            <div class="textcon fc ">
+                                <span class="fsm">New-delhi</span>
+                                <span class="fsm">10:00 AM</span>
+                                <div class="spacebelow">
+                                    <span>02-MAR-2020</span>
+                                </div>
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="imagecon">
+                                <div class="toptemp">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
+                                    <br>
+                                </div>
+                                <div class="imginside">
+                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firstcontainer">
+                            <div class="textcon fc ">
+                                <span class="fsm">New-delhi</span>
+                                <span class="fsm">10:00 AM</span>
+                                <div class="spacebelow">
+                                    <span>02-MAR-2020</span>
+                                </div>
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="imagecon">
+                                <div class="toptemp">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
+                                    <br>
+                                </div>
+                                <div class="imginside">
+                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firstcontainer">
+                            <div class="textcon fc ">
+                                <span class="fsm">New-delhi</span>
+                                <span class="fsm">10:00 AM</span>
+                                <div class="spacebelow">
+                                    <span>02-MAR-2020</span>
+                                </div>
+                                <div class="weathericon">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg " alt="humidityIcon">
+                                        <span class="fss">25%
+                                        </span></div>
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
+                                            alt="precipitationIcon">
+                                        <span class="fss">10%
+                                        </span></div>
+                                </div>
+                            </div>
+                            <div class="imagecon">
+                                <div class="toptemp">
+                                    <div class="iconsweather">
+                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                            alt="sunnyIcon">
+                                        <span class="fss fc">25&deg;C
+                                        </span></div>
                                     <br>
                                 </div>
                                 <div class="imginside">
@@ -378,78 +507,6 @@
                             </div>
                         </div>
 
-                        <div class="firstcontainer">
-                            <div class="textcon fc ">
-                                <span class="fsm">New-delhi</span>
-                                <br>
-                                <span class="fsm">10:00 AM</span>
-                                <br>
-                                <div class="spacebelow">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="imagecon">
-                                <div class="toptemp">
-                                    <span class="fss fc">
-                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
-                                    <br>
-                                </div>
-                                <div class="imginside">
-                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="firstcontainer">
-                            <div class="textcon fc ">
-                                <span class="fsm">New-delhi</span>
-                                <br>
-                                <span class="fsm">10:00 AM</span>
-                                <br>
-                                <div class="spacebelow">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <br>
-                                <div class="Weathericon">
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/humidityIcon.svg"
-                                            alt="humidityIcon">25%
-                                    </span>
-                                    <br>
-                                    <span class="fss">
-                                        <img class="weat" src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon">10%
-                                    </span>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="imagecon">
-                                <div class="toptemp">
-                                    <span class="fss fc">
-                                        <img class="weat" src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon">25&deg;C
-                                    </span>
-                                    <br>
-                                </div>
-                                <div class="imginside">
-                                    <img class="imgneed" src="../../Assets/Icons for cities/anadyr.svg" alt="anadyr">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
