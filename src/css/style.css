@@ -1,4 +1,5 @@
 @import url("../../Assets/files/vars.css");
+
 body {
   margin: 0;
 }
@@ -427,14 +428,6 @@ select {
 }
 
 @media screen and (width<=600px) {
-  .citygrid {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 25vw;
-    padding-right: 25vw;
-    padding-bottom: 25px;
-  }
-
   .font-size-small {
     font-size: smaller;
   }
