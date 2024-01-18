@@ -329,7 +329,230 @@ select {
   font-size: medium;
   font-weight: lighter;
 }
+.lastcontainer
+{
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.lastcontainerbox
+{
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.textbottom
+{ margin-left: 150px;
+  place-self: flex-start flex-start;
+}
+
+.updownarrow
+{ margin-right: 150px;
+  justify-self: flex-end;
+  font-weight: lighter;
+}
+.fslarge
+{
+  font-size: larger;
+
+}
+.fslarger
+{
+  font-size: x-large;
+}
+.arrow
+{
+  width:15px;
+  height: 12px;
+}
+
+.citygrid
+{
+display: flex;
+flex-wrap: wrap;
+padding-left: 7vw;
+padding-right: 4vw;
+padding-top: 2vw;
+padding-bottom: 2vw;
+}
+.notestatus
+{
+  width: 80px;
+  height: 50px;
+  text-align: end;
+  color: var(--primary-white);
+}
+.gap-more
+{
+  gap:45px ;
+}
+.citybox
+{
+  background-color:var(--bg-grey-tile);
+  width:320px;
+  padding: 10px;
+  display: flex;
+  animation: slide-in 1s ease-out;  
+}
+.citybox:hover
+{ cursor: pointer;
+  transform: scale(1.1);
+}
+@keyframes slide-in {
+from {
+  opacity: 0;
+  transform: translateX(-150px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+.connamecity
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.continentname
+{
+color: var(--bright-yellow-text);
+font-size: medium;
+align-self: flex-start;
+padding-top: 5px;
+}
+
+.cityname
+{
+  color: var(--primary-white);
+  font-size: medium;
+  align-self: flex-end;
+}
+
+.tempstatus
+{
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  padding-left: 120px;
+}
+
+.temperature
+{
+  text-align: end;
+}
+
+.weathericoncity
+{
+  width:20px;
+  height: 20px;
+}
+
+
+@media screen and (width<=1150px)
+ {
+  .firstcontainer
+{
+  height: 170px;
+}
+
+  .citybox
+{
+  width:200px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  gap:20px
+  
+}
+
+.imgneed
+{
+  width:110px;
+  height: 160px;
+}
+
+.citygrid
+{
+  padding-left: 9vw;
+  padding-right: 1vw;
+}
+
+.tempstatus
+{
+  padding-left: 32px;
+}
+
+.fsm
+{
+font-size: 12px;
+font-weight: bold;
+}
+
+.fss{
+  font-size: smaller;
+}
+}
+@media  screen and  (width<=900px)
+{
+  .citygrid
+{
+display: flex;
+flex-wrap: wrap;
+padding-left: 100px;
+padding-right: 75px;
+padding-bottom: 25px;
+}
+.fslarge
+{
+font-size: small;
+}
+.fslarger
+{
+font-size: medium;
+}
+.tempstatus
+{
+  padding-left: 2px;
+}
+.citybox
+  {
+    width:170px;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    
+  }
+  .citygrid
+  {
+    padding-left:2vw ;
+    padding-right:2vw ;
+  }
+}
+@media  screen and  (width<=800px)
+{
+    .citygrid{
+        display: flex;
+          flex-wrap: wrap;
+          padding-left: 17vw;
+          padding-right: 17vw;
+          padding-bottom: 25px;
+      }
+}
+@media  screen and  (width<=600px)
+{
+.citygrid{
+  display: flex;
+    flex-wrap: wrap;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    padding-bottom: 25px;
+}
+}
 @media screen and (width<=800px) {
   .first {
     font-size: 14px;
