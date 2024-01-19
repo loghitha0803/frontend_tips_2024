@@ -164,14 +164,31 @@ select {
 }
 
 .head-text {
-  color: var(--primary-white);
-  font-size: larger;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding-left: 30vw;
-  padding-top: 2vh;
+    color: var(--primary-white);
+    font-size: larger;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    width: 75%;
+  }
+
+.arrow-middle-section {
+  background-color: var(--primary-white);
+  border-radius: 100%;
+  font-size: 34px;
+  font-weight: bolder;
+  height: 40px;
+  margin-top: 89px;
   text-align: center;
-  width: 75%;
+  width: 40px;
+}
+
+.arrow-move-right {
+  margin-right: 10px;
+}
+
+.arrow-move-left {
+  margin-left: 10px;
 }
 
 .arrow-middle-section {
@@ -325,34 +342,34 @@ select {
     font-weight: lighter;
   }
 
-.lastcontainer {
+.last-container {
     display: flex;
     flex-wrap: wrap;
   }
 
-.lastcontainerbox {
+.last-container-box {
     display: flex;
     justify-content: space-between;
     margin: 5px;
     width: 100%;
   }
 
-.textbottom {
+.text-bottom {
     margin-left: 40px;
     place-self: flex-start flex-start;
   }
 
-.updownarrow {
+.up-down-arrow {
     font-weight: lighter;
     justify-self: flex-end;
     margin-right: 40px;
   }
 
-.fslarge {
+.font-size-large {
     font-size: larger;
   }
 
-.fslarger {
+.font-size-larger {
     font-size: x-large;
   }
 
@@ -361,14 +378,14 @@ select {
     width: 15px;
   }
 
-.citygrid {
+.city-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 5px 40px 40px;
   }
 
-.notestatus {
+.note-status {
     color: var(--primary-white);
     height: 50px;
     text-align: end;
@@ -379,7 +396,7 @@ select {
     gap: 25px;
   }
 
-.citybox {
+.city-box {
     animation: slide-in 1s ease-out;
     background-color: var(--bg-grey-tile);
     display:grid;
@@ -389,7 +406,7 @@ select {
     width: 359px;
   }
 
-.citybox:hover {
+.city-box:hover {
     cursor: pointer;
     transform: scale(1.1);
   }
@@ -406,7 +423,7 @@ select {
     }
   }
 
-.connamecity {
+.con-name-city {
     display: flex;
     flex-direction: column;
   gap:20px
@@ -419,12 +436,12 @@ select {
     padding-top: 5px;
   }
 
-.cityname {
+.city-name {
     color: var(--primary-white);
     font-size: medium;
   }
 
-.tempstatus {
+.temp-status {
     display: flex;
     flex-direction: column;
     justify-self: flex-end;
@@ -441,14 +458,14 @@ select {
   }
 
 @media screen and (width<=1150px) {
-  .firstcontainer {
+  .first-container {
       height: 170px;
     }
 
-  .citybox {
+  .city-box {
       display: flex;
       gap: 20px;
-      height: 50px;
+      height: 70px;
       padding: 10px;
       width: 200px;
     }
@@ -458,12 +475,12 @@ select {
       width: 110px;
     }
 
-  .citygrid {
+  .city-grid {
       padding-left: 9vw;
       padding-right: 1vw;
     }
 
-  .tempstatus {
+  .temp-status {
       padding-left: 32px;
     }
 
@@ -478,7 +495,7 @@ select {
   }
 
 @media screen and (width<=900px) {
-  .citygrid {
+  .city-grid {
       display: flex;
       flex-wrap: wrap;
       padding-bottom: 25px;
@@ -494,13 +511,13 @@ select {
       font-size: medium;
     }
 
-  .tempstatus {
+  .temp-status {
       padding-left: 2px;
     }
 
-  .citybox {
+  .city-box {
       display: flex;
-      height: 50px;
+      height: 70px;
       padding: 10px;
       width: 170px;
     }
@@ -532,7 +549,15 @@ select {
 
   .time {
       font-size: 20px;
-      height: 20px;
+    }
+
+    .seconds {
+      align-items: center;
+    display: flex;
+    font-size: smaller;
+    width: auto;
+    position: relative;
+    top: -7px;
     }
 
   .city-box {
