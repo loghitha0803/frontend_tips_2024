@@ -8,7 +8,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.topcontainer {
+.top-container {
   background-image: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
     url("../../Assets/General Images & Icons/background.svg");
   background-size: cover;
@@ -16,11 +16,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6vh 3vw 8vh;
+  padding: 2vh 3vw 8vh 1vw;
   min-width: 780px;
 }
 
-.flexcolumns {
+.flex-columns {
   flex-direction: column;
 }
 
@@ -47,8 +47,15 @@ select {
 }
 
 .am-image {
-  width: 40px;
-  height: 32px;
+  height: 46px;
+  position: relative;
+  top: -6px;
+}
+
+.seconds {
+font-size: 24px;
+position: relative;
+top:7px;
 }
 
 .date {
@@ -56,7 +63,7 @@ select {
   color: var(--primary-white);
 }
 
-.temperaturediff {
+.temperature-diff {
   font-size: large;
   color: var(--primary-white);
   flex-direction: column;
@@ -158,7 +165,7 @@ select {
   display: flex;
 }
 
-.middlecontainer {
+.middle-container {
   background-color: var(--primary-black);
   background-size: cover;
   border-radius: 7vh 7vh 0 0;
@@ -166,7 +173,7 @@ select {
   min-width: 810px;
 }
 
-.middletopsection {
+.middle-top-section {
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -176,7 +183,7 @@ select {
   z-index: 1;
 }
 
-.headtext {
+.head-text {
   text-align: center;
   color: var(--primary-white);
   font-size: larger;
@@ -199,7 +206,7 @@ select {
   padding-right: 5px;
 }
 
-.iconcombined::after {
+.icon-combined::after {
   display: block;
   content: " ";
   width: 0;
@@ -207,12 +214,12 @@ select {
   background-color: var(--bg-selection-blue);
 }
 
-.iconcombined:hover::after {
+.icon-combined:hover::after {
   width: 100%;
   transition: 0.3ms ease;
 }
 
-.textcontent {
+.text-content {
   font-size: small;
   font-weight: lighter;
   align-self: center;
@@ -228,7 +235,7 @@ select {
   text-align: center;
 }
 
-.botcontainer {
+.bot-container {
   margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -245,19 +252,19 @@ select {
   display: none;
 }
 
-.firstcontainer {
+.first-container {
   display: flex;
   background-color: var(--bg-dark-grey-tile);
   background-size: cover;
   padding: 1vw;
 }
 
-.firstcontainer:hover {
+.first-container:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.textcon {
+.text-con {
   align-self: flex-start;
   flex-direction: column;
   margin-left: 8px;
@@ -267,7 +274,7 @@ select {
   display: inline-flex;
 }
 
-.imagecon {
+.image-con {
   display: flex;
   flex-direction: column;
   justify-self: end;
@@ -275,11 +282,11 @@ select {
   padding-right: 8px;
 }
 
-.toptemp {
+.top-temp {
   align-self: flex-end;
 }
 
-.imginside {
+.img-inside {
   align-self: flex-end;
 }
 
@@ -306,7 +313,7 @@ select {
   font-weight: bold;
 }
 
-.spacebelow {
+.space-below {
   padding-top: 5px;
 }
 
@@ -314,13 +321,13 @@ select {
   display: inline-flex;
 }
 
-.weathericon {
+.weather-icon {
   gap: 4px;
   display: flex;
   flex-direction: column;
 }
 
-.iconsweather {
+.icons-weather {
   display: flex;
   gap: 2px;
 }
@@ -413,7 +420,7 @@ select {
     width: 140px;
   }
 
-  .weathericon {
+  .weather-icon {
     width: 10px;
     height: 40px;
   }
@@ -441,7 +448,7 @@ select {
     width: 140px;
   }
 
-  .weathericon {
+  .weather-icon {
     width: 10px;
     height: 40px;
   }
