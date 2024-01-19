@@ -89,13 +89,6 @@ select {
   gap: 20px;
 }
 
-.block2 {
-  align-items: end;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 5px;
-}
-
 .first-image {
   align-self: flex-start;
   bottom: -1vh;
