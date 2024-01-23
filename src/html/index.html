@@ -3,6 +3,7 @@
     <head>
         <title>T1001</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <script src="../js/node.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -13,18 +14,41 @@
                     alt="image of the broken-hill"
                 >
                 <div class="selectors">
-                    <select>
-                        <option>New York</option>
-                        <option>Delhi</option>
-                    </select>
+                    <input type="text" class="image-city" list="listsdata">
+                    <datalist id="listsdata">
+                        <option>Anandyr</option>
+                        <option>Auckland</option>
+                        <option>Bangkok</option>
+                        <option>Brokenhill</option>
+                        <option>Dublin</option>
+                        <option>Jamaica</option>
+                        <option>Juba</option>
+                        <option>Karachi</option>
+                        <option>Kolkata</option>
+                        <option>London</option>
+                        <option>Losangeles</option>
+                        <option>Maseru</option>
+                        <option>Moscow</option>
+                        <option>NewYork</option>
+                        <option>Nome</option>
+                        <option>Perth</option>
+                        <option>Seoul</option>
+                        <option>Troll</option>
+                        <option>Vienna</option>
+                        <option>Vostok</option>
+                        <option>Winnipeg</option>
+                        <option>Yangon</option>
+                    </datalist>
                     <time>
                         <div class="flex-columns">
                             <div class="time">
-                                <span>10:10</span>
+                                <div class="hrs-mins">
+                                    <span>10:10</span>
+                                </div>
                                 <div class="seconds">
                                     <small>:40</small>
                                 </div>
-                                <div class="am-image">
+                                <div>
                                     <img
                                         class="am-image"
                                         src="../../Assets/General Images & Icons/amState.svg"
@@ -43,15 +67,15 @@
                     <div>
                         <span>Temp &deg; C</span>
                         <br >
-                        <div class="celsius">
+                        <div class="celsius temp-value-celsius">
                             <span>25C</span>
                         </div>
                     </div>
                     <br >
-                    <div class="temperature">
+                    <div class="temperature reduced-font">
                         <span>Temp F</span>
                         <br >
-                        <div class="celsius">
+                        <div class="celsius temp-value-farenheit">
                             <span>78F</span>
                         </div>
                     </div>
@@ -65,18 +89,15 @@
                     <div>
                         <span>Humidity</span>
                         <br >
-                        <div class="celsius">
-                            <span>25</span>
-                            <div class="percent">
-                                <span>%</span>
-                            </div>
+                        <div class="celsius humidity-value">
+                            <span>25%</span>
                         </div>
                     </div>
                     <br >
                     <div class="temp reduced-font">
                         <span>Precipitation</span>
                         <br >
-                        <div class="celsius">
+                        <div class="celsius precipitation-value">
                             <span>0%</span>
                         </div>
                     </div>
@@ -88,6 +109,7 @@
                     <br >
                     <div class="weather-top-icon">
                         <img
+                            class="hourly-image now-image"
                             src="../../Assets/Weather Icons/humidityIconBlack.svg"
                             alt="humidityIconBlack"
                             width="20px"
@@ -96,18 +118,21 @@
                         <br >
                         <br >
                     </div>
-                    <div>
+                    <div class="temperature-hourly-update">
                         <span>6</span>
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 11am</span>
+                    <div class="first-time">
+                        <span> 11am</span>
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
+                            class="hourly-image first-hour-image"
                             src="../../Assets/Weather Icons/rainyIconBlack.svg"
                             alt="rainyIcon"
                             width="20px"
@@ -116,18 +141,21 @@
                         <br >
                         <br >
                     </div>
-                    <div>
+                    <div class="temperature-hourly-update">
                         <span>7</span>
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 12pm </span>
+                    <div class="first-time">
+                        <span> 12pm</span>
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
+                            class="second-hour-image second-image"
                             src="../../Assets/Weather Icons/sunnyIconBlack.svg"
                             alt="sunnyIcon"
                             width="20px"
@@ -136,18 +164,21 @@
                         <br >
                         <br >
                     </div>
-                    <div>
+                    <div class="temperature-hourly-update">
                         <span>8</span>
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 1pm </span>
+                    <div class="first-time">
+                        <span> 1pm</span>
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
+                            class="hourly-image third-image"
                             src="../../Assets/Weather Icons/precipitationIconBlack.svg"
                             alt="precipitationIcon"
                             width="20px"
@@ -156,18 +187,21 @@
                         <br >
                         <br >
                     </div>
-                    <div>
+                    <div class="temperature-hourly-update">
                         <span>7</span>
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span>2pm </span>
+                    <div class="first-time">
+                        <span> 2pm</span>
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
+                            class="hourly-image forth-image"
                             src="../../Assets/Weather Icons/rainyIconBlack.svg"
                             alt="rainyIcon"
                             width="20px"
@@ -176,26 +210,8 @@
                         <br >
                         <br >
                     </div>
-                    <div>
+                    <div class="temperature-hourly-update">
                         <span>8</span>
-                    </div>
-                </div>
-                <div class="vertical-small-column margin-bottom"></div>
-                <div class="first">
-                    <span> 3pm</span>
-                    <br >
-                    <div class="vertical-small-column"></div>
-                    <br >
-                    <div class="image">
-                        <img
-                            src="../../Assets/Weather Icons/precipitationIconBlack.svg"
-                            alt="cloudyIcon"
-                            width="20px"
-                            height="20px"
-                        >
-                    </div>
-                    <div>
-                        <span>6</span>
                     </div>
                 </div>
             </div>
@@ -697,7 +713,7 @@
                     </div>
                     <div class="city-grid gap-more">
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -706,21 +722,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -729,21 +745,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -752,21 +768,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -775,21 +791,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -798,21 +814,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -821,21 +837,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -844,21 +860,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color font-size-small">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -867,21 +883,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -890,21 +906,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -913,21 +929,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -936,21 +952,21 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="Weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="city-box">
-                            <div class="con-name-city">
+                            <div class="continent-name-city">
                                 <div class="continent-name">
                                     <span>Asia</span>
                                 </div>
@@ -959,16 +975,16 @@
                                 </div>
                             </div>
                             <div class="temp-status">
-                                <div class="temperature font-color font-size-large">
+                                <div class="temperature-align font-color font-size-large">
                                     <span>38 &deg;C</span>
                                 </div>
                                 <div class="note-status">
                                     <img
-                                        class="Weathericoncity"
+                                        class="weather-icon-city"
                                         src="../../Assets/Weather Icons/humidityIcon.svg"
                                         alt="humidityIcon"
                                     >
-                                    <span clss="font-color fontsizesmall">53%</span>
+                                    <span class="font-color font-size-small">53%</span>
                                 </div>
                             </div>
                         </div>
