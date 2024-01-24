@@ -34,10 +34,10 @@ document.querySelector('.image-city').addEventListener('change', (city) => {
 
     /**
      *
-     * @param datetime
+     * @param cityDateTime
      */
-    function formatDateTime (datetime) {
-      const [date, time] = datetime.split(', ')
+    function formatDateTime (cityDateTime) {
+      const [date, time] = cityDateTime.split(', ')
       const [month, datesplit, year] = date.split('/')
       const [hrs, mins, secs] = time.split(':')
       let [sec, am] = secs.split(' ')
@@ -95,20 +95,22 @@ document.querySelector('.image-city').addEventListener('change', (city) => {
       const hourlyImage = Array.from(hourly).map((element) => element.src)
       const updatedTimings = cityData[givenInput].nextFiveHrs
       updatedTimings.unshift(cityData[givenInput].temperature)
+
       for (let i = 0; i < updatedTimings.length; i++) {
+        updatedTimings[i] = updatedTimings[i].slice(0, -2)
         if (
-          updatedTimings[i] >= '23\u00B0C' &&
-          updatedTimings[i] <= '29\u00B0C'
+          Number(updatedTimings[i]) >= 23 &&
+          Number(updatedTimings[i]) <= 29
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/cloudyIcon.svg'
         } else if (
-          updatedTimings[i] >= '18\u00B0C' &&
-          updatedTimings[i] <= '22\u00B0C'
+          Number(updatedTimings[i]) >= 18 &&
+          Number(updatedTimings[i]) <= 22
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/windyIcon.svg'
-        } else if (updatedTimings[i] < '18\u00B0C') {
+        } else if (Number(updatedTimings[i]) < 18) {
           hourlyImage[i] = '../../../Assets/Weather Icons/rainyIcon.svg'
-        } else if (updatedTimings[i] > '18\u00B0C') {
+        } else if (Number(updatedTimings[i])) {
           hourlyImage[i] = '../../../Assets/Weather Icons/sunnyIcon.svg'
         }
       }
@@ -119,7 +121,7 @@ document.querySelector('.image-city').addEventListener('change', (city) => {
         (element) => element.textContent
       )
       for (let i = 0; i < tempHourlyUpdate.length; i++) {
-        tempHourly[i].textContent = updatedTimings[i]
+        tempHourly[i].textContent = updatedTimings[i] + '\u00B0C'
       }
       updatedTimings.shift()
       document.querySelector('.now-image').src = hourlyImage[0]
@@ -127,7 +129,8 @@ document.querySelector('.image-city').addEventListener('change', (city) => {
       document.querySelector('.second-image').src = hourlyImage[2]
       document.querySelector('.third-image').src = hourlyImage[3]
       document.querySelector('.forth-image').src = hourlyImage[4]
+      setTimeout(formatDateTime, 1000)
     }
     formatDateTime(cityData[givenInput].dateAndTime)
-  }
+  } else { alert('wrong city name entered') }
 })
