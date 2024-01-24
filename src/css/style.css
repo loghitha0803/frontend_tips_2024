@@ -224,6 +224,11 @@ body {
   width: 80px;
 }
 
+datalist
+{
+  background-color: brown;
+}
+
 .option {
   align-self: center;
   background-color: var(--bg-grey-tile);
@@ -232,6 +237,8 @@ body {
   height: 20px;
   text-align: center;
   width: 30px;
+  position: relative;
+  top: 25px;
 }
 
 .bottom-container {
