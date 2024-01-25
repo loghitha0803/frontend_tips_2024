@@ -1,4 +1,8 @@
-
+.main-div{
+    padding:  10px;
+    display: grid;
+    min-width: 900px;
+}
 .light-background-color {
     background-color: rgb(182 201 221);
     background-size: cover;
@@ -25,19 +29,22 @@
     padding: 0 7px;
     height: auto;
 }
-.justify-content-spacebw {
+.justify-self-start {
     justify-self: flex-start;
 }
 .justify-self-end{
     justify-self: flex-end;
 }
 .user-input{
-    padding: 10px 0;
+    padding: 43px 0;
 }
 .border-color-rounded {
     border: solid darkslateblue;
     border-radius: 10px;
-
+}
+.border-color-square
+{
+    border: solid darkslateblue;
 }
 .place-content-center
 {
@@ -70,8 +77,89 @@
 .input-type-radio
 {
     margin: .4rem;
+    background-color:darkslateblue;
+}
+.water-level {
+    padding-left: 15px;
 }
 .slide-container{
     display: grid;
+    padding: 10px;
+}
+.justify-content-spacearound {
+    justify-content: space-around;
+}
+.align-flex-start
+{
+    align-content: flex-start;
+}
+.measuring-scale-value
+{
+    padding: 1vh 1vh 1vh 3vh;
+    justify-content: space-between;
+}
+.second-container {
+    padding: 50px;
+}
+.large-division {
+    width: 2px;
+    height: 10px;
+    background-color: black;
+}
+.small-division {
+    width: 2px;
+    height: 5px;
+    background-color: black;
+}
+.blue-background-color {
+    background-color: slateblue;
+    width:70px;
+    height: 20px;
+}
+.border-top-large{
+    border-top: black;
+    width: 12px;
+    height: 2px;
+}
+.align-flex-end {
+    align-content: flex-end;
+}
+.large-division-changed {
+    background-color: black;
+    width:12px;
+    height: 2px;
+}
+.small-division-changed {
+    background-color: black;
+    width:5px;
+    height: 2px;
+    gap: 2px;
+}
+.border-top-small{
+    border-top: black;
+    width: 2px;
+    height: 2px;
+}
+.gap-large {
+    gap: 10vw;
+}
+.vertical {
+    
+    appearance: slider-vertical;
+}
+.slide-container-vertical {
+    display: grid;
+    width: inherit;
+}
+.justify-flex-end {
+    justify-content: flex-end;
+}
+.width-half {
+    width: 100px;
+}
+.power-on {
+    justify-self: center;
+    text-align: center;
+    width: 50px;
     padding: 10px;
 }
