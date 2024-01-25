@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COFFEE MACHINE CONTROLLER</title>
+        <link type="text/CSS" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="light-background-color">
+        <div class="grid-columns">
+            <div class="flex-display gap-between flex-direction-column ">
+            <div class="user-input flex-display gap-between border-color-rounded place-content-center">
+                <div class="flex-direction-column flex-display first-block place-content-center">
+                    <div >
+                        <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Cup">
+                    </div>
+                    <div >
+                        <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Carafe">
+                    </div>
+                </div>
+                <div  class="flex-display  flex-direction-column border-color-rounded place-content-center">
+                    <div class="tags grid-columns ">
+                        <div class="coffee justify-self-start ">COFFEE</div>
+                        <div class="latte justify-self-end">LATTE</div>
+                    </div>
+                    <div class="flex-display gap-between justify-evenly">
+                    <div>
+                        <input type="radio" id="coffee" name="drone" value="COFFEE" checked />
+                      </div>
+                      <div>
+                        <input type="radio" id="HOTWATER" name="drone" value="HOTWATER" />
+                      </div>
+                      <div>
+                        <input type="radio" id="LATTE" name="drone" value="LATTE" />
+                      </div>
+                    </div>
+                    <div class="hotwater">HOTWATER</div>
+                </div>
+            </div>
+            <div class="border-color-rounded">
+                <div class="slide-container">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <div class="slide-container">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <div class="slide-container">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
