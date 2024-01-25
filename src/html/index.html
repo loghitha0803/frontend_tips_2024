@@ -1,277 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>COFFEE MACHINE CONTROLLER</title>
         <link type="text/CSS" rel="stylesheet" href="../css/style.css">
     </head>
     <body >
         <div class="light-background-color border-color-square main-div">
-        <div class="grid-columns gap-between">
-            <div class="flex-display gap-between flex-direction-column ">
-            <div class="user-input flex-display gap-between border-color-rounded place-content-center">
-                <div class="flex-direction-column flex-display first-block place-content-center">
-                    <div >
-                        <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Cup">
+            <div class="grid-columns gap-between">
+                <div class="flex-display gap-between flex-direction-column ">
+                    <div class="user-input flex-display gap-between border-color-rounded place-content-center">
+                        <div class="flex-direction-column flex-display first-block place-content-center">
+                            <div >
+                                <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Cup">
+                            </div>
+                            <div >
+                                <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Carafe">
+                            </div>
+                        </div>
+                        <div class="flex-display  flex-direction-column border-color-square place-content-center">
+                            <div class="tags grid-columns ">
+                                <div class="coffee justify-self-start ">COFFEE</div>
+                                <div class="latte justify-self-end">LATTE</div>
+                            </div>
+                            <div class="flex-display gap-between justify-evenly">
+                                <div>
+                                    <input class="input-type-radio"type="radio" id="coffee" name="drone" value="COFFEE" checked>
+                                </div>
+                                <div>
+                                    <input class="input-type-radio"type="radio" id="hotwater" name="drone" value="HOTWATER">
+                                </div>
+                                <div>
+                                    <input class="input-type-radio" type="radio" id="latte" name="drone" value="LATTE">
+                                </div>
+                            </div>
+                            <div class="hotwater">HOTWATER</div>
+                        </div>
                     </div>
-                    <div >
-                        <input class="dark-background-color font-color-white input-type-button" type="button" value="1 Carafe">
+                    <div class="border-color-rounded user-input">
+                        <div class="water-level">Water level</div>
+                        <div class="slide-container">
+                            <input type="range" min="1" max="100" value="50" class="slider">
+                        </div>
+                        <div class="flex-display  justify-content-spacearound align-flex-start">
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                        </div>
+                        <div class="flex-display measuring-scale-value">
+                            <div>0</div>
+                            <div>20</div>
+                            <div>40</div>
+                            <div>60</div>
+                            <div>80</div>
+                            <div>100</div>
+                        </div>
+                        <div class="water-level">Bean level</div>
+                        <div class="slide-container">
+                            <input type="range" min="1" max="100" value="50" class="slider">
+                        </div>
+                        <div class="flex-display  justify-content-spacearound align-flex-start">
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                        </div>
+                        <div class="flex-display measuring-scale-value">
+                            <div>0</div>
+                            <div>20</div>
+                            <div>40</div>
+                            <div>60</div>
+                            <div>80</div>
+                            <div>100</div>
+                        </div>
+                        <div class="water-level">Milk level</div>
+                        <div class="slide-container">
+                            <input type="range" min="1" max="100" value="50" class="slider">
+                        </div>
+                        <div class="flex-display  justify-content-spacearound align-flex-start">
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="small-division"></div>
+                            <div class="large-division"></div>
+                        </div>
+                        <div class="flex-display measuring-scale-value">
+                            <div>0</div>
+                            <div>20</div>
+                            <div>40</div>
+                            <div>60</div>
+                            <div>80</div>
+                            <div>100</div>
+                        </div>
                     </div>
                 </div>
-                <div  class="flex-display  flex-direction-column border-color-square place-content-center">
-                    <div class="tags grid-columns ">
-                        <div class="coffee justify-self-start ">COFFEE</div>
-                        <div class="latte justify-self-end">LATTE</div>
+                <div class=" second-container flex-display flex-direction-column border-color-rounded gap-between">
+                    <div class="flex-display justify-content-spacearound">
+                        <div class="Indicators">Low Water</div>
+                        <div class="Indicators">Low Bean</div>
+                        <div class="Indicators">Low Milk</div>
                     </div>
-                    <div class="flex-display gap-between justify-evenly">
-                    <div>
-                        <input class="input-type-radio"type="radio" id="coffee" name="drone" value="COFFEE" checked />
-                      </div>
-                      <div>
-                        <input class="input-type-radio"type="radio" id="HOTWATER" name="drone" value="HOTWATER" />
-                      </div>
-                      <div>
-                        <input class="input-type-radio" type="radio" id="LATTE" name="drone" value="LATTE" />
-                      </div>
+                    <div class="flex-display gap-between justify-content-spacearound">
+                        <div class="blue-background-color  "></div>
+                        <div class="blue-background-color  "></div>
+                        <div class="blue-background-color "></div>
                     </div>
-                    <div class="hotwater">HOTWATER</div>
-                </div>
-            </div>
-            <div class="border-color-rounded user-input">
-                <div class="water-level">Water level</div>
-                <div class="slide-container">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                </div>
-                <div class="flex-display  justify-content-spacearound align-flex-start">
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                </div>
-                <div class="flex-display measuring-scale-value">
-                    <div>0</div>
-                    <div>20</div>
-                    <div>40</div>
-                    <div>60</div>
-                    <div>80</div>
-                    <div>100</div>
-                </div>
-                <div class="water-level">Bean level</div>
-                <div class="slide-container">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                </div>
-                <div class="flex-display  justify-content-spacearound align-flex-start">
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                </div>
-                <div class="flex-display measuring-scale-value">
-                    <div>0</div>
-                    <div>20</div>
-                    <div>40</div>
-                    <div>60</div>
-                    <div>80</div>
-                    <div>100</div>
-                </div>
-                <div class="water-level">Milk level</div>
-                <div class="slide-container">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                </div>
-                <div class="flex-display  justify-content-spacearound align-flex-start">
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="small-division"></div>
-                    <div class="large-division"></div>
-                </div>
-                <div class="flex-display measuring-scale-value">
-                    <div>0</div>
-                    <div>20</div>
-                    <div>40</div>
-                    <div>60</div>
-                    <div>80</div>
-                    <div>100</div>
-                </div>
-            </div>
-            </div>
-            <div class=" second-container flex-display flex-direction-column border-color-rounded gap-between">
-                <div class="flex-display justify-content-spacearound">
-                <div class="Indicators">Low Water</div>
-                <div class="Indicators">Low Bean</div>
-                <div class="Indicators">Low Milk</div>
-                </div>
-                <div class="flex-display gap-between justify-content-spacearound">
-                    <div class="blue-background-color  "  ></div>
-                    <div class="blue-background-color  "  ></div>
-                    <div class="blue-background-color "  ></div>
-                </div>
-                <div class="flex-display gap-large">
-                    <div>Chamber</div>
-                    <div>Dispenser</div>
-                </div>
-                <div class="flex-display ">
-                    
-                    <div class="flex-display flex-direction-column measuring-scale-value">
-                        <div>60</div>
-                        <div>50</div>
-                        <div>40</div>
-                        <div>30</div>
-                        <div>20</div>
-                        <div>10</div>
-                        <div>0</div>
+                    <div class="flex-display gap-large">
+                        <div>Chamber</div>
+                        <div>Dispenser</div>
                     </div>
-                    <div class="flex-display  flex-direction-column justify-flex-end gap-between">
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                    </div>
-                    <div class="slide-container-vertical">
-                        <input type="range" min="1" max="100" value="50" class="vertical" id="myRange">
-                    </div>
-                    
-                    <div class="flex-display flex-direction-column measuring-scale-value">
-                        <div>60</div>
-                        <div>50</div>
-                        <div>40</div>
-                        <div>30</div>
-                        <div>20</div>
-                        <div>10</div>
-                        <div>0</div>
-                    </div>
-                    <div class="flex-display  flex-direction-column justify-flex-end gap-between">
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="small-division-changed"></div>
-                        <div class="large-division-changed"></div>
-                    </div>
-                    <div class="slide-container-vertical">
-                        <input type="range" min="1" max="100" value="50" class="vertical" id="myRange">
-                    </div>
-                    <div class="flex-display flex-direction-column justify-content-spacearound">
-                        <div class="blue-background-color  "  ></div>
-                    <div class="blue-background-color  "  ></div>
-                    <div class="blue-background-color "  ></div>
-                    <div class="blue-background-color  "  ></div>
-                    <div class="blue-background-color  "  ></div>
+                    <div class="flex-display ">
+
+                        <div class="flex-display flex-direction-column measuring-scale-value">
+                            <div>60</div>
+                            <div>50</div>
+                            <div>40</div>
+                            <div>30</div>
+                            <div>20</div>
+                            <div>10</div>
+                            <div>0</div>
+                        </div>
+                        <div class="flex-display  flex-direction-column justify-flex-end gap-between">
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                        </div>
+                        <div class="slide-container-vertical">
+                            <input type="range" min="1" max="100" value="50" class="vertical">
+                        </div>
+
+                        <div class="flex-display flex-direction-column measuring-scale-value">
+                            <div>60</div>
+                            <div>50</div>
+                            <div>40</div>
+                            <div>30</div>
+                            <div>20</div>
+                            <div>10</div>
+                            <div>0</div>
+                        </div>
+                        <div class="flex-display  flex-direction-column justify-flex-end gap-between">
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="small-division-changed"></div>
+                            <div class="large-division-changed"></div>
+                        </div>
+                        <div class="slide-container-vertical">
+                            <input type="range" min="1" max="100" value="50" class="vertical">
+                        </div>
+                        <div class="flex-display flex-direction-column justify-content-spacearound">
+                            <div class="blue-background-color  "></div>
+                            <div class="blue-background-color  "></div>
+                            <div class="blue-background-color "></div>
+                            <div class="blue-background-color  "></div>
+                            <div class="blue-background-color  "></div>
+
+                        </div>
+                        <div class="flex-display flex-direction-column justify-content-spacearound">
+                            <div>Purging</div>
+                            <div>Heating </div>
+                            <div>Grinding</div>
+                            <div>Brewing</div>
+                            <div>Dispensing</div>
+                        </div>
 
                     </div>
-                    <div class="flex-display flex-direction-column justify-content-spacearound">
-                        <div>Purging</div>
-                        <div>Heating </div>
-                        <div>Grinding</div>
-                        <div>Brewing</div>
-                        <div>Dispensing</div>
+                    <div class="grid-columns">
+                        <div>Elapsed Time</div>
+                        <div>Total Cups</div>
                     </div>
+                    <div class="grid-columns">
+                        <div class=" width-half border-color-square">0</div>
+                        <div class= " width-half border-color-square">0</div>
+                    </div>
+                </div>
 
-                </div>
-                <div class="grid-columns">
-                    <div>Elapsed Time</div>
-                    <div>Total Cups</div>
-                </div>
-                <div class="grid-columns">
-                    <div class=" width-half border-color-square">0</div>
-                    <div class= " width-half border-color-square">0</div>
-                </div>
             </div>
-            
-            
-        </div>
-        <div class="power-on flex-direction-column flex-display">
-            <input class="dark-background-color font-color-white input-type-button" type="button" value="ON">
-            <div>POWER</div>
+            <div class="power-on flex-direction-column flex-display">
+                <input class="dark-background-color font-color-white input-type-button" type="button" value="ON">
+                <div>POWER</div>
+            </div>
         </div>
     </body>
 </html>
