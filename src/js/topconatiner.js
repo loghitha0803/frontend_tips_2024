@@ -1,28 +1,18 @@
+/* eslint-disable no-undef */
+/* eslint-disable jsdoc/require-param-description */
+/* eslint-disable jsdoc/require-param-type */
 /* eslint-disable eqeqeq */
-let cityData
-let givenInput
-let data
-let inputElement
-let datalistOptions
-let imageValue
-let imageVal
-let temperature
-let tempHourly
-let tempHourlyUpdate
-let humidityValue
-let precipitationValue
-let farenheit
-let farenheitValue
-let currentTime
-let amImage
-let nextFiveHours
-let firstTime
-let hourly
-let hourlyImage
-let updatedTimings
-(async () => {
-  data = await fetch('../../../Assets/files/data.json')
-  cityData = await data.json()
+/* eslint-disable no-unused-vars */
+/**
+ *
+ * @param cityData
+ */
+
+/**
+ *
+ * @param cityData
+ */
+function topcontainer (cityData) {
   document.querySelector('.image-city').addEventListener('change', (city) => {
     inputElement = document.querySelector('.image-city')
     datalistOptions = document.getElementById('listsdata')
@@ -36,10 +26,7 @@ let updatedTimings
       imageVal = document.querySelectorAll('.img-top-inside')
       imageValue.style.visibility = 'visible'
       imageValue.src = `../../../Assets/Icons for cities/${givenInput}.svg`
-      imageVal.forEach(function (image) {
-        image.style.visibility = 'visible'
-        image.src = `../../../Assets/Icons for cities/${givenInput}.svg`
-      })
+
       temperature = document.querySelector('.temp-value-celsius')
       humidityValue = document.querySelector('.humidity-value')
       precipitationValue = document.querySelector('.precipitation-value')
@@ -65,7 +52,7 @@ let updatedTimings
        *
        */
       function updateDynamicTime () {
-        currentTime = new Date().toLocaleString('en-US', { timeZone: cityData[givenInput].timeZone })
+        currentTime = new Date().toLocaleString(undefined, { timeZone: cityData[givenInput].timeZone })
         const [date, time] = currentTime.split(', ')
         const [datesplit, month, year] = date.split('/')
         const [hrs, mins, secs] = time.split(':')
@@ -133,12 +120,12 @@ let updatedTimings
         updatedTimings[i] = updatedTimings[i].slice(0, -2)
         if (
           Number(updatedTimings[i]) >= 23 &&
-          Number(updatedTimings[i]) <= 29
+              Number(updatedTimings[i]) <= 29
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/cloudyIcon.svg'
         } else if (
           Number(updatedTimings[i]) >= 18 &&
-          Number(updatedTimings[i]) <= 22
+              Number(updatedTimings[i]) <= 22
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/windyIcon.svg'
         } else if (Number(updatedTimings[i]) < 18) {
@@ -162,6 +149,7 @@ let updatedTimings
       document.querySelector('.second-image').src = hourlyImage[2]
       document.querySelector('.third-image').src = hourlyImage[3]
       document.querySelector('.forth-image').src = hourlyImage[4]
+      
     } else {
       alert('Please Enter the Correct City Name')
       imageValue = document.querySelector('.first-image')
@@ -195,4 +183,4 @@ let updatedTimings
       document.querySelectorAll('.first-class').textContent = '-'
     }
   })
-})()
+}
