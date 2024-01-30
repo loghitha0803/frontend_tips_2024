@@ -137,11 +137,53 @@ function clickSunny (cityData, hover, clickIndex) {
       )
     })
 
-    compareByTemperature = (a, b) => b.temperature - a.temperature
+    compareByTemperature = (a, b) => cityData[b].temperature - cityData[a].temperature
     sortedCitiesSunny = selectedCitiesSunny.sort(compareByTemperature)
     climate = sortedCitiesSunny
     addEvent(sortedCitiesSunny, cityData, clickIndex)
     indexChange(sortedCitiesSunny, cityData, clickIndex)
+  })
+}
+/**
+ *
+ * @param cityData
+ * @param hover
+ * @param clickIndex
+ */
+function clickCloudy (cityData, hover, clickIndex) {
+  hover.addEventListener('click', function () {
+    hoverDiv[0].style.setProperty('--initial-size', '100%')
+    hoverDiv[1].style.setProperty('--initial-size', '0%')
+    hoverDiv[2].style.setProperty('--initial-size', '0%')
+    cityCards.style.transform = 'translateX(0px)'
+    document.querySelector('.arrow-move-right').style.visibility = 'hidden'
+    document.querySelector('.arrow-move-left').style.visibility = 'hidden'
+
+    removeCitycards()
+
+    selectedCitiesCold = Object.keys(cityData).filter((cityKey) => {
+      temperature = parseInt(cityData[cityKey].temperature)
+
+      humidity = parseInt(cityData[cityKey].humidity)
+
+      precipitation = parseInt(cityData[cityKey].precipitation)
+
+      return (
+        !isNaN(temperature) &&
+        !isNaN(humidity) &&
+        !isNaN(precipitation) &&
+        temperature >= 20 &&
+        temperature <= 28 &&
+        humidity > 50 &&
+        precipitation < 50
+      )
+    })
+
+    compareByPrecipitaion = (a, b) => cityData[b].precipitation - cityData[a].precipitation
+    sortedCitiesCold = selectedCitiesCold.sort(compareByPrecipitaion)
+    climate = sortedCitiesCold
+    addEvent(sortedCitiesCold, cityData, clickIndex)
+    indexChange(sortedCitiesCold, cityData, clickIndex)
   })
 }
 /**
@@ -167,40 +209,40 @@ function indexChange (gran, cityData, clickIndex) {
  * @param hover
  * @param clickIndex
  */
-function clickCloudy (cityData, hover, clickIndex) {
-  hover.addEventListener('click', function () {
-    hoverDiv[0].style.setProperty('--initial-size', '0%')
-    hoverDiv[1].style.setProperty('--initial-size', '100%')
-    hoverDiv[2].style.setProperty('--initial-size', '0%')
-    cityCards.style.transform = 'translateX(0px)'
-    document.querySelector('.arrow-move-right').style.visibility = 'hidden'
-    document.querySelector('.arrow-move-left').style.visibility = 'hidden'
-    removeCitycards()
-    selectedCitiesCold = Object.keys(cityData).filter((cityKey) => {
-      temperature = parseInt(cityData[cityKey].temperature)
+// function clickCloudy (cityData, hover, clickIndex) {
+//   hover.addEventListener('click', function () {
+//     hoverDiv[0].style.setProperty('--initial-size', '0%')
+//     hoverDiv[1].style.setProperty('--initial-size', '100%')
+//     hoverDiv[2].style.setProperty('--initial-size', '0%')
+//     cityCards.style.transform = 'translateX(0px)'
+//     document.querySelector('.arrow-move-right').style.visibility = 'hidden'
+//     document.querySelector('.arrow-move-left').style.visibility = 'hidden'
+//     removeCitycards()
+//     selectedCitiesCold = Object.keys(cityData).filter((cityKey) => {
+//       temperature = parseInt(cityData[cityKey].temperature)
 
-      humidity = parseInt(cityData[cityKey].humidity)
+//       humidity = parseInt(cityData[cityKey].humidity)
 
-      precipitation = parseInt(cityData[cityKey].precipitation)
+//       precipitation = parseInt(cityData[cityKey].precipitation)
 
-      return (
-        !isNaN(temperature) &&
-        !isNaN(humidity) &&
-        !isNaN(precipitation) &&
-        temperature >= 20 &&
-        temperature <= 28 &&
-        humidity > 50 &&
-        precipitation < 50
-      )
-    })
+//       return (
+//         !isNaN(temperature) &&
+//         !isNaN(humidity) &&
+//         !isNaN(precipitation) &&
+//         temperature >= 20 &&
+//         temperature <= 28 &&
+//         humidity > 50 &&
+//         precipitation < 50
+//       )
+//     })
 
-    compareByPrecipitaion = (a, b) => b.precipitation - a.precipitation
-    sortedCitiesCold = selectedCitiesCold.sort(compareByPrecipitaion)
-    climate = sortedCitiesCold
-    addEvent(sortedCitiesCold, cityData, clickIndex)
-    indexChange(selectedCitiesCold, cityData, clickIndex)
-  })
-}
+//     compareByPrecipitaion = (a, b) => citydata[b].precipitation - cityData[a].precipitation
+//     sortedCitiesCold = selectedCitiesCold.sort(compareByPrecipitaion)
+//     climate = sortedCitiesCold
+//     addEvent(sortedCitiesCold, cityData, clickIndex)
+//     indexChange(selectedCitiesCold, cityData, clickIndex)
+//   })
+// }
 /**
  *
  * @param arr
@@ -317,7 +359,7 @@ function windowchange (cityData) {
     hoverDiv[0].style.setProperty('--initial-size', '100%')
     hoverDiv[1].style.setProperty('--initial-size', '0%')
     hoverDiv[2].style.setProperty('--initial-size', '0%')
-    compareByTemperature = (a, b) => b.temperature - a.temperature
+    compareByTemperature = (a, b) => cityData[b].temperature - cityData[a].temperature
     sortedCitiesSunny = sunny(cityData).sort(compareByTemperature)
     addEvent(sortedCitiesSunny, cityData)
   })
