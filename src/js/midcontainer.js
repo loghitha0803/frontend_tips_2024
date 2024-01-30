@@ -39,12 +39,16 @@ function midcontainer (cityData) {
   firstContainer = document.querySelector('.first-container')
   climate = sunny(cityData)
   windowchange(cityData)
-  document.querySelector('.arrow-move-right').addEventListener('click', function () {
-    rightButton(cityCards)
-  })
-  document.querySelector('.arrow-move-left').addEventListener('click', function () {
-    leftButton(cityCards, indexValue)
-  })
+  document
+    .querySelector('.arrow-move-right')
+    .addEventListener('click', function () {
+      rightButton(cityCards)
+    })
+  document
+    .querySelector('.arrow-move-left')
+    .addEventListener('click', function () {
+      leftButton(cityCards, indexValue)
+    })
 
   hoverDiv.forEach(function (hover, clickIndex) {
     if (clickIndex === 0) {
@@ -73,17 +77,21 @@ function midcontainer (cityData) {
  * @param cityData
  */
 function sunny (cityData) {
-  selectedCitiesSunny = Object.keys(cityData).filter(cityKey => {
+  selectedCitiesSunny = Object.keys(cityData).filter((cityKey) => {
     temperature = parseInt(cityData[cityKey].temperature)
 
     humidity = parseInt(cityData[cityKey].humidity)
 
     precipitation = parseInt(cityData[cityKey].precipitation)
 
-    return !isNaN(temperature) && !isNaN(humidity) && !isNaN(precipitation) &&
-  temperature > 29 &&
-  humidity < 50 &&
-  precipitation >= 50
+    return (
+      !isNaN(temperature) &&
+      !isNaN(humidity) &&
+      !isNaN(precipitation) &&
+      temperature > 29 &&
+      humidity < 50 &&
+      precipitation >= 50
+    )
   })
   return selectedCitiesSunny
 }
@@ -112,17 +120,21 @@ function clickSunny (cityData, hover, clickIndex) {
 
     removeCitycards()
 
-    selectedCitiesSunny = Object.keys(cityData).filter(cityKey => {
+    selectedCitiesSunny = Object.keys(cityData).filter((cityKey) => {
       temperature = parseInt(cityData[cityKey].temperature)
 
       humidity = parseInt(cityData[cityKey].humidity)
 
       precipitation = parseInt(cityData[cityKey].precipitation)
 
-      return !isNaN(temperature) && !isNaN(humidity) && !isNaN(precipitation) &&
-    temperature > 29 &&
-    humidity < 50 &&
-    precipitation >= 50
+      return (
+        !isNaN(temperature) &&
+        !isNaN(humidity) &&
+        !isNaN(precipitation) &&
+        temperature > 29 &&
+        humidity < 50 &&
+        precipitation >= 50
+      )
     })
 
     compareByTemperature = (a, b) => b.temperature - a.temperature
@@ -164,17 +176,22 @@ function clickCloudy (cityData, hover, clickIndex) {
     document.querySelector('.arrow-move-right').style.visibility = 'hidden'
     document.querySelector('.arrow-move-left').style.visibility = 'hidden'
     removeCitycards()
-    selectedCitiesCold = Object.keys(cityData).filter(cityKey => {
+    selectedCitiesCold = Object.keys(cityData).filter((cityKey) => {
       temperature = parseInt(cityData[cityKey].temperature)
 
       humidity = parseInt(cityData[cityKey].humidity)
 
       precipitation = parseInt(cityData[cityKey].precipitation)
 
-      return !isNaN(temperature) && !isNaN(humidity) && !isNaN(precipitation) &&
-      temperature >= 20 && temperature <= 28 &&
-      humidity > 50 &&
-      precipitation < 50
+      return (
+        !isNaN(temperature) &&
+        !isNaN(humidity) &&
+        !isNaN(precipitation) &&
+        temperature >= 20 &&
+        temperature <= 28 &&
+        humidity > 50 &&
+        precipitation < 50
+      )
     })
 
     compareByPrecipitaion = (a, b) => b.precipitation - a.precipitation
@@ -275,9 +292,17 @@ function addEvent (arr, cityData, clickIndex) {
     humidityChange.textContent = cityData[arr[i]].humidity
     precipitationChange = cloneDiv.querySelector('.precipitation-value')
     precipitationChange.textContent = cityData[arr[i]].precipitation
-    if (clickIndex === 2) { cloneDiv.querySelector('.particular-icon').src = '../../Assets/Weather Icons/rainyIcon.svg' } else if (clickIndex === 1) { cloneDiv.querySelector('.particular-icon').src = '../../Assets/Weather Icons/snowflakeIcon.svg' }
+    if (clickIndex === 2) {
+      cloneDiv.querySelector('.particular-icon').src =
+        '../../Assets/Weather Icons/rainyIcon.svg'
+    } else if (clickIndex === 1) {
+      cloneDiv.querySelector('.particular-icon').src =
+        '../../Assets/Weather Icons/snowflakeIcon.svg'
+    }
 
-    cloneDiv.querySelector('.img-top-inside').src = `../../Assets/Icons for cities/${arr[i]}.svg`
+    cloneDiv.querySelector(
+      '.img-top-inside'
+    ).src = `../../Assets/Icons for cities/${arr[i]}.svg`
     console.log(cloneDiv.querySelector('.img-top-inside').src)
     cityCards.appendChild(cloneDiv)
     console.log(cloneDiv)
@@ -312,16 +337,20 @@ function clickRainy (cityData, hover, clickIndex) {
     document.querySelector('.arrow-move-right').style.visibility = 'visible'
     document.querySelector('.arrow-move-left').style.visibility = 'visible'
     removeCitycards()
-    selectedCitiesRainy = Object.keys(cityData).filter(cityKey => {
+    selectedCitiesRainy = Object.keys(cityData).filter((cityKey) => {
       temperature = parseInt(cityData[cityKey].temperature)
 
       humidity = parseInt(cityData[cityKey].humidity)
 
       precipitation = parseInt(cityData[cityKey].precipitation)
 
-      return !isNaN(temperature) && !isNaN(humidity) && !isNaN(precipitation) &&
-      temperature < 20 &&
-      humidity >= 50
+      return (
+        !isNaN(temperature) &&
+        !isNaN(humidity) &&
+        !isNaN(precipitation) &&
+        temperature < 20 &&
+        humidity >= 50
+      )
     })
     compareByHumidity = (a, b) =>
       parseInt(cityData[b].humidity) - parseInt(cityData[a].humidity)

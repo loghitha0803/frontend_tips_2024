@@ -39,10 +39,12 @@ body {
   font-size: xx-large;
   padding-top: 20px;
 }
-.city-cards
-{ display: flex;
+
+.city-cards {
+  display: flex;
   gap: 40px;
 }
+
 .seconds {
   align-items: center;
   display: flex;
@@ -205,22 +207,23 @@ body {
 .icon-size {
   padding-right: 5px;
 }
-.icon-combined::after{
+
+.icon-combined::after {
   background-color: var(--bg-selection-blue);
   content: " ";
   display: block;
   height: 2px;
   width: var(--initial-size);
 }
-.icon-combined:hover::after
-{ transition: 0.5s ease;
-  width:var(--final-size)
+
+.icon-combined:hover::after {
+  transition: 0.5s ease;
+  width: var(--final-size);
 }
 
 .country-name {
   text-transform: capitalize;
 }
-
 
 .text-content {
   align-self: center;
@@ -230,8 +233,7 @@ body {
   width: 80px;
 }
 
-datalist
-{
+datalist {
   background-color: brown;
 }
 
@@ -243,7 +245,6 @@ datalist
   height: 20px;
   text-align: center;
   width: 30px;
-
 }
 
 .bottom-container {
@@ -255,7 +256,7 @@ datalist
 
 .main-bottom-container {
   gap: 40px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .main-bottom-container::-webkit-scrollbar {
@@ -267,7 +268,7 @@ datalist
   background-size: cover;
   display: flex;
   padding: 1vw;
-  width:340px;
+  width: 340px;
 }
 
 .first-container:hover {

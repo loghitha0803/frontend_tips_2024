@@ -52,7 +52,9 @@ function topcontainer (cityData) {
        *
        */
       function updateDynamicTime () {
-        currentTime = new Date().toLocaleString(undefined, { timeZone: cityData[givenInput].timeZone })
+        currentTime = new Date().toLocaleString(undefined, {
+          timeZone: cityData[givenInput].timeZone
+        })
         const [date, time] = currentTime.split(', ')
         const [datesplit, month, year] = date.split('/')
         const [hrs, mins, secs] = time.split(':')
@@ -120,12 +122,12 @@ function topcontainer (cityData) {
         updatedTimings[i] = updatedTimings[i].slice(0, -2)
         if (
           Number(updatedTimings[i]) >= 23 &&
-              Number(updatedTimings[i]) <= 29
+          Number(updatedTimings[i]) <= 29
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/cloudyIcon.svg'
         } else if (
           Number(updatedTimings[i]) >= 18 &&
-              Number(updatedTimings[i]) <= 22
+          Number(updatedTimings[i]) <= 22
         ) {
           hourlyImage[i] = '../../../Assets/Weather Icons/windyIcon.svg'
         } else if (Number(updatedTimings[i]) < 18) {
@@ -134,9 +136,7 @@ function topcontainer (cityData) {
           hourlyImage[i] = '../../../Assets/Weather Icons/sunnyIcon.svg'
         }
       }
-      tempHourly = document.querySelectorAll(
-        '.temperature-hourly-update'
-      )
+      tempHourly = document.querySelectorAll('.temperature-hourly-update')
       tempHourlyUpdate = Array.from(tempHourly).map(
         (element) => element.textContent
       )
@@ -149,7 +149,6 @@ function topcontainer (cityData) {
       document.querySelector('.second-image').src = hourlyImage[2]
       document.querySelector('.third-image').src = hourlyImage[3]
       document.querySelector('.forth-image').src = hourlyImage[4]
-      
     } else {
       alert('Please Enter the Correct City Name')
       imageValue = document.querySelector('.first-image')
@@ -171,9 +170,7 @@ function topcontainer (cityData) {
       document.querySelector('.date').style.visibility = 'hidden'
       document.querySelector('.am-image').style.visibility = 'hidden'
       document.querySelectorAll('.hourly-image').innerText = 'NIL'
-      tempHourly = document.querySelectorAll(
-        '.temperature-hourly-update'
-      )
+      tempHourly = document.querySelectorAll('.temperature-hourly-update')
       tempHourlyUpdate = Array.from(tempHourly).map(
         (element) => element.textContent
       )
