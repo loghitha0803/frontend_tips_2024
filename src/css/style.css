@@ -233,10 +233,6 @@ body {
   width: 80px;
 }
 
-datalist {
-  background-color: brown;
-}
-
 .option-click {
   align-self: center;
   background-color: var(--bg-grey-tile);

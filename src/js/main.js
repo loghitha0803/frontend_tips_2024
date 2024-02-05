@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-let cityData;
-(async () => {
-  cityData = await (await fetch('../../../Assets/files/data.json')).json();
+import { topcontainer } from './topcontainer.js';
+
+const extractJson = async () => {
+  const cityData = await (await fetch('../../../Assets/files/data.json')).json();
   topcontainer(cityData);
-})();
+};
+extractJson();
