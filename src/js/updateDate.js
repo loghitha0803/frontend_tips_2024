@@ -24,38 +24,13 @@ export function updateDate (currentTime) {
   const nextFiveHours = Array.from(firstTime).map((element) => element.textContent);
 
   for (let index = 0, currentTime = hrs; index < nextFiveHours.length; index++) {
-    if (am === 'am') {
-      if (currentTime < 11) {
-        currentTime++;
-        nextFiveHours[index] = currentTime + 'AM';
-        firstTime[index].textContent = nextFiveHours[index];
-      } else if (currentTime === 11) {
-        currentTime++;
-        nextFiveHours[index] = currentTime + 'PM';
-        am = 'PM';
-        firstTime[index].textContent = nextFiveHours[index];
-      } else if (currentTime === 12) {
-        nextFiveHours[index] = 1 + 'AM';
-        currentTime = 1;
-        am = 'AM';
-        firstTime[index].textContent = nextFiveHours[index];
-      }
+    if (am === 'am' || am === 'AM') {
+      am = Number(currentTime) === 11 ? 'PM' : 'AM';
     } else {
-      if (currentTime < 11) {
-        currentTime++;
-        nextFiveHours[index] = currentTime + 'PM';
-        firstTime[index].textContent = nextFiveHours[index];
-      } else if (currentTime === 11) {
-        currentTime++;
-        nextFiveHours[index] = currentTime + 'AM';
-        am = 'AM';
-        firstTime[index].textContent = nextFiveHours[index];
-      } else if (currentTime === 12) {
-        nextFiveHours[index] = 1 + 'PM';
-        currentTime = 1;
-        am = 'PM';
-        firstTime[index].textContent = nextFiveHours[index];
-      }
+      am = Number(currentTime) === 11 ? 'AM' : 'PM';
     }
+    currentTime = (currentTime % 12) + 1;
+    nextFiveHours[index] = currentTime + am;
+    firstTime[index].textContent = nextFiveHours[index];
   }
 }
