@@ -24,10 +24,7 @@ export function changeCityDetails (cityDetails, givenInput) {
    * @description              - To Get the time of the city to the server
    */
   function updateDynamicTime (cityDetails) {
-    const currentTime = new Date().toLocaleString('en-US', {
-      timeZone: cityDetails.timeZone
-    });
-
+    const currentTime = new Date().toLocaleString('en-US', { timeZone: cityDetails.timeZone });
     updateDate(currentTime);
   }
   weatherIconChange(cityDetails);
