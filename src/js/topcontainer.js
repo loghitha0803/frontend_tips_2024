@@ -23,13 +23,13 @@ export function topcontainer (cityData) {
   });
   const defaultInput = 'anadyr';
   const cityDetails = cityData[defaultInput];
-  changeCityDetails(cityDetails, defaultInput);
+  changeCityDetails(cityDetails);
   document.querySelector('.image-city').addEventListener('change', (city) => {
     const inputElement = document.querySelector('.image-city');
     if ([...datalistOptions.options].some((option) => option.value === inputElement.value)) {
       const givenInput = city.target.value.toLowerCase();
       const cityDetails = cityData[givenInput];
-      changeCityDetails(cityDetails, givenInput);
+      changeCityDetails(cityDetails);
     } else {
       wrongCityName();
     }

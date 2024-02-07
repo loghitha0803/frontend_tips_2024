@@ -7,10 +7,10 @@ let time;
  * @param {string}givenInput  - selectedcity
  * @description               - To change the city details in both default and user chosen input
  */
-export function changeCityDetails (cityDetails, givenInput) {
+export function changeCityDetails (cityDetails) {
   clearInterval(time);
   time = setInterval(updateDynamicTime, 1000, cityDetails);
-  imageValue.src = `../../../Assets/Icons for cities/${givenInput}.svg`;
+  imageValue.src = `../../../Assets/Icons for cities/${cityDetails.cityName}.svg`;
   temperature.innerText = `${cityDetails.temperature}`;
   humidityValue.innerText = `${cityDetails.humidity}`;
   precipitationValue.innerText = `${cityDetails.precipitation}`;
