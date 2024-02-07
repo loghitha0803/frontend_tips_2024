@@ -4,7 +4,6 @@ let time;
 /**
  *
  * @param {object}cityDetails -  Particular city details in the json file
- * @param {string}givenInput  - selectedcity
  * @description               - To change the city details in both default and user chosen input
  */
 export function changeCityDetails (cityDetails) {
