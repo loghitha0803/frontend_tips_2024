@@ -69,7 +69,7 @@ function updateDate (currentTime) {
   const datesplit = `${date.getDate()}`.padStart(2, 0);
   const month = `${date.getMonth() + 1}`.padStart(2, 0);
   const year = date.getFullYear();
-  let meridian = hrs >= 12 ? 'PM' : 'AM';
+  let meridian = Number(hrs) >= 12 ? 'PM' : 'AM';
   hrs = Number(hrs) === 12 ? 12 : hrs % 12;
   hrsMin.innerText = `${hrs}:${mins}`;
   second.innerText = `:${sec}`;
