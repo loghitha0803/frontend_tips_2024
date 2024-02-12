@@ -7,6 +7,7 @@ let time;
  * @description               - To change the city details in both default and user chosen input
  */
 export function changeCityDetails (cityDetails) {
+  updateDynamicTime(cityDetails);
   clearInterval(time);
   time = setInterval(updateDynamicTime, 1000, cityDetails);
   imageValue.src = `../../../Assets/Icons for cities/${cityDetails.cityName}.svg`;
