@@ -1,6 +1,7 @@
 // import { temperature } from './globalConstants';
 let isascendingcontinent = false;
 let istemperatureSort = true;
+let time
 /**
  *
  * @param cityData
@@ -11,41 +12,6 @@ export function bottomContainer (cityData) {
   clickSortContinent(cityData);
   clickSortTemp(cityData);
 }
-/**
- *
- * @param cityData
- */
-// function appendContinent (cityData) {
-
-//   // const cityBox = document.querySelector('.city-box');
-//   for (let i = 0; i < 11; i++) {
-//     const cityBox =`<div class="city-box">
-//     <div class="continent-name-city">
-//         <div class="continent-name">
-//             <span>Asia</span>
-//         </div>
-//         <div class="city-name">
-//             <span>Delhi, 10:10AM</span>
-//         </div>
-//     </div>
-//     <div class="temp-status">
-//         <div class="temperature-align font-color font-size-large">
-//             <span>38 &deg;C</span>
-//         </div>
-//         <div class="note-status">
-//             <img
-//                 class="weather-icon-city"
-//                 src="../../Assets/Weather Icons/humidityIcon.svg"
-//                 alt="humidityIcon"
-//             >
-//             <span class="font-color font-size-small humidity-continent">53%</span>
-//         </div>
-//     </div>
-// </div>`
-//     cityGrid=document.querySelector('.city-grid')
-//     cityGrid.
-//   }
-// }
 /**
  *
  * @param cityData
@@ -120,15 +86,15 @@ function removeCitycards (cityCards) {
 function changeContinent (city, cityData) {
   const cityGrid = document.querySelector('.city-grid');
   removeCitycards(cityGrid);
-
+  let cityBox;
   for (let j = 0; j < 12; j++) {
-    const cityBox = `<div class="city-box">
+    cityBox = `<div class="city-box">
     <div class="continent-name-city">
         <div class="continent-name">
             <span>${cityData[city[j]].timeZone.split('/')[0]}</span>
         </div>
         <div class="city-name">
-            <span>${cityData[city[j]].cityName + ',' + updateContinentTime(cityData)}</span>
+            <span>${cityData[city[j]].cityName} , </span><span class='city-name continent-time'></span>
         </div>
     </div>
     <div class="temp-status">
@@ -144,23 +110,38 @@ function changeContinent (city, cityData) {
             <span class="font-color font-size-small humidity-continent">${cityData[city[j]].humidity}</span>
         </div>
     </div>
-</div>`;
+              </div>`;
     cityGrid.insertAdjacentHTML('beforeend', cityBox);
-
-    /**
-     *
-     * @param cityData
-     */
-    function updateContinentTime (cityData) {
-      const options = {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: cityData[city[j]].timeZone,
-        hour12: true
-      };
-      const currentContinentTime = new Date().toLocaleString(undefined, options);
-      console.log(currentContinentTime)
-      return currentContinentTime;
-    }
   }
+  /**
+   *
+   * @param cityData
+   */
+  updateContinentTime(cityData,city);
+  clearInterval(time)
+  time=setInterval( updateContinentTime(cityData,city),1000)
+}
+/**
+ *
+ * @param cityData
+ * @param cityBox
+ * @param city
+ */
+function updateContinentTime (cityData, city) {
+  console.log("kojol")
+  const continentDetails = document.querySelectorAll('.city-box');
+  continentDetails.forEach(function (cityCard, index) {
+    const options = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second:'2-digit',
+      timeZone: cityData[city[index]].timeZone,
+      hour12: true
+    };
+    const currentContinentTime = new Date().toLocaleString(undefined, options);
+    const continentTime = cityCard.querySelector('.continent-time');
+    continentTime.textContent=currentContinentTime
+    console.log(continentTime.textContent)
+  }
+  );
 }
