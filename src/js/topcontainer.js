@@ -1,11 +1,13 @@
-import { changeCityDetails } from './CityWeatherUpdate.js';
+import { changeCityDetails } from './cityWeatherUpdate.js';
 import { wrongCityName } from './errorHandling.js';
+import { midcontainer } from './midcontainer.js';
 /**
  *
  * @param {object}cityData - Extracted JSON file
  * @description            - Validates the option selected
  */
 export function topcontainer (cityData) {
+  midcontainer(cityData);
   const datalistOptions = document.getElementById('listsdata');
   let cityName;
   let optionsArray = [];
@@ -21,15 +23,30 @@ export function topcontainer (cityData) {
     options.value = element;
     datalistOptions.append(options);
   });
-  const defaultInput = 'anadyr';
-  const cityDetails = cityData[defaultInput];
-  changeCityDetails(cityDetails);
+  const cityChange = {
+    cityDetails: 'anadyr',
+    changeCity: function () {
+      changeCityDetails(cityData[this.cityDetails]);
+    }
+  };
+
+  cityChange.changeCity();
+  // const defaultInput = 'anadyr';
+  // const cityDetails = cityData[defaultInput];
+  // changeCityDetails(cityDetails);
   document.querySelector('.image-city').addEventListener('change', (city) => {
     const inputElement = document.querySelector('.image-city');
+    console.log(cityChange.changeCity());
     if ([...datalistOptions.options].some((option) => option.value === inputElement.value)) {
-      const givenInput = city.target.value.toLowerCase();
-      const cityDetails = cityData[givenInput];
-      changeCityDetails(cityDetails);
+      console.log(city.target.value.toLowerCase());
+      const chooseCity = {
+        cityDetails: city.target.value.toLowerCase()
+      };
+      const givenCityBind = cityChange.changeCity.bind(chooseCity);
+      givenCityBind();
+      // const givenInput = city.target.value.toLowerCase();
+      // const cityDetails = cityData[givenInput];
+      // changeCityDetails(cityDetails);
     } else {
       wrongCityName();
     }
