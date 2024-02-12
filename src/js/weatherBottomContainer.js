@@ -1,7 +1,6 @@
 // import { temperature } from './globalConstants';
-let newvalue = 0;
-let isascendingcontinent = true;
-let istemperatureSort = false;
+let isascendingcontinent = false;
+let istemperatureSort = true;
 /**
  *
  * @param cityData
@@ -56,22 +55,20 @@ export function bottomContainer (cityData) {
  * @param data
  * @param cityData
  * @param isascending
+ * @param isascendingcontinent
  * @param istemperatureSort
  */
-function sortDataByContinent (cityData, isascending, istemperatureSort) {
+function sortDataByContinent (cityData, isascendingcontinent, istemperatureSort) {
   let sortedData = [];
-
   const continents = [...new Set(Object.values(cityData).map((city) => city.timeZone.split('/')[0]))].sort();
-
   continents.forEach(function (continent) {
     let citiesInContinent = Object.keys(cityData).filter((cityKey) => cityData[cityKey].timeZone.startsWith(continent)).sort();
-    const compareByTemperature = (a, b) => istemperatureSort ? (parseInt(cityData[b].temperature) - parseInt(cityData[a].temperature)) : (parseInt(cityData[a].temperature) - parseInt(cityData[b].temperature));
+    const compareByTemperature = (a, b) => istemperatureSort ? (parseInt(cityData[a].temperature) - parseInt(cityData[b].temperature)) : (parseInt(cityData[b].temperature) - parseInt(cityData[a].temperature));
     citiesInContinent = citiesInContinent.sort(compareByTemperature);
-    citiesInContinent.forEach(function (cityname) {
-      sortedData.push(cityname);
-    });
+    sortedData.push(citiesInContinent);
   });
-  sortedData = isascending ? sortedData : sortedData.reverse();
+  sortedData = isascendingcontinent ? sortedData : sortedData.reverse();
+  sortedData = sortedData.flat(6);
   return sortedData;
 }
 /**
@@ -82,10 +79,10 @@ function clickSortContinent (cityData) {
   const continent = document.querySelector('.continent-arrow');
   continent.addEventListener('click', function () {
     isascendingcontinent = !isascendingcontinent;
+    const updown = isascendingcontinent ? 'Up' : 'Down';
+    continent.src = `../../../Assets/General Images & Icons/arrow${updown}.svg`;
     const continentSort = sortDataByContinent(cityData, isascendingcontinent, istemperatureSort);
     changeContinent(continentSort, cityData);
-    newvalue += 180;
-    continent.style.transform = `rotate(${newvalue}deg)`;
   });
 }
 /**
@@ -96,10 +93,10 @@ function clickSortTemp (cityData) {
   const temperatureArrow = document.querySelector('.temp-arrow');
   temperatureArrow.addEventListener('click', function () {
     istemperatureSort = !istemperatureSort;
+    const updown = istemperatureSort ? 'Up' : 'Down';
+    temperatureArrow.src = `../../../Assets/General Images & Icons/arrow${updown}.svg`;
     const temperatureSort = sortDataByContinent(cityData, isascendingcontinent, istemperatureSort);
     changeContinent(temperatureSort, cityData);
-    newvalue += 180;
-    temperatureArrow.style.transform = `rotate(${newvalue}deg)`;
   });
 }
 // Call the function to sort the city data by continent names
@@ -108,16 +105,23 @@ function clickSortTemp (cityData) {
  * @param data
  * @param city
  * @param cityData
+ * @param cityCards
  */
 function removeCitycards (cityCards) {
   while (cityCards.firstChild) {
     cityCards.removeChild(cityCards.firstChild);
   }
 }
+/**
+ *
+ * @param city
+ * @param cityData
+ */
 function changeContinent (city, cityData) {
   const cityGrid = document.querySelector('.city-grid');
-  removeCitycards(cityGrid)
-  for (let j = 0; j < 11; j++) {
+  removeCitycards(cityGrid);
+
+  for (let j = 0; j < 12; j++) {
     const cityBox = `<div class="city-box">
     <div class="continent-name-city">
         <div class="continent-name">
@@ -141,7 +145,7 @@ function changeContinent (city, cityData) {
         </div>
     </div>
 </div>`;
-    cityGrid.insertAdjacentHTML('beforeend',cityBox);
+    cityGrid.insertAdjacentHTML('beforeend', cityBox);
 
     /**
      *
@@ -149,12 +153,13 @@ function changeContinent (city, cityData) {
      */
     function updateContinentTime (cityData) {
       const options = {
-        hour: 'numeric',
-        minute: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
         timeZone: cityData[city[j]].timeZone,
         hour12: true
       };
       const currentContinentTime = new Date().toLocaleString(undefined, options);
+      console.log(currentContinentTime)
       return currentContinentTime;
     }
   }
