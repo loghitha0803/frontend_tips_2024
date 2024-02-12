@@ -31,9 +31,6 @@ export function topcontainer (cityData) {
   };
 
   cityChange.changeCity();
-  // const defaultInput = 'anadyr';
-  // const cityDetails = cityData[defaultInput];
-  // changeCityDetails(cityDetails);
   document.querySelector('.image-city').addEventListener('change', (city) => {
     const inputElement = document.querySelector('.image-city');
     console.log(cityChange.changeCity());
@@ -44,9 +41,6 @@ export function topcontainer (cityData) {
       };
       const givenCityBind = cityChange.changeCity.bind(chooseCity);
       givenCityBind();
-      // const givenInput = city.target.value.toLowerCase();
-      // const cityDetails = cityData[givenInput];
-      // changeCityDetails(cityDetails);
     } else {
       wrongCityName();
     }

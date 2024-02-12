@@ -35,7 +35,7 @@ export function changeStyle (visibilityProperty) {
  * @param {object}cityData -Holds the details of the cities from the extracted JSON file
  * @description            -To add the citycards default
  */
-export function defaultMiddleCityCards (cityData) {
+export function defaultMiddleCityCards (cityData,cityCards) {
   document.querySelector('.arrow-move-left').style.visibility = 'hidden';
   document.querySelector('.arrow-move-right').style.visibility = 'hidden';
   const hoverDiv = document.querySelectorAll('.icon-combined');
@@ -44,6 +44,6 @@ export function defaultMiddleCityCards (cityData) {
 
     const compareByTemperature = (a, b) => cityData[b].temperature - cityData[a].temperature;
     const sortedCitiesSunny = sunny(cityData).sort(compareByTemperature);
-    cloneCityCards(sortedCitiesSunny, cityData);
+    cloneCityCards(sortedCitiesSunny, cityData,cityCards,"sunny");
   });
 }
