@@ -1,6 +1,6 @@
 import { clickSunny, clickRainy, clickCloudy, clickLeftButton, clickRightButton } from './sortCitiesButtons.js';
 import { defaultMiddleCityCards } from './errorHandling.js';
-let time
+let time;
 /**
  * @function midcontainer
  * @param {object}cityData - The extracted details of all the cities in json file
@@ -21,7 +21,7 @@ export function midcontainer (cityData) {
     }
   });
   const iconCombined = document.querySelectorAll('.icon-combined');
-  defaultMiddleCityCards(cityData,cityCards);
+  defaultMiddleCityCards(cityData, cityCards);
   document.querySelector('.arrow-move-right').addEventListener('click', function () {
     clickRightButton(cityCards);
   });
@@ -59,17 +59,18 @@ export function removeCitycards () {
  * @function cloneCityCards
  * @param {Array}arr -Sorted Array based on the given condition
  * @param {object}cityData - The extracted details of all the cities in json file
+ * @param cityCards
  * @param imageIcons
  * @param {number}clickIndex - index of the chosen weather icon
  * @description - To clone the cityCards
  */
-export function cloneCityCards (arr, cityData, cityCards,imageIcons) {
-
+export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
   const index = document.querySelector('.option-click');
   let indexValue = index.value;
   removeCitycards();
+  let cloneDiv
   for (let userInput = 0; userInput < indexValue; userInput++) {
-    const cloneDiv = `<div class="first-container">
+     cloneDiv = `<div class="first-container">
     <div class="text-contained font-color">
         <span class="font-size-medium country-name">${cityData[arr[userInput]].cityName}</span>
         <span class="font-size-medium existing-time"></span>
@@ -123,34 +124,36 @@ export function cloneCityCards (arr, cityData, cityCards,imageIcons) {
 </div>`;
     indexValue = arr.length > indexValue ? indexValue : arr.length;
     cityCards.insertAdjacentHTML('beforeend', cloneDiv);
-    updateTime(cloneDiv,cityData,arr,userInput)
-    clearInterval(time);
-    time = setInterval(()=>{updateTime(cloneDiv,cityData,arr,indexValue)},1000);
+  }
+  updateTime(cloneDiv, cityData, arr, indexValue);
+  clearInterval(time);
+  time = setInterval(() => { updateTime(cloneDiv, cityData, arr, indexValue); }, 1000);
+}
+/**
+ * @param cityCards
+ * @param cityData
+ * @param arr
+ * @param indexValue
+ *@function updateTime
+ *@description - To Calculate and update the Date and time every minute
+ */
+function updateTime (cityCards, cityData, arr, indexValue) {
+  for (let userInput = 0; userInput < indexValue; userInput++) {
+    const options = {
+      hour: '2-digit',
+      minute: '2-digit',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour12: true,
+      timeZone: cityData[arr[userInput]].timeZone
+    };
+    const cityTime = new Date().toLocaleString('en-US', { ...options, day: undefined, month: undefined, year: undefined });
+    const cityDate = new Date().toLocaleString('en-UK', { ...options, hour: undefined, minute: undefined });
+    const cityCardsChange = document.querySelectorAll('.first-container');
+    const existingTime = cityCardsChange[userInput].querySelector('.existing-time');
+    const bottomDate = cityCardsChange[userInput].querySelector('.bottom-date');
+    existingTime.textContent = cityTime;
+    bottomDate.textContent = cityDate;
   }
 }
- /**
-     *@function updateTime
-     *@description - To Calculate and update the Date and time every minute
-     */
-     function updateTime (cityCards,cityData,arr,indexValue) {
-      for(userInput=0)
-      const options = {
-        hour: '2-digit',
-        minute: '2-digit',
-        second:'2-digit',
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-        hour12: true,
-        timeZone: cityData[arr[userInput]].timeZone
-      };
-      const cityTime = new Date().toLocaleString('en-US', { ...options, day: undefined, month: undefined, year: undefined });
-      const cityDate = new Date().toLocaleString('en-UK', { ...options, hour: undefined, minute: undefined });
-      console.log(cityCards)
-      console.log(userInput)
-      console.log(cityCards)
-      const existingTime=document.querySelectorAll('.existing-time')
-      const bottomDate=document.querySelectorAll('.bottom-date')
-      existingTime[userInput].textContent=cityTime
-      bottomDate[userInput].textContent=cityDate
-    }
