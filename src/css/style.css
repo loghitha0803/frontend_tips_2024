@@ -186,9 +186,11 @@ body {
   text-align: center;
   width: 40px;
 }
+
 .existing-time{
   width:130px;
 }
+
 .arrow-move-right {
   margin-right: 10px;
 }
@@ -210,6 +212,7 @@ body {
 .icon-size {
   padding-right: 5px;
 }
+
 .icon-combined::after {
   background-color: var(--bg-selection-blue);
   content: " ";
@@ -530,9 +533,11 @@ body {
     padding: 10px;
     width: 190px;
   }
+
   .first-container {
     width:200px;
   }
+
   .date {
     font-size: 14px;
   }

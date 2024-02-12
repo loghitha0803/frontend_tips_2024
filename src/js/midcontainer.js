@@ -57,20 +57,19 @@ export function removeCitycards () {
 }
 /**
  * @function cloneCityCards
- * @param {Array}arr -Sorted Array based on the given condition
- * @param {object}cityData - The extracted details of all the cities in json file
- * @param cityCards
- * @param imageIcons
- * @param {number}clickIndex - index of the chosen weather icon
- * @description - To clone the cityCards
+ * @param {Array}arr          -Sorted Array based on the given condition
+ * @param {object}cityData    - The extracted details of all the cities in json file
+ * @param {object}cityCards   -  The div inside which the citcards has been appended
+ * @param {string}imageIcons  -  The string that holds the weather condition
+ * @description               - To clone the cityCards
  */
 export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
   const index = document.querySelector('.option-click');
   let indexValue = index.value;
   removeCitycards();
-  let cloneDiv
+  let cloneDiv;
   for (let userInput = 0; userInput < indexValue; userInput++) {
-     cloneDiv = `<div class="first-container">
+    cloneDiv = `<div class="first-container">
     <div class="text-contained font-color">
         <span class="font-size-medium country-name">${cityData[arr[userInput]].cityName}</span>
         <span class="font-size-medium existing-time"></span>
@@ -125,20 +124,19 @@ export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
     indexValue = arr.length > indexValue ? indexValue : arr.length;
     cityCards.insertAdjacentHTML('beforeend', cloneDiv);
   }
-  updateTime(cloneDiv, cityData, arr, indexValue);
+  updateTime(cityData, arr);
   clearInterval(time);
-  time = setInterval(() => { updateTime(cloneDiv, cityData, arr, indexValue); }, 1000);
+  time = setInterval(() => { updateTime(cityData, arr); }, 1000);
 }
 /**
- * @param cityCards
- * @param cityData
- * @param arr
- * @param indexValue
  *@function updateTime
- *@description - To Calculate and update the Date and time every minute
+ *@param {object}cityData    - The extracted details of all the cities in json file
+ *@param {Array}arr          -Sorted Array based on the given condition
+ *@description               - To Calculate and update the Date and time every minute
  */
-function updateTime (cityCards, cityData, arr, indexValue) {
-  for (let userInput = 0; userInput < indexValue; userInput++) {
+function updateTime (cityData, arr) {
+  const cityCardsChange = document.querySelectorAll('.first-container');
+  cityCardsChange.forEach(function (cityCard, userInput) {
     const options = {
       hour: '2-digit',
       minute: '2-digit',
@@ -150,10 +148,9 @@ function updateTime (cityCards, cityData, arr, indexValue) {
     };
     const cityTime = new Date().toLocaleString('en-US', { ...options, day: undefined, month: undefined, year: undefined });
     const cityDate = new Date().toLocaleString('en-UK', { ...options, hour: undefined, minute: undefined });
-    const cityCardsChange = document.querySelectorAll('.first-container');
-    const existingTime = cityCardsChange[userInput].querySelector('.existing-time');
-    const bottomDate = cityCardsChange[userInput].querySelector('.bottom-date');
+    const existingTime = cityCard.querySelector('.existing-time');
+    const bottomDate = cityCard.querySelector('.bottom-date');
     existingTime.textContent = cityTime;
     bottomDate.textContent = cityDate;
-  }
+  });
 }

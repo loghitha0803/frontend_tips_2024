@@ -1,6 +1,6 @@
 import { removeCitycards, cloneCityCards } from './midcontainer.js';
+import { index } from './globalConstants.js';
 let newTransformValue;
-const index = document.querySelector('.option-click');
 /**
  * @function sunny
  * @param {object}cityData - The extracted details of all the cities in json file
@@ -16,8 +16,8 @@ export function sunny (cityData) {
  * @param {object} cityData   -  The extracted details of all the cities in json file
  * @param {object}weatherIcon -  Holds the weather icon div
  * @param {number}clickIndex  -  Holds the weather icon index
- * @param imageIcons
  * @param {object}cityCards   -  The div inside which the citcards to be appended
+ * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               -  To sort the sunny cities
  */
 export function clickSunny (cityData, weatherIcon, clickIndex, cityCards, imageIcons) {
@@ -29,7 +29,7 @@ export function clickSunny (cityData, weatherIcon, clickIndex, cityCards, imageI
     removeCitycards();
     const compareByTemperature = (a, b) => cityData[b].temperature - cityData[a].temperature;
     const sortedCitiesRainy = sunny(cityData).sort(compareByTemperature);
-    cloneCityCards(sortedCitiesRainy, cityData, imageIcons);
+    cloneCityCards(sortedCitiesRainy, cityData, cityCards, imageIcons);
     changeIndex(sortedCitiesRainy, cityData, clickIndex, cityCards, imageIcons);
   });
 }
@@ -38,8 +38,8 @@ export function clickSunny (cityData, weatherIcon, clickIndex, cityCards, imageI
  * @param {object} cityData   -  The extracted details of all the cities in json file
  * @param {object}weatherIcon -  Holds the weather icon div
  * @param {number}clickIndex  -  Holds the weather icon index
- * @param imageIcons
  * @param {object}cityCards   -  The div inside which the citcards to be appended
+ * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               -  To sort the rainy cities
  */
 export function clickRainy (cityData, weatherIcon, clickIndex, cityCards, imageIcons) {
@@ -51,7 +51,7 @@ export function clickRainy (cityData, weatherIcon, clickIndex, cityCards, imageI
     removeCitycards();
     const compareByHumidity = (a, b) => parseInt(cityData[b].humidity) - parseInt(cityData[a].humidity);
     const sortedCitiesRainy = (Object.keys(cityData).filter((cityKey) => parseInt(cityData[cityKey].temperature) < 20 && parseInt(cityData[cityKey].humidity) >= 50)).sort(compareByHumidity);
-    cloneCityCards(sortedCitiesRainy, cityData,cityCards, imageIcons);
+    cloneCityCards(sortedCitiesRainy, cityData, cityCards, imageIcons);
     changeIndex(sortedCitiesRainy, cityData, clickIndex, cityCards, imageIcons);
   });
 }
@@ -60,8 +60,8 @@ export function clickRainy (cityData, weatherIcon, clickIndex, cityCards, imageI
  * @param {object} cityData   -  The extracted details of all the cities in json file
  * @param {object}weatherIcon -  Holds the weather icon div
  * @param {number}clickIndex  -  Holds the weather icon index
- * @param imageIcons
  * @param {object}cityCards   -  The div inside which the citcards to be appended
+ * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               -  To sort the cloudy cities
  */
 export function clickCloudy (cityData, weatherIcon, clickIndex, cityCards, imageIcons) {
@@ -73,7 +73,7 @@ export function clickCloudy (cityData, weatherIcon, clickIndex, cityCards, image
     removeCitycards();
     const compareByPrecipitaion = (a, b) => cityData[b].precipitation - cityData[a].precipitation;
     const sortedCitiesCold = (Object.keys(cityData).filter((cityKey) => parseInt(cityData[cityKey].temperature) >= 20 && parseInt(cityData[cityKey].temperature) <= 28 && parseInt(cityData[cityKey].humidity) > 50 && parseInt(cityData[cityKey].precipitation) < 50)).sort(compareByPrecipitaion);
-    cloneCityCards(sortedCitiesCold, cityData,cityCards, imageIcons);
+    cloneCityCards(sortedCitiesCold, cityData, cityCards, imageIcons);
     changeIndex(sortedCitiesCold, cityData, clickIndex, cityCards, imageIcons);
   });
 }
@@ -83,8 +83,7 @@ export function clickCloudy (cityData, weatherIcon, clickIndex, cityCards, image
  * @param {object}cityData    -  The extracted details of all the cities in json file
  * @param {number}clickIndex  -  Holds the weather icon index
  * @param {object}cityCards   -  The div inside which the citcards to be appended
- * @param imageIcons
- * @param {string}indexValue  -  Change in the number of citycards by the user
+ * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               -  clone citycards based on the user input
  */
 export function changeIndex (sortedArray, cityData, clickIndex, cityCards, imageIcons) {
@@ -93,7 +92,6 @@ export function changeIndex (sortedArray, cityData, clickIndex, cityCards, image
     document.querySelector('.arrow-move-left').style.visibility = 'hidden';
   }
   index.addEventListener('change', function () {
-    console.log(clickIndex);
     if (+index.value === 3) {
       document.querySelector('.arrow-move-right').style.visibility = 'hidden';
       document.querySelector('.arrow-move-left').style.visibility = 'hidden';
@@ -101,7 +99,7 @@ export function changeIndex (sortedArray, cityData, clickIndex, cityCards, image
       document.querySelector('.arrow-move-left').style.visibility = 'visible';
     }
     cityCards.style.transform = 'translateX(0px)';
-    cloneCityCards(sortedArray, cityData, cityCards,imageIcons);
+    cloneCityCards(sortedArray, cityData, cityCards, imageIcons);
     newTransformValue = 0;
   });
 }

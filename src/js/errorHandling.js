@@ -32,8 +32,8 @@ export function changeStyle (visibilityProperty) {
 }
 /**
  * @function defaultMiddleCityCards
- * @param cityCards
  * @param {object}cityData -Holds the details of the cities from the extracted JSON file
+ * @param {object}cityCards   -  The div inside which the citcards to be appended
  * @description            -To add the citycards default
  */
 export function defaultMiddleCityCards (cityData, cityCards) {

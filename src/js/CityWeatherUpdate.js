@@ -71,7 +71,7 @@ function updateDate (currentTime) {
   const month = `${date.getMonth() + 1}`.padStart(2, 0);
   const year = date.getFullYear();
   let meridian = Number(hrs) >= 12 ? 'PM' : 'AM';
-  hrs = Number(hrs) === 12 ? 12 : hrs % 12;
+  hrs = Number(hrs) === 12 || Number(hrs) === 0 ? 12 : hrs % 12;
   hrsMin.innerText = `${hrs}:${mins}`;
   second.innerText = `:${sec}`;
   dateClass.innerText = `${datesplit}/${month}/${year}`;

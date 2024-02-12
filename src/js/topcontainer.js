@@ -33,9 +33,7 @@ export function topcontainer (cityData) {
   cityChange.changeCity();
   document.querySelector('.image-city').addEventListener('change', (city) => {
     const inputElement = document.querySelector('.image-city');
-    console.log(cityChange.changeCity());
     if ([...datalistOptions.options].some((option) => option.value === inputElement.value)) {
-      console.log(city.target.value.toLowerCase());
       const chooseCity = {
         cityDetails: city.target.value.toLowerCase()
       };

@@ -10,4 +10,5 @@ const farenheitValue = document.querySelector('.temp-value-farenheit');
 const tempHourly = document.querySelectorAll('.temperature-hourly-update');
 const hourly = document.querySelectorAll('.hourly-image');
 const firstContainer = document.querySelector('.first-container');
-export { imageValue, firstContainer, temperature, tempHourly, hourly, humidityValue, precipitationValue, hrsMin, second, dateClass, amImage, farenheitValue };
+const index = document.querySelector('.option-click');
+export { imageValue, firstContainer, temperature, tempHourly, index, hourly, humidityValue, precipitationValue, hrsMin, second, dateClass, amImage, farenheitValue };
