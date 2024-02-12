@@ -87,19 +87,19 @@ function changeContinent (city, cityData) {
   const cityGrid = document.querySelector('.city-grid');
   removeCitycards(cityGrid);
   let cityBox;
-  for (let j = 0; j < 12; j++) {
+  for (let noOfContinentCards = 0; noOfContinentCards < 12; noOfContinentCards++) {
     cityBox = `<div class="city-box">
     <div class="continent-name-city">
         <div class="continent-name">
-            <span>${cityData[city[j]].timeZone.split('/')[0]}</span>
+            <span>${cityData[city[noOfContinentCards]].timeZone.split('/')[0]}</span>
         </div>
         <div class="city-name">
-            <span>${cityData[city[j]].cityName} , </span><span class='city-name continent-time'></span>
+            <span>${cityData[city[noOfContinentCards]].cityName} , </span><span class='city-name continent-time'></span>
         </div>
     </div>
     <div class="temp-status">
         <div class="temperature-align font-color font-size-large">
-            <span>${cityData[city[j]].temperature}</span>
+            <span>${cityData[city[noOfContinentCards]].temperature}</span>
         </div>
         <div class="note-status">
             <img
@@ -107,7 +107,7 @@ function changeContinent (city, cityData) {
                 src="../../Assets/Weather Icons/humidityIcon.svg"
                 alt="humidityIcon"
             >
-            <span class="font-color font-size-small humidity-continent">${cityData[city[j]].humidity}</span>
+            <span class="font-color font-size-small humidity-continent">${cityData[city[noOfContinentCards]].humidity}</span>
         </div>
     </div>
               </div>`;
@@ -118,8 +118,8 @@ function changeContinent (city, cityData) {
    * @param cityData
    */
   updateContinentTime(cityData,city);
-  clearInterval(time)
-  time=setInterval( updateContinentTime(cityData,city),1000)
+  clearInterval(time);
+  time = setInterval(() => { updateContinentTime(cityData,city)}, 1000*60);
 }
 /**
  *
@@ -128,20 +128,17 @@ function changeContinent (city, cityData) {
  * @param city
  */
 function updateContinentTime (cityData, city) {
-  console.log("kojol")
   const continentDetails = document.querySelectorAll('.city-box');
   continentDetails.forEach(function (cityCard, index) {
     const options = {
       hour: '2-digit',
       minute: '2-digit',
-      second:'2-digit',
       timeZone: cityData[city[index]].timeZone,
       hour12: true
     };
     const currentContinentTime = new Date().toLocaleString(undefined, options);
     const continentTime = cityCard.querySelector('.continent-time');
     continentTime.textContent=currentContinentTime
-    console.log(continentTime.textContent)
   }
   );
 }
