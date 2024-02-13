@@ -1,87 +1,75 @@
-let isascendingcontinent = false;
-let istemperatureSort = true;
+import { removeCitycards } from './midcontainer.js';
+let isAscendingContinent = false;
+let isAscendingTemperature = true;
 let time;
 /**
- *
- * @param cityData
+ * @function bottomContainer
+ * @param {object} cityData   -  The extracted details of all the cities in json file
+ * @description               -  To update the bottom container of the website based on the input
  */
 export function bottomContainer (cityData) {
-  const sortDefault = sortDataByContinent(cityData, isascendingcontinent, istemperatureSort);
-  changeContinent(sortDefault, cityData);
+  const sortDefault = sortDataByContinent(cityData, isAscendingContinent, isAscendingTemperature);
+  appendContinentCards(sortDefault, cityData);
   clickSortContinent(cityData);
-  clickSortTemp(cityData);
+  clickSortTemperature(cityData);
 }
 /**
- *
- * @param cityData
+ * @function sortDataByContinent
+ * @param {object} cityData            `       -  The extracted details of all the cities in json file
+ * @param {boolean}isAscendingContinent        -  Flag indicating the alphabetical order of the continent
+ * @param {boolean}isAscendingTemperature      -  Flag indicating whether sorting of temperature should be in ascending
+ * @returns {Array}                            -  Sorted Array based on the input
+ * @description                                -  Sort the Array based on the continent and temperature.
  */
-/**
- *
- * @param data
- * @param cityData
- * @param isascending
- * @param isascendingcontinent
- * @param istemperatureSort
- */
-function sortDataByContinent (cityData, isascendingcontinent, istemperatureSort) {
+function sortDataByContinent (cityData, isAscendingContinent, isAscendingTemperature) {
   const continents = [...new Set(Object.values(cityData).map((city) => city.timeZone.split('/')[0]))].sort();
   let sortedData = continents.reduce((acc, continent) => {
     let citiesInContinent = Object.keys(cityData).filter((cityKey) => cityData[cityKey].timeZone.startsWith(continent)).sort();
-    const compareByTemperature = (a, b) => istemperatureSort ? (parseInt(cityData[a].temperature) - parseInt(cityData[b].temperature)) : (parseInt(cityData[b].temperature) - parseInt(cityData[a].temperature));
+    const compareByTemperature = (a, b) => isAscendingTemperature ? (parseInt(cityData[a].temperature) - parseInt(cityData[b].temperature)) : (parseInt(cityData[b].temperature) - parseInt(cityData[a].temperature));
     citiesInContinent = citiesInContinent.sort(compareByTemperature);
     acc.push(citiesInContinent);
     return acc;
   }, []);
-  sortedData = isascendingcontinent ? sortedData : sortedData.reverse();
+  sortedData = isAscendingContinent ? sortedData : sortedData.reverse();
   return sortedData.flat(6);
 }
 /**
- *
- * @param cityData
+ * @function clickSortContinent
+ * @param {object} cityData -  The extracted details of all the cities in json file
+ * @description             -  To change the continent cards based on the continent flag
  */
 function clickSortContinent (cityData) {
   const continent = document.querySelector('.continent-arrow');
   continent.addEventListener('click', function () {
-    isascendingcontinent = !isascendingcontinent;
-    const updown = isascendingcontinent ? 'Up' : 'Down';
+    isAscendingContinent = !isAscendingContinent;
+    const updown = isAscendingContinent ? 'Up' : 'Down';
     continent.src = `../../../Assets/General Images & Icons/arrow${updown}.svg`;
-    const continentSort = sortDataByContinent(cityData, isascendingcontinent, istemperatureSort);
-    changeContinent(continentSort, cityData);
+    const continentSort = sortDataByContinent(cityData, isAscendingContinent, isAscendingTemperature);
+    appendContinentCards(continentSort, cityData);
   });
 }
 /**
- *
- * @param cityData
+ * @function clickSortTemperature
+ * @param {object} cityData -  The extracted details of all the cities in json file
+ * @description             -  To change the continent cards based on the temperature flag
  */
-function clickSortTemp (cityData) {
+function clickSortTemperature (cityData) {
   const temperatureArrow = document.querySelector('.temp-arrow');
   temperatureArrow.addEventListener('click', function () {
-    istemperatureSort = !istemperatureSort;
-    const updown = istemperatureSort ? 'Up' : 'Down';
+    isAscendingTemperature = !isAscendingTemperature;
+    const updown = isAscendingTemperature ? 'Up' : 'Down';
     temperatureArrow.src = `../../../Assets/General Images & Icons/arrow${updown}.svg`;
-    const temperatureSort = sortDataByContinent(cityData, isascendingcontinent, istemperatureSort);
-    changeContinent(temperatureSort, cityData);
+    const temperatureSort = sortDataByContinent(cityData, isAscendingContinent, isAscendingTemperature);
+    appendContinentCards(temperatureSort, cityData);
   });
 }
-// Call the function to sort the city data by continent names
 /**
- *
- * @param data
- * @param city
- * @param cityData
- * @param cityCards
+ * @function appendContinentCards
+ * @param {Array}sortedArray -Sorted array based on the continent and temperature order
+ * @param {object} cityData  -  The extracted details of all the cities in json file
+ * @description              -  To append the continent cards
  */
-function removeCitycards (cityCards) {
-  while (cityCards.firstChild) {
-    cityCards.removeChild(cityCards.firstChild);
-  }
-}
-/**
- *
- * @param city
- * @param cityData
- */
-function changeContinent (city, cityData) {
+function appendContinentCards (sortedArray, cityData) {
   const cityGrid = document.querySelector('.city-grid');
   removeCitycards(cityGrid);
   let cityBox;
@@ -89,15 +77,15 @@ function changeContinent (city, cityData) {
     cityBox = `<div class="city-box">
     <div class="continent-name-city">
         <div class="continent-name">
-            <span>${cityData[city[noOfContinentCards]].timeZone.split('/')[0]}</span>
+            <span>${cityData[sortedArray[noOfContinentCards]].timeZone.split('/')[0]}</span>
         </div>
         <div class="city-name">
-            <span>${cityData[city[noOfContinentCards]].cityName} , </span><span class='city-name continent-time'></span>
+            <span>${cityData[sortedArray[noOfContinentCards]].cityName} , </span><span class='city-name continent-time'></span>
         </div>
     </div>
     <div class="temp-status">
         <div class="temperature-align font-color font-size-large">
-            <span>${cityData[city[noOfContinentCards]].temperature}</span>
+            <span>${cityData[sortedArray[noOfContinentCards]].temperature}</span>
         </div>
         <div class="note-status">
             <img
@@ -105,33 +93,29 @@ function changeContinent (city, cityData) {
                 src="../../Assets/Weather Icons/humidityIcon.svg"
                 alt="humidityIcon"
             >
-            <span class="font-color font-size-small humidity-continent">${cityData[city[noOfContinentCards]].humidity}</span>
+            <span class="font-color font-size-small humidity-continent">${cityData[sortedArray[noOfContinentCards]].humidity}</span>
         </div>
     </div>
               </div>`;
     cityGrid.insertAdjacentHTML('beforeend', cityBox);
   }
-  /**
-   *
-   * @param cityData
-   */
-  updateContinentTime(cityData, city);
+  updateContinentTime(cityData, sortedArray);
   clearInterval(time);
-  time = setInterval(() => { updateContinentTime(cityData, city); }, 1000 * 60);
+  time = setInterval(() => { updateContinentTime(cityData, sortedArray); }, 1000 * 60);
 }
 /**
- *
- * @param cityData
- * @param cityBox
- * @param city
+ * @function updateContinentTime
+ * @param {object} cityData  -  The extracted details of all the cities in json file
+ * @param {Array}sortedArray - Sorted array based on the continent and temperature order
+ * @description              -  To update the time
  */
-function updateContinentTime (cityData, city) {
+function updateContinentTime (cityData, sortedArray) {
   const continentDetails = document.querySelectorAll('.city-box');
   continentDetails.forEach(function (cityCard, index) {
     const options = {
       hour: '2-digit',
       minute: '2-digit',
-      timeZone: cityData[city[index]].timeZone,
+      timeZone: cityData[sortedArray[index]].timeZone,
       hour12: true
     };
     const currentContinentTime = new Date().toLocaleString(undefined, options);

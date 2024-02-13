@@ -39,8 +39,7 @@ export function topcontainer (cityData) {
       const chooseCity = {
         cityDetails: city.target.value.toLowerCase()
       };
-      const givenCityBind = cityChange.changeCity.bind(chooseCity);
-      givenCityBind();
+      cityChange.changeCity.call(chooseCity);
     } else {
       wrongCityName();
     }

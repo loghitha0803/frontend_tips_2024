@@ -30,16 +30,6 @@ export function midcontainer (cityData) {
   addSortCities(cityData, iconCombined, cityCards);
 }
 /**
- * @function removeCitycards
- * @description - To  remove the citycards according to the input
- */
-export function removeCitycards () {
-  const cityCards = document.querySelector('.city-cards');
-  while (cityCards.firstChild) {
-    cityCards.removeChild(cityCards.firstChild);
-  }
-}
-/**
  * @function cloneCityCards
  * @param {Array}arr          -Sorted Array based on the given condition
  * @param {object}cityData    - The extracted details of all the cities in json file
@@ -50,7 +40,7 @@ export function removeCitycards () {
 export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
   const index = document.querySelector('.option-click');
   let indexValue = index.value;
-  removeCitycards();
+  removeCitycards(cityCards);
   let cloneDiv;
   for (let userInput = 0; userInput < indexValue; userInput++) {
     cloneDiv = `<div class="first-container">
@@ -137,4 +127,14 @@ function updateTime (cityData, arr) {
     existingTime.textContent = cityTime;
     bottomDate.textContent = cityDate;
   });
+}
+/**
+ * @function removeCitycards
+ * @param {object}cityCards   -  The div inside which the citcards has been appended
+ * @description               -  To remove the continent cards
+ */
+export function removeCitycards (cityCards) {
+  while (cityCards.firstChild) {
+    cityCards.removeChild(cityCards.firstChild);
+  }
 }
