@@ -1,7 +1,6 @@
-// import { temperature } from './globalConstants';
 let isascendingcontinent = false;
 let istemperatureSort = true;
-let time
+let time;
 /**
  *
  * @param cityData
@@ -25,17 +24,16 @@ export function bottomContainer (cityData) {
  * @param istemperatureSort
  */
 function sortDataByContinent (cityData, isascendingcontinent, istemperatureSort) {
-  let sortedData = [];
   const continents = [...new Set(Object.values(cityData).map((city) => city.timeZone.split('/')[0]))].sort();
-  continents.forEach(function (continent) {
+  let sortedData = continents.reduce((acc, continent) => {
     let citiesInContinent = Object.keys(cityData).filter((cityKey) => cityData[cityKey].timeZone.startsWith(continent)).sort();
     const compareByTemperature = (a, b) => istemperatureSort ? (parseInt(cityData[a].temperature) - parseInt(cityData[b].temperature)) : (parseInt(cityData[b].temperature) - parseInt(cityData[a].temperature));
     citiesInContinent = citiesInContinent.sort(compareByTemperature);
-    sortedData.push(citiesInContinent);
-  });
+    acc.push(citiesInContinent);
+    return acc;
+  }, []);
   sortedData = isascendingcontinent ? sortedData : sortedData.reverse();
-  sortedData = sortedData.flat(6);
-  return sortedData;
+  return sortedData.flat(6);
 }
 /**
  *
@@ -117,9 +115,9 @@ function changeContinent (city, cityData) {
    *
    * @param cityData
    */
-  updateContinentTime(cityData,city);
+  updateContinentTime(cityData, city);
   clearInterval(time);
-  time = setInterval(() => { updateContinentTime(cityData,city)}, 1000*60);
+  time = setInterval(() => { updateContinentTime(cityData, city); }, 1000 * 60);
 }
 /**
  *
@@ -138,7 +136,7 @@ function updateContinentTime (cityData, city) {
     };
     const currentContinentTime = new Date().toLocaleString(undefined, options);
     const continentTime = cityCard.querySelector('.continent-time');
-    continentTime.textContent=currentContinentTime
+    continentTime.textContent = currentContinentTime;
   }
   );
 }
