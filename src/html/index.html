@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>T1001</title>
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link rel="icon " href="../../Assets/Weather Icons/weather icon.png" type="image/x-icon">
+        <script src="../js/index.js" type="module"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-container">
+                <img
+                    class="first-image"
+                    alt="image of the broken-hill"
+                >
+                <div class="selectors">
+                    <input type="text" class="image-city" list="listsdata" placeholder="Select City">
+                    <datalist id="listsdata">
+                    </datalist>
+                    <time>
+                        <div class="flex-columns">
+                            <div class="time">
+                                <div class="hrs-mins">
+                                </div>
+                                <div class="seconds">
+                                </div>
+                                <div>
+                                    <img
+                                        class="am-image"
+                                        src="../../Assets/General Images & Icons/amState.svg"
+                                        alt="meridian"
+                                    >
+                                </div>
+                                <br >
+                            </div>
+                            <div class="date">
+                            </div>
+                        </div>
+                    </time>
+                </div>
+                <div class="temperature-diff flex-columns text-capitalise reduced-font">
+                    <div>
+                        <span>Temp &deg; C</span>
+                        <br >
+                        <div class="celsius temp-value-celsius">
+                        </div>
+                    </div>
+                    <br >
+                    <div class="temperature reduced-font">
+                        <span>Temp F</span>
+                        <br >
+                        <div class="celsius temp-value-farenheit">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-columns gap-between-icons">
+                    <div class="vertical-large-column"></div>
+                    <br >
+                    <div class="vertical-large-column"></div>
+                </div>
+                <div class="temperature-diff flex-columns reduced-font">
+                    <div>
+                        <span>Humidity</span>
+                        <br >
+                        <div class="celsius humidity-value">
+                        </div>
+                    </div>
+                    <br >
+                    <div class="temp reduced-font">
+                        <span>Precipitation</span>
+                        <br >
+                        <div class="celsius precipitation-value">
+                        </div>
+                    </div>
+                </div>
+                <div class="first">
+                    <span> NOW </span>
+                    <br >
+                    <div class="vertical-small-column"></div>
+                    <br >
+                    <div class="weather-top-icon">
+                        <img
+                            class="hourly-image now-image"
+                            alt="humidityIconBlack"
+                            width="20px"
+                            height="20px"
+                        >
+                        <br >
+                        <br >
+                    </div>
+                    <div class="temperature-hourly-update">
+                    </div>
+                </div>
+                <div class="vertical-small-column margin-bottom"></div>
+                <div class="first">
+                    <div class="next-five-hrs">
+                    </div>
+                    <br >
+                    <div class="vertical-small-column"></div>
+                    <br >
+                    <div class="weather-top-icon">
+                        <img
+                            class="hourly-image first-hour-image"
+                            alt="rainyIcon"
+                            width="20px"
+                            height="20px"
+                        >
+                        <br >
+                        <br >
+                    </div>
+                    <div class="temperature-hourly-update">
+                    </div>
+                </div>
+                <div class="vertical-small-column margin-bottom"></div>
+                <div class="first">
+                    <div class="next-five-hrs">
+                    </div>
+                    <br >
+                    <div class="vertical-small-column"></div>
+                    <br >
+                    <div class="weather-top-icon">
+                        <img
+                            class="hourly-image second-hour-image second-image"
+                            alt="sunnyIcon"
+                            width="20px"
+                            height="20px"
+                        >
+                        <br >
+                        <br >
+                    </div>
+                    <div class="temperature-hourly-update">
+                    </div>
+                </div>
+                <div class="vertical-small-column margin-bottom"></div>
+                <div class="first">
+                    <div class="next-five-hrs">
+                    </div>
+                    <br >
+                    <div class="vertical-small-column"></div>
+                    <br >
+                    <div class="weather-top-icon">
+                        <img
+                            class="hourly-image third-image"
+                            alt="precipitationIcon"
+                            width="20px"
+                            height="20px"
+                        >
+                        <br >
+                        <br >
+                    </div>
+                    <div class="temperature-hourly-update">
+                    </div>
+                </div>
+                <div class="vertical-small-column margin-bottom"></div>
+                <div class="first">
+                    <div class="next-five-hrs">
+                    </div>
+                    <br >
+                    <div class="vertical-small-column"></div>
+                    <br >
+                    <div class="weather-top-icon">
+                        <img
+                            class="hourly-image forth-image"
+                            alt="rainyIcon"
+                            width="20px"
+                            height="20px"
+                        >
+                        <br >
+                        <br >
+                    </div>
+                    <div class="temperature-hourly-update">
+                    </div>
+                </div>
+            </div>
+            <div class="middle-container">
+                <div class="middle-top-section">
+                    <div class="head-text">
+                        <span>Top Cities Around World</span>
+                    </div>
+                    <div class="icons gap-between-icons">
+                        <div class="icon-combined">
+                            <img
+                                class="icon-size"
+                                src="../../Assets/Weather Icons/sunnyIcon.svg"
+                                alt="sunnyIcon"
+                            >
+                        </div>
+                        <div class="icon-combined">
+                            <img
+                                class="icon-size"
+                                src="../../Assets/Weather Icons/snowflakeIcon.svg"
+                                alt="snowflakeIcon"
+                            >
+                        </div>
+                        <div class="icon-combined">
+                            <img
+                                class="icon-size"
+                                src="../../Assets/Weather Icons/rainyIcon.svg"
+                                alt="rainyIcon"
+                            >
+                        </div>
+                        <div class="text-content">
+                            <span>Display Top</span>
+                        </div>
+                        <input
+                            class="option-click"
+                            type="number"
+                            min="3"
+                            max="10"
+                            placeholder="3"
+                            value="3"
+                        >
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    <button class="arrow-middle-section arrow-move-right">&lt;</button>
+                    <div class="main-bottom-container gap-between">
+                        <div class="city-cards">
+                        </div>
+                    </div>
+                    <button class="arrow-middle-section arrow-move-left">&gt;</button>
+                </div>
+                <div class="last-container">
+                    <div class="last-container-box">
+                        <div class="text-bottom font-color font-size-larger">
+                            <span> Cities across continents at a Glance</span>
+                        </div>
+                        <div class="up-down-arrow font-color font-size-large gap-bw">
+                            <div class="down-arrow">
+                                <span
+                                >Continent-Name
+                                    <img
+                                        class="arrow continent-arrow"
+                                        src="../../Assets/General Images & Icons/arrowDown.svg"
+                                        alt="downarrow"
+                                    >
+                                </span>
+                            </div>
+                            <div class="up-arrow">
+                                <span
+                                >Temperature
+                                    <img
+                                        class="arrow temp-arrow"
+                                        src="../../Assets/General Images & Icons/arrowUp.svg"
+                                        alt="uparrow"
+                                    >
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-grid gap-more">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -7,7 +7,7 @@ module.exports = {
   extends: [
     'standard',
     'plugin:react/recommended',
-    'plugin:jsdoc/recommended',
+    'plugin:jsdoc/recommended'
   ],
   overrides: [
     {
@@ -21,7 +21,7 @@ module.exports = {
       parserOptions: {
         sourceType: 'script'
       },
-      extends: ['plugin:@html-eslint/recommended'],
+      extends: ['plugin:@html-eslint/recommended']
     }
   ],
   parserOptions: {
@@ -34,6 +34,7 @@ module.exports = {
   ],
   rules: {
     'id-match': ['error', '^[a-z]+([A-Z][a-z]+)*$'],
-    '@html-eslint/id-naming-convention': ['error', 'kebab-case']
+    '@html-eslint/id-naming-convention': ['error', 'kebab-case'],
+    semi: ['error', 'always']
   }
-}
+};
