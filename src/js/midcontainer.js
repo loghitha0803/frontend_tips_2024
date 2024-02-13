@@ -1,4 +1,4 @@
-import { clickSunny, clickRainy, clickCloudy, clickLeftButton, clickRightButton } from './sortCitiesButtons.js';
+import { addSortCities, clickRightButton, clickLeftButton } from './sortclick.js';
 import { defaultMiddleCityCards } from './errorHandling.js';
 let time;
 /**
@@ -8,7 +8,6 @@ let time;
  */
 export function midcontainer (cityData) {
   const cityCards = document.querySelector('.city-cards');
-  let imageIcons;
   const icons = document.querySelector('.icons');
   icons.addEventListener('click', function (e) {
     const iconClass = e.target;
@@ -28,22 +27,7 @@ export function midcontainer (cityData) {
   document.querySelector('.arrow-move-left').addEventListener('click', function () {
     clickLeftButton(cityCards);
   });
-
-  iconCombined.forEach(function (weatherIcon, clickIndex) {
-    if (clickIndex === 0) {
-      imageIcons = 'sunny';
-      clickSunny(cityData, weatherIcon, clickIndex, cityCards, imageIcons);
-    }
-    if (clickIndex === 1) {
-      imageIcons = 'snowflake';
-      clickCloudy(cityData, weatherIcon, clickIndex, cityCards, imageIcons);
-    }
-
-    if (clickIndex === 2) {
-      imageIcons = 'rainy';
-      clickRainy(cityData, weatherIcon, clickIndex, cityCards, imageIcons);
-    }
-  });
+  addSortCities(cityData, iconCombined, cityCards);
 }
 /**
  * @function removeCitycards
