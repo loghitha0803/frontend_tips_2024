@@ -40,7 +40,7 @@ export function addSortCities (cityData, iconCombined, cityCards) {
       newTransformValue = 0;
       cityCards.style.transform = 'translateX(0px)';
       document.querySelector('.arrow-move-left').style.visibility = 'hidden';
-      removeCitycards();
+      removeCitycards(cityCards);
       const sortCall = {
         imageIcons: 'sunny',
         sortedCities: [],
