@@ -264,7 +264,7 @@ body {
   background-color: var(--bg-dark-grey-tile);
   background-size: cover;
   display: flex;
-  padding: 1vw;
+  padding: 15px;
   width:320px;
 }
 
@@ -534,9 +534,9 @@ body {
     width: 190px;
   }
 
-  .first-container {
+  /* .first-container {
     width:200px;
-  }
+  } */
 
   .date {
     font-size: 14px;
@@ -555,9 +555,6 @@ body {
     font-size: smaller;
   }
 
-  .img-top-inside {
-    width: 140px;
-  }
 
   .weather-icon {
     height: 40px;
@@ -570,9 +567,6 @@ body {
     font-size: smaller;
   }
 
-  .img-top-inside {
-    width: 140px;
-  }
 
   .weather-icon {
     height: 40px;

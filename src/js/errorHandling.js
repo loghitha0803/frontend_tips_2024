@@ -1,4 +1,4 @@
-import { temperature, humidityValue, precipitationValue, farenheitValue, hrsMin, second, dateClass, amImage, imageValue, tempHourly, hourly } from './globalConstants.js';
+import { temperature, humidityValue, precipitationValue, farenheitValue, hrsMin, second, dateClass, index, amImage, imageValue, tempHourly, hourly } from './globalConstants.js';
 import { sortcityWeatherBased } from './sortclick.js';
 import { cloneCityCards } from './midcontainer.js';
 /**
@@ -37,9 +37,14 @@ export function changeStyle (visibilityProperty) {
  * @description            -To add the citycards default
  */
 export function defaultMiddleCityCards (cityData, cityCards) {
-  document.querySelector('.arrow-move-left').style.visibility = 'hidden';
-  document.querySelector('.arrow-move-right').style.visibility = 'hidden';
   document.querySelector('.icon-size').style.borderBottom = '2px solid var(--bg-selection-blue)';
   const sortedCitiesSunny = sortcityWeatherBased(cityData);
+  if (Math.round(window.innerWidth / 352) <= +(index.value)) {
+    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+    document.querySelector('.arrow-move-left').style.visibility = 'visible';
+  } else {
+    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+    document.querySelector('.arrow-move-left').style.visibility = 'hidden';
+  }
   cloneCityCards(sortedCitiesSunny[0], cityData, cityCards, 'sunny');
 }

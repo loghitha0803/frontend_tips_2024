@@ -1,6 +1,6 @@
 import { removeCitycards, cloneCityCards } from './midcontainer.js';
 import { index } from './globalConstants.js';
-let newTransformValue;
+let newTransformValue = 0;
 
 /**
  * @function sortcityWeatherBased
@@ -39,7 +39,6 @@ export function addSortCities (cityData, iconCombined, cityCards) {
     element.addEventListener('click', function () {
       newTransformValue = 0;
       cityCards.style.transform = 'translateX(0px)';
-      document.querySelector('.arrow-move-left').style.visibility = 'hidden';
       removeCitycards(cityCards);
       const sortCall = {
         imageIcons: 'sunny',
@@ -63,15 +62,18 @@ export function addSortCities (cityData, iconCombined, cityCards) {
         sortCall.imageIcons = 'snowflake';
       }
       if (clickIndex === 2) {
-        if (+index.value > 3) {
-          document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-          document.querySelector('.arrow-move-left').style.visibility = 'visible';
-        }
         sortCall.sortedCities = sortedCities[clickIndex];
         sortCall.imageIcons = 'rainy';
       }
       sortCall.cloneCity();
       sortCall.indexplay();
+      if (Math.round(window.innerWidth / 352) < +(index.value)) {
+        document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+        document.querySelector('.arrow-move-left').style.visibility = 'visible';
+      } else {
+        document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+        document.querySelector('.arrow-move-left').style.visibility = 'hidden';
+      }
     });
   });
 }
@@ -85,8 +87,12 @@ export function addSortCities (cityData, iconCombined, cityCards) {
  * @description               -  clone citycards based on the user input
  */
 export function indexChange (sortedArray, cityData, clickIndex, cityCards, imageIcons) {
+  if (Math.round(window.innerWidth / 352) <= +(index.value)) {
+    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+    document.querySelector('.arrow-move-left').style.visibility = 'visible';
+  }
   index.addEventListener('change', function () {
-    if (+index.value > 3 && +clickIndex === 2) {
+    if (Math.round(window.innerWidth / 352) <= +(index.value)) {
       document.querySelector('.arrow-move-right').style.visibility = 'hidden';
       document.querySelector('.arrow-move-left').style.visibility = 'visible';
     } else { document.querySelector('.arrow-move-left').style.visibility = 'hidden'; }
@@ -101,9 +107,7 @@ export function indexChange (sortedArray, cityData, clickIndex, cityCards, image
  * @description               -  Deals with the function of right arrow button
  */
 export function clickRightButton (cityCards) {
-  const numContainers = cityCards.children.length;
-  const lastContainerIndex = numContainers - 1;
-  if (lastContainerIndex > 2 && newTransformValue > 0) {
+  if (newTransformValue > 0) {
     document.querySelector('.arrow-move-left').style.visibility = 'visible';
     newTransformValue -= 405;
     cityCards.style.transform = `translateX(-${newTransformValue}px)`;
@@ -119,13 +123,11 @@ export function clickRightButton (cityCards) {
  * @description               -  Deals with the function of right arrow button
  */
 export function clickLeftButton (cityCards) {
-  const numContainers = cityCards.children.length;
-  const lastContainerIndex = numContainers - 1;
-  if (lastContainerIndex > 2 && newTransformValue < 405 * (numContainers - 3)) {
+  if (newTransformValue < 405 * (+(index.value) + 1 - Math.round(window.innerWidth / 352))) {
     document.querySelector('.arrow-move-right').style.visibility = 'visible';
     newTransformValue += 405;
     cityCards.style.transform = `translateX(-${newTransformValue}px)`;
-    if (+newTransformValue === 405 * (numContainers - 3)) {
+    if (!(newTransformValue < 405 * (+(index.value) + 1 - Math.round(window.innerWidth / 352)))) {
       document.querySelector('.arrow-move-left').style.visibility = 'hidden';
     }
   }
