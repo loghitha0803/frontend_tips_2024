@@ -7,6 +7,7 @@ let time;
  * @description               - To change the city details in both default and user chosen input
  */
 export function changeCityDetails (cityDetails) {
+  updateDynamicTime(cityDetails);
   clearInterval(time);
   time = setInterval(updateDynamicTime, 1000, cityDetails);
   imageValue.src = `../../../Assets/Icons for cities/${cityDetails.cityName}.svg`;
@@ -69,8 +70,8 @@ function updateDate (currentTime) {
   const datesplit = `${date.getDate()}`.padStart(2, 0);
   const month = `${date.getMonth() + 1}`.padStart(2, 0);
   const year = date.getFullYear();
-  let meridian = hrs >= 12 ? 'PM' : 'AM';
-  hrs = Number(hrs) === 12 ? 12 : hrs % 12;
+  let meridian = Number(hrs) >= 12 ? 'PM' : 'AM';
+  hrs = Number(hrs) === 12 || Number(hrs) === 0 ? 12 : hrs % 12;
   hrsMin.innerText = `${hrs}:${mins}`;
   second.innerText = `:${sec}`;
   dateClass.innerText = `${datesplit}/${month}/${year}`;

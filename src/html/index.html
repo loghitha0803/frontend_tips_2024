@@ -3,38 +3,37 @@
     <head>
         <title>T1001</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link rel="icon " href="../../Assets/Weather Icons/weather icon.png" type="image/x-icon">
+        <script src="../js/index.js" type="module"></script>
     </head>
     <body>
         <div class="container">
             <div class="top-container">
                 <img
                     class="first-image"
-                    src="../../Assets/Icons for cities/anadyr.svg"
                     alt="image of the broken-hill"
                 >
                 <div class="selectors">
-                    <select>
-                        <option>New York</option>
-                        <option>Delhi</option>
-                    </select>
+                    <input type="text" class="image-city" list="listsdata" placeholder="Select City">
+                    <datalist id="listsdata">
+                    </datalist>
                     <time>
                         <div class="flex-columns">
                             <div class="time">
-                                <span>10:10</span>
-                                <div class="seconds">
-                                    <small>:40</small>
+                                <div class="hrs-mins">
                                 </div>
-                                <div class="am-image">
+                                <div class="seconds">
+                                </div>
+                                <div>
                                     <img
                                         class="am-image"
                                         src="../../Assets/General Images & Icons/amState.svg"
-                                        alt="morning"
+                                        alt="meridian"
                                     >
                                 </div>
                                 <br >
                             </div>
                             <div class="date">
-                                <span>01-MAR-2020</span>
                             </div>
                         </div>
                     </time>
@@ -43,16 +42,14 @@
                     <div>
                         <span>Temp &deg; C</span>
                         <br >
-                        <div class="celsius">
-                            <span>25C</span>
+                        <div class="celsius temp-value-celsius">
                         </div>
                     </div>
                     <br >
-                    <div class="temperature">
+                    <div class="temperature reduced-font">
                         <span>Temp F</span>
                         <br >
-                        <div class="celsius">
-                            <span>78F</span>
+                        <div class="celsius temp-value-farenheit">
                         </div>
                     </div>
                 </div>
@@ -65,19 +62,14 @@
                     <div>
                         <span>Humidity</span>
                         <br >
-                        <div class="celsius">
-                            <span>25</span>
-                            <div class="percent">
-                                <span>%</span>
-                            </div>
+                        <div class="celsius humidity-value">
                         </div>
                     </div>
                     <br >
                     <div class="temp reduced-font">
                         <span>Precipitation</span>
                         <br >
-                        <div class="celsius">
-                            <span>0%</span>
+                        <div class="celsius precipitation-value">
                         </div>
                     </div>
                 </div>
@@ -88,7 +80,7 @@
                     <br >
                     <div class="weather-top-icon">
                         <img
-                            src="../../Assets/Weather Icons/humidityIconBlack.svg"
+                            class="hourly-image now-image"
                             alt="humidityIconBlack"
                             width="20px"
                             height="20px"
@@ -96,19 +88,19 @@
                         <br >
                         <br >
                     </div>
-                    <div>
-                        <span>6</span>
+                    <div class="temperature-hourly-update">
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 11am</span>
+                    <div class="next-five-hrs">
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
-                            src="../../Assets/Weather Icons/rainyIconBlack.svg"
+                            class="hourly-image first-hour-image"
                             alt="rainyIcon"
                             width="20px"
                             height="20px"
@@ -116,19 +108,19 @@
                         <br >
                         <br >
                     </div>
-                    <div>
-                        <span>7</span>
+                    <div class="temperature-hourly-update">
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 12pm </span>
+                    <div class="next-five-hrs">
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
-                            src="../../Assets/Weather Icons/sunnyIconBlack.svg"
+                            class="hourly-image second-hour-image second-image"
                             alt="sunnyIcon"
                             width="20px"
                             height="20px"
@@ -136,19 +128,19 @@
                         <br >
                         <br >
                     </div>
-                    <div>
-                        <span>8</span>
+                    <div class="temperature-hourly-update">
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span> 1pm </span>
+                    <div class="next-five-hrs">
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
-                            src="../../Assets/Weather Icons/precipitationIconBlack.svg"
+                            class="hourly-image third-image"
                             alt="precipitationIcon"
                             width="20px"
                             height="20px"
@@ -156,19 +148,19 @@
                         <br >
                         <br >
                     </div>
-                    <div>
-                        <span>7</span>
+                    <div class="temperature-hourly-update">
                     </div>
                 </div>
                 <div class="vertical-small-column margin-bottom"></div>
                 <div class="first">
-                    <span>2pm </span>
+                    <div class="next-five-hrs">
+                    </div>
                     <br >
                     <div class="vertical-small-column"></div>
                     <br >
                     <div class="weather-top-icon">
                         <img
-                            src="../../Assets/Weather Icons/rainyIconBlack.svg"
+                            class="hourly-image forth-image"
                             alt="rainyIcon"
                             width="20px"
                             height="20px"
@@ -176,26 +168,7 @@
                         <br >
                         <br >
                     </div>
-                    <div>
-                        <span>8</span>
-                    </div>
-                </div>
-                <div class="vertical-small-column margin-bottom"></div>
-                <div class="first">
-                    <span> 3pm</span>
-                    <br >
-                    <div class="vertical-small-column"></div>
-                    <br >
-                    <div class="image">
-                        <img
-                            src="../../Assets/Weather Icons/precipitationIconBlack.svg"
-                            alt="cloudyIcon"
-                            width="20px"
-                            height="20px"
-                        >
-                    </div>
-                    <div>
-                        <span>6</span>
+                    <div class="temperature-hourly-update">
                     </div>
                 </div>
             </div>
@@ -230,442 +203,76 @@
                             <span>Display Top</span>
                         </div>
                         <input
-                            class="option"
+                            class="option-click"
                             type="number"
                             min="3"
                             max="10"
                             placeholder="3"
+                            value="3"
                         >
                     </div>
                 </div>
                 <div class="bottom-container">
                     <button class="arrow-middle-section arrow-move-right">&lt;</button>
                     <div class="main-bottom-container gap-between">
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
+                        <div class="city-cards">
+                        </div>
+                    </div>
+                    <button class="arrow-middle-section arrow-move-left">&gt;</button>
+                </div>
+                <div class="last-container">
+                    <div class="last-container-box">
+                        <div class="text-bottom font-color font-size-larger">
+                            <span> Cities across continents at a Glance</span>
+                        </div>
+                        <div class="up-down-arrow font-color font-size-large gap-bw">
+                            <div class="down-arrow">
+                                <span
+                                >Continent-Name
                                     <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="city-image"
+                                        class="arrow"
+                                        src="../../Assets/General Images & Icons/arrowDown.svg"
+                                        alt="downarrow"
                                     >
-                                </div>
+                                </span>
+                            </div>
+                            <div class="up-arrow">
+                                <span
+                                >Temperature
+                                    <img
+                                        class="arrow"
+                                        src="../../Assets/General Images & Icons/arrowUp.svg"
+                                        alt="uparrow"
+                                    >
+                                </span>
                             </div>
                         </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
+                    </div>
+                    <div class="city-grid gap-more">
+                        <div class="city-box">
+                            <div class="continent-name-city">
+                                <div class="continent-name">
+                                    <span>Asia</span>
                                 </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
+                                <div class="city-name">
+                                    <span>Delhi, 10:10AM</span>
                                 </div>
                             </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
+                            <div class="temp-status">
+                                <div class="temperature-align font-color font-size-large">
+                                    <span>38 &deg;C</span>
                                 </div>
-                                <div class="img-inside">
+                                <div class="note-status">
                                     <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
+                                        class="weather-icon-city"
+                                        src="../../Assets/Weather Icons/humidityIcon.svg"
+                                        alt="humidityIcon"
                                     >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-container">
-                            <div class="text-contained font-color">
-                                <span class="font-size-medium">New Delhi</span>
-                                <span class="font-size-medium">10:00 AM</span>
-                                <div class="bottom-date">
-                                    <span>02-MAR-2020</span>
-                                </div>
-                                <div class="weather-icon">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/humidityIcon.svg "
-                                            alt="humidityIcon"
-                                        >
-                                        <span class="font-size-small">25% </span>
-                                    </div>
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/precipitationIcon.svg"
-                                            alt="precipitationIcon"
-                                        >
-                                        <span class="font-size-small">10% </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image-contained">
-                                <div class="top-temp">
-                                    <div class="icons-weather">
-                                        <img
-                                            class="weather-notation"
-                                            src="../../Assets/Weather Icons/sunnyIcon.svg"
-                                            alt="sunnyIcon"
-                                        >
-                                        <span class="font-size-small font-color">25&deg;C </span>
-                                    </div>
-                                    <br >
-                                </div>
-                                <div class="img-inside">
-                                    <img
-                                        class="img-top-inside"
-                                        src="../../Assets/Icons for cities/anadyr.svg"
-                                        alt="Image of the city"
-                                    >
+                                    <span class="font-color font-size-small humidity-continent">53%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="arrow-middle-section arrow-move-left">&gt;</button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { temperature, humidityValue, precipitationValue, farenheitValue, hrsMin, second, dateClass, amImage, imageValue, tempHourly, hourly } from './globalConstants.js';
 /**
+ * @function wrongCityName
  * @description - Deals with the wrong cityname given as input by the user
  */
 export function wrongCityName () {

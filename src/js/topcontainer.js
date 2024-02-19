@@ -29,22 +29,14 @@ export function topcontainer (cityData) {
   };
 
   cityChange.changeCity();
-  // const defaultInput = 'anadyr';
-  // const cityDetails = cityData[defaultInput];
-  // changeCityDetails(cityDetails);
   document.querySelector('.image-city').addEventListener('change', (city) => {
     const inputElement = document.querySelector('.image-city');
-    console.log(cityChange.changeCity());
     if ([...datalistOptions.options].some((option) => option.value === inputElement.value)) {
-      console.log(city.target.value.toLowerCase());
       const chooseCity = {
         cityDetails: city.target.value.toLowerCase()
       };
       const givenCityBind = cityChange.changeCity.bind(chooseCity);
       givenCityBind();
-      // const givenInput = city.target.value.toLowerCase();
-      // const cityDetails = cityData[givenInput];
-      // changeCityDetails(cityDetails);
     } else {
       wrongCityName();
     }
