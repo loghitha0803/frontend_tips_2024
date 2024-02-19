@@ -1,6 +1,11 @@
 {
   "name": "webtips_starter_repo",
   "version": "1.0.0",
+  "prettier":{
+    "printWidth": 200,
+    "singleQuote": true,
+    "spaceBeforeFunctionParen":true
+  },
   "description": "This will act as a starter repository for **WebTips** projects",
   "main": "index.js",
   "directories": {
