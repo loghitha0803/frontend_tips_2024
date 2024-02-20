@@ -1,0 +1,67 @@
+.flex-display {
+    display: flex;
+    }
+
+  .flex-direction-column {
+    flex-direction: column;
+  }  
+
+    .border-color{
+        border: 2px solid  black;
+        padding: 10px;
+    }
+
+    .background-color-light {
+        background-color: lightgreen;
+    }
+
+    .background-color-dark {
+        background-color: darkgreen;
+    }
+
+    .background-blue{
+        background-color: lightblue;
+    }
+
+    .font-white {
+        color: aliceblue;
+    }
+
+    .zone {
+        background-color: azure;
+    }
+
+    .whole-container {
+        justify-content: center;
+        width: 90%;
+    }
+
+    .mid-container {
+        justify-content: center;
+        width: 90%;
+    }
+
+    .justify-content {
+       gap:10px
+    }
+
+    .zone-indicator {
+        width:337px;
+        text-align: center;
+    }
+
+    .timer {
+        width:147px;
+        text-align: center;
+        
+    }
+
+    .bottom {
+        width:90%;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .text-align-center {
+        text-align: center;
+    }

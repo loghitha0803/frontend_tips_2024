@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sprinkler</title>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    </head>
+    <body >
+
+        <div class=" whole-container flex-display">
+            <div class=" flex-display  background-color-light border-color">
+                <div>
+                    <button class="run-mode" disabled>run mode</button>
+                </div>
+                <div class="flex-display flex-direction-column border-color background-color-dark font-white">
+                    <legend>SELECTOR</legend>
+                    <div class="flex-display">
+                        <div>
+                            <input type="radio" class="select-direction" id="front" name="selectdirection" value="front" checked>
+                            <label for="huey">Front</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" class="select-direction"id="back" name="selectdirection" value="back">
+                            <label for="back">Back</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" class="select-direction" id="right" name="selectdirection" value="right">
+                            <label for="right">Right</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="select-direction" id="left" name="selectdirection" value="left">
+                            <label for="left">Left</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-color-light border-color">
+                <div>
+                    <h3 class="text-align-center">Zone Configuration</h3>
+                    <div class="slider">
+                        <label for="Zone">Zone Order</label>
+                        <br >
+                        <input type="range" class="zone-order"id="zone" name="temp" value="0" list="values" step="33">
+
+                        <datalist id="values">
+                            <option value="0" label=""></option>
+                            <option value="33" label=""></option>
+                            <option value="66" label=""></option>
+                            <option value="99" label=""></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="zone-time">
+                    <label for="Zone">Zone Time</label>
+                    <br >
+                    <input type="number" class="zone-time-change" min="0" max="15" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="flex-display  mid-container">
+            <div class="flex-display flex-direction-column justify-content background-color-light border-color zone-indicator">
+                <label> Zone Indicators</label>
+                <button class="front-indicator background-color-light">FRONT</button>
+                <button class="back-indicator background-color-light">BACK</button>
+                <button class="right-indicator background-color-light">RIGHT</button>
+                <button class="left-indicator background-color-light">LEFT</button>
+            </div>
+            <div class="flex-display  flex-direction-column background-color-light border-color timer ">
+                <label>Timer</label>
+                <div class="time-elapsed border-color background-color-dark font-white text-align-center"> 01:00</div>
+            </div>
+        </div>
+        <div class=" flex-display justify-content bottom ">
+            <label>Power</label>
+            <button class="background-color-light justify-content power-on">ON</button>
+            <button class="background-color-light justify-content reset">RESET </button>
+        </div>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
