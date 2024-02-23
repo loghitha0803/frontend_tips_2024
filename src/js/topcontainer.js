@@ -1,7 +1,6 @@
 import { changeCityDetails } from './cityWeatherUpdate.js';
 import { wrongCityName } from './errorHandling.js';
 import { midcontainer } from './midcontainer.js';
-import { bottomContainer } from './weatherBottomContainer.js';
 /**
  *
  * @param {object}cityData - Extracted JSON file
@@ -9,7 +8,6 @@ import { bottomContainer } from './weatherBottomContainer.js';
  */
 export function topcontainer (cityData) {
   midcontainer(cityData);
-  bottomContainer(cityData);
   const datalistOptions = document.getElementById('listsdata');
   let cityName;
   let optionsArray = [];
