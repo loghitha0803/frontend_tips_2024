@@ -28,13 +28,13 @@ export function sortcityWeatherBased (cityData) {
 }
 /**
  * @function sortCities
- * @param {object} cityData     -  The extracted details of all the cities in json file
+ * @param {Array}cityName       -  Holds all the cityNames
  * @param {object} iconCombined -  Holds the weather icon div
  * @param {object} cityCards    -  The div inside which the citcards to be appended
  * @description                 -  To add the sorted cities based on the input
  */
-export function addSortCities (cityData, iconCombined, cityCards) {
-  const sortedCities = sortcityWeatherBased(cityData);
+export function addSortCities (cityName, iconCombined, cityCards) {
+  const sortedCities = sortcityWeatherBased(cityName);
   iconCombined.forEach(function (element, clickIndex) {
     element.addEventListener('click', function () {
       newTransformValue = 0;
@@ -44,20 +44,18 @@ export function addSortCities (cityData, iconCombined, cityCards) {
         imageIcons: 'sunny',
         sortedCities: [],
         cloneCity: function () {
-          cloneCityCards(this.sortedCities, cityData, cityCards, this.imageIcons);
+          cloneCityCards(this.sortedCities, cityCards, this.imageIcons);
         },
         indexplay: function () {
-          indexChange(this.sortedCities, cityData, clickIndex, cityCards, this.imageIcons);
+          indexChange(this.sortedCities, cityCards, this.imageIcons);
         }
       };
       if (clickIndex === 0) {
-        index.value = 3;
         sortCall.sortedCities = sortedCities[clickIndex];
         sortCall.imageIcons = 'sunny';
       }
 
       if (clickIndex === 1) {
-        index.value = 2;
         sortCall.sortedCities = sortedCities[clickIndex];
         sortCall.imageIcons = 'snowflake';
       }
@@ -66,40 +64,35 @@ export function addSortCities (cityData, iconCombined, cityCards) {
         sortCall.imageIcons = 'rainy';
       }
       sortCall.cloneCity();
+      arrowVisible(cityCards);
       sortCall.indexplay();
-      if (Math.round(window.innerWidth / 352) < +(index.value)) {
-        document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-        document.querySelector('.arrow-move-left').style.visibility = 'visible';
-      } else {
-        document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-        document.querySelector('.arrow-move-left').style.visibility = 'hidden';
-      }
     });
   });
 }
 /**
  * @function changeIndex
  * @param {Array}sortedArray  -  The sorted array based on the weather condition
- * @param {object}cityData    -  The extracted details of all the cities in json file
- * @param {number}clickIndex  -  Holds the weather icon index
  * @param {object}cityCards   -  The div inside which the citcards to be appended
  * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               -  clone citycards based on the user input
  */
-export function indexChange (sortedArray, cityData, clickIndex, cityCards, imageIcons) {
-  if (Math.round(window.innerWidth / 352) <= +(index.value)) {
-    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-    document.querySelector('.arrow-move-left').style.visibility = 'visible';
-  }
+export function indexChange (sortedArray, cityCards, imageIcons) {
   index.addEventListener('change', function () {
-    if (Math.round(window.innerWidth / 352) <= +(index.value)) {
-      document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-      document.querySelector('.arrow-move-left').style.visibility = 'visible';
-    } else { document.querySelector('.arrow-move-left').style.visibility = 'hidden'; }
+    cloneCityCards(sortedArray, cityCards, imageIcons);
+    arrowVisible(cityCards);
     cityCards.style.transform = 'translateX(0px)';
-    cloneCityCards(sortedArray, cityData, cityCards, imageIcons);
     newTransformValue = 0;
   });
+}
+
+/**
+ * @param {object} cityCards    -  The div inside which the citcards to be appended
+ */
+function arrowVisible (cityCards) {
+  if (cityCards.scrollWidth > window.innerWidth) {
+    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
+    document.querySelector('.arrow-move-left').style.visibility = 'visible';
+  } else { document.querySelector('.arrow-move-left').style.visibility = 'hidden'; document.querySelector('.arrow-move-right').style.visibility = 'hidden'; }
 }
 /**
  * @function clickRightButton
