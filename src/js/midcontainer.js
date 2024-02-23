@@ -3,10 +3,10 @@ import { defaultMiddleCityCards } from './errorHandling.js';
 let time;
 /**
  * @function midcontainer
- * @param {object}cityName - The extracted details of all the cities in json file
+ * @param {object}cityData - The extracted details of all the cities in json file
  * @description    - To get the weather chosen by user
  */
-export function midcontainer (cityName) {
+export function midcontainer (cityData) {
   const cityCards = document.querySelector('.city-cards');
   const icons = document.querySelector('.icons');
   icons.addEventListener('click', function (e) {
@@ -20,32 +20,32 @@ export function midcontainer (cityName) {
     }
   });
   const iconCombined = document.querySelectorAll('.icon-combined');
-  defaultMiddleCityCards(cityName, cityCards);
+  defaultMiddleCityCards(cityData, cityCards);
   document.querySelector('.arrow-move-right').addEventListener('click', function () {
     clickRightButton(cityCards);
   });
   document.querySelector('.arrow-move-left').addEventListener('click', function () {
     clickLeftButton(cityCards);
   });
-  addSortCities(cityName, iconCombined, cityCards);
+  addSortCities(cityData, iconCombined, cityCards);
 }
 /**
  * @function cloneCityCards
  * @param {Array}arr          -Sorted Array based on the given condition
+ * @param {object}cityData    - The extracted details of all the cities in json file
  * @param {object}cityCards   -  The div inside which the citcards has been appended
  * @param {string}imageIcons  -  The string that holds the weather condition
  * @description               - To clone the cityCards
  */
-export function cloneCityCards (arr, cityCards, imageIcons) {
+export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
   const index = document.querySelector('.option-click');
   let indexValue = index.value;
   removeCitycards(cityCards);
   let cloneDiv;
   for (let userInput = 0; userInput < indexValue; userInput++) {
-    const orderCity = cityData(arr[userInput]);
     cloneDiv = `<div class="first-container">
     <div class="text-contained font-color">
-        <span class="font-size-medium country-name">${orderCity.cityName}</span>
+        <span class="font-size-medium country-name">${cityData[arr[userInput]].cityName}</span>
         <span class="font-size-medium existing-time"></span>
         <div class="bottom-date">
             <span></span>
@@ -57,7 +57,7 @@ export function cloneCityCards (arr, cityCards, imageIcons) {
                     src="../../Assets/Weather Icons/humidityIcon.svg "
                     alt="humidityIcon"
                 >
-                <span class="font-size-small humidity-value">${orderCity.humidity} </span>
+                <span class="font-size-small humidity-value">${cityData[arr[userInput]].humidity} </span>
             </div>
             <div class="icons-weather">
                 <img
@@ -66,7 +66,7 @@ export function cloneCityCards (arr, cityCards, imageIcons) {
                     alt="precipitationIcon"
                 >
                 <span class="font-size-small precipitation-value"
-                >${orderCity.precipitation}
+                >${cityData[arr[userInput]].precipitation}
                 </span>
             </div>
         </div>
@@ -81,7 +81,7 @@ export function cloneCityCards (arr, cityCards, imageIcons) {
                 >
                 <span
                     class="font-size-small font-color temp-value-celsius"
-                >${orderCity.temperature}
+                >${cityData[arr[userInput]].temperature}
                 </span>
             </div>
             <br >
@@ -97,19 +97,20 @@ export function cloneCityCards (arr, cityCards, imageIcons) {
 </div>`;
     indexValue = arr.length > indexValue ? indexValue : arr.length;
     cityCards.insertAdjacentHTML('beforeend', cloneDiv);
-    updateTime(arr);
-    clearInterval(time);
-    time = setInterval(() => { updateTime(arr); }, 1000);
   }
+  updateTime(cityData, arr);
+  clearInterval(time);
+  time = setInterval(() => { updateTime(cityData, arr); }, 1000);
 }
 /**
  *@function updateTime
- * @param {string}orderCity  - The chosen city Name
+ *@param {object}cityData    - The extracted details of all the cities in json file
+ *@param {Array}arr          -Sorted Array based on the given condition
  *@description               - To Calculate and update the Date and time every minute
  */
-function updateTime (orderCity) {
+function updateTime (cityData, arr) {
   const cityCardsChange = document.querySelectorAll('.first-container');
-  cityCardsChange.forEach(function (cityCard, index) {
+  cityCardsChange.forEach(function (cityCard, userInput) {
     const options = {
       hour: '2-digit',
       minute: '2-digit',
@@ -117,7 +118,7 @@ function updateTime (orderCity) {
       month: 'short',
       year: 'numeric',
       hour12: true,
-      timeZone: cityData(orderCity[index]).timeZone
+      timeZone: cityData[arr[userInput]].timeZone
     };
     const cityTime = new Date().toLocaleString('en-US', { ...options, day: undefined, month: undefined, year: undefined });
     const cityDate = new Date().toLocaleString('en-UK', { ...options, hour: undefined, minute: undefined });
