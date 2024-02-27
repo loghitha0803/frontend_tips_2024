@@ -1,18 +1,17 @@
-import { temperature, humidityValue, precipitationValue, farenheitValue, hrsMin, second, dateClass, index, amImage, imageValue, tempHourly, hourly } from './globalConstants.js';
-import { sortcityWeatherBased } from './sortclick.js';
+import { temperature, humidityValue, precipitationValue, styleHidden, styleVisible, farenheitValue, hrsMin, second, dateClass, index, amImage, imageValue, tempHourly, hourly } from './globalConstants.js';
+import { weatherArray } from './sortclick.js';
 import { cloneCityCards } from './midcontainer.js';
 /**
- * @function wrongCityName
+ * @function handleInvalidCityName
  * @description - Deals with the wrong cityname given as input by the user
  */
-export function wrongCityName () {
-  const hidden = 'hidden';
+export function handleInvalidCityName () {
   alert('Please Enter the Correct City Name');
   temperature.innerText = '-';
   humidityValue.innerText = '-';
   precipitationValue.innerText = '-';
   farenheitValue.innerText = '-';
-  changeStyle(hidden);
+  changeStyle(styleHidden);
   hourly.innerText = 'NIL';
   tempHourly.forEach(function (element, index) {
     element.textContent = 'NIL';
@@ -38,13 +37,13 @@ export function changeStyle (visibilityProperty) {
  */
 export function defaultMiddleCityCards (cityData, cityCards) {
   document.querySelector('.icon-size').style.borderBottom = '2px solid var(--bg-selection-blue)';
-  const sortedCitiesSunny = sortcityWeatherBased(cityData);
+  const sortedCitiesSunny = weatherArray(cityData);
   if (Math.round(window.innerWidth / 352) <= +(index.value)) {
-    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-    document.querySelector('.arrow-move-left').style.visibility = 'visible';
+    document.querySelector('.arrow-move-right').style.visibility = styleHidden;
+    document.querySelector('.arrow-move-left').style.visibility = styleVisible;
   } else {
-    document.querySelector('.arrow-move-right').style.visibility = 'hidden';
-    document.querySelector('.arrow-move-left').style.visibility = 'hidden';
+    document.querySelector('.arrow-move-right').style.visibility = styleHidden;
+    document.querySelector('.arrow-move-left').style.visibility = styleHidden;
   }
   cloneCityCards(sortedCitiesSunny[0], cityData, cityCards, 'sunny');
 }

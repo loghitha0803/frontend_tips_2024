@@ -1,5 +1,6 @@
 import { addSortCities, clickRightButton, clickLeftButton } from './sortclick.js';
 import { defaultMiddleCityCards } from './errorHandling.js';
+import { timerSecond } from './globalConstants.js';
 let time;
 /**
  * @function midcontainer
@@ -100,7 +101,7 @@ export function cloneCityCards (arr, cityData, cityCards, imageIcons) {
   }
   updateTime(cityData, arr);
   clearInterval(time);
-  time = setInterval(() => { updateTime(cityData, arr); }, 1000);
+  time = setInterval(() => { updateTime(cityData, arr); }, timerSecond);
 }
 /**
  *@function updateTime

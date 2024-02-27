@@ -1,5 +1,5 @@
 import { changeCityDetails } from './cityWeatherUpdate.js';
-import { wrongCityName } from './errorHandling.js';
+import { handleInvalidCityName } from './errorHandling.js';
 import { midcontainer } from './midcontainer.js';
 /**
  *
@@ -39,7 +39,7 @@ export function topcontainer (cityData) {
       };
       cityChange.changeCity.call(chooseCity);
     } else {
-      wrongCityName();
+      handleInvalidCityName();
     }
   });
 }

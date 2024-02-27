@@ -1,5 +1,5 @@
 import { changeStyle } from './errorHandling.js';
-import { imageValue, temperature, humidityValue, precipitationValue, farenheitValue, tempHourly, hourly } from './globalConstants.js';
+import { imageValue, temperature, humidityValue, timerSecond, styleVisible, precipitationValue, farenheitValue, tempHourly, hourly } from './globalConstants.js';
 let time;
 /**
  *
@@ -9,15 +9,14 @@ let time;
 export function changeCityDetails (cityDetails) {
   updateDynamicTime(cityDetails);
   clearInterval(time);
-  time = setInterval(updateDynamicTime, 1000, cityDetails);
+  time = setInterval(updateDynamicTime, timerSecond, cityDetails);
   imageValue.src = `../../../Assets/Icons for cities/${cityDetails.cityName}.svg`;
   temperature.innerText = `${cityDetails.temperature}`;
   humidityValue.innerText = `${cityDetails.humidity}`;
   precipitationValue.innerText = `${cityDetails.precipitation}`;
   const tempvalue = parseInt(cityDetails.temperature);
   farenheitValue.innerText = Math.round(Number(tempvalue) * 1.8 + 32, 0) + 'F';
-  const style = 'visible';
-  changeStyle(style);
+  changeStyle(styleVisible);
   /**
    *
    *@param {string}cityDetails - Particular city details in the json file
@@ -27,14 +26,14 @@ export function changeCityDetails (cityDetails) {
     const currentTime = new Date().toLocaleString('en-US', { timeZone: cityDetails.timeZone });
     updateDate(currentTime);
   }
-  weatherIconChange(cityDetails);
+  changeWeatherIcon(cityDetails);
 }
 /**
  *
  * @param {string}cityDetails - Particular city details in the json file
  * @description               - Holds the temperature value for next five hours
  */
-function weatherIconChange (cityDetails) {
+function changeWeatherIcon (cityDetails) {
   const updatedTimings = cityDetails.nextFiveHrs;
   updatedTimings.unshift(cityDetails.temperature);
   hourly.forEach(function (element, index) {
