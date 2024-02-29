@@ -64,7 +64,7 @@ export class UserDashboard {
   deleteProject () {
     const selectedProject = this.projectList.querySelector('.selected');
     if (selectedProject) {
-      const projectName = selectedProject.textContent;
+      const projectName = (selectedProject.textContent).split('C')[0];
       this.user.deleteProject(projectName);
       this.updateDashboard();
       this.populateProjectList();

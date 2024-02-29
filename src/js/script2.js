@@ -83,8 +83,11 @@ export class Admin extends TeamLead {
 
   addProject (project) {
     const teamName = project.team;
+    console.log(teamName);
     if (teamName) {
+      console.log(this.teams);
       this.teams[teamName] = project.name;
+      console.log(this.teams);
     } else {
       this.teams[teamName] = [project];
     }
