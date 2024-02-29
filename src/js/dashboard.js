@@ -11,7 +11,7 @@ import {
   dashboard,
   loginForm
 } from './constntDeclaration.js';
-import { Admin, TeamLead, TeamMember, Project } from './script2.js';
+import { Admin, TeamLead, TeamMember, Project } from './script.js';
 let completedProjects = 0;
 
 export class UserDashboard {
