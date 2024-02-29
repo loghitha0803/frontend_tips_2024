@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Task Management</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="loginPage" class="loginPage">
+      <form id="loginForm" class="loginForm">
+        <label class="label-details" for="username">Username:</label>
+        <input
+          class="user-input"
+          type="text"
+          id="username"
+          name="username"
+          required
+        /><br /><br />
+        <label for="password" class="label-details">Password:</label>
+        <input
+          class="user-input"
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button class="submit" type="submit">Login</button>
+      </form>
+    </div>
+
+    <div id="dashboard" class="dashboard" style="display: none">
+      <div id="sidebar" class="sidebar">
+        <h2>User Dashboard</h2>
+        <!-- <div class="flex-display"><div>Total No of Projects :</div><div class='total-pro'>00</div></div><br>
+    <div class="flex-display"><div> completed :</div><div class='completed-pro'>00</div></div> -->
+        <div id="projectStats" class="projectStats">
+          Total Projects: 0, Completed: 0
+        </div>
+        <input
+          type="text"
+          id="project-name-input"
+          placeholder="Enter Project Name"
+          style="display: none"
+        />
+        <input
+          type="text"
+          id="team-name-input"
+          placeholder="Enter Team Name"
+          style="display: none"
+        />
+        <ul id="projectList">
+          <!-- Project list will be dynamically populated -->
+        </ul>
+        <div class="flex-display">
+          <button id="addProjectBtn" style="display: none">Add Project</button>
+          <button id="deleteProjectBtn" style="display: none">
+            Delete Project
+          </button>
+        </div>
+      </div>
+    </div>
+    <button id="logoutBtn" class="logout-btn" style="display: none">
+      Logout
+    </button>
+    <button id="backBtn" class="logout-btn" style="display: none">Back</button>
+
+    <script src="../js/script2.js" type="module"></script>
+  </body>
+</html>
