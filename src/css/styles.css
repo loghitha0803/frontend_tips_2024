@@ -5,34 +5,44 @@ body {
 .board {
   display: flex;
 }
-h1,
-h2,
-h3 {
+h2 {
+  text-align: center;
   color: #333;
 }
 .dashboard {
   display: flex;
+  max-width: 800px;
+  /* margin: 50px auto; */
+  padding: 20px;
+  background-color: #e1f5fe;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .sidebar {
-  width: 20%;
   padding: 20px;
-  margin-left: 38vw;
-  background-color: #e1f5fe;
 }
 .logout-btn {
-  margin: 10px 45vw;
-  background-color: #e1f5fe;
+  height: min-content;
+}
+
+.back-btn {
+  margin:10vh 43vw
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
 .projectStats {
+  font-size: larger;
+  font-weight: bold;
   padding-bottom: 25px;
 }
 li {
   margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .button {
@@ -65,15 +75,24 @@ li {
   font-weight: bold;
 }
 button {
-  background-color: #e1f5fe;
-  margin-bottom: 10px;
+  text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 .flex-display {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center;
 }
 .task-input {
   height: 30px;
+  width:20%;
   margin-left: 38vw;
   background-color: #fff;
 }
@@ -86,7 +105,14 @@ button {
   box-sizing: border-box;
 }
 input {
-  margin-bottom: 5px;
+  width: calc(100% - 20px);
+    margin: 0 auto 10px auto;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 .submit {
   background-color: #4caf50;
@@ -105,25 +131,28 @@ input {
   border-radius: 5px;
   padding: 10px;
 }
-.flex-display {
-  display: flex;
-}
 .task-list {
   list-style-type: none;
   padding: 0;
 }
-
+.notification {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  font-size: medium;
+  font-weight: bold;
+}
 .task-item {
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
-
 .task-item button {
   margin-left: 5px;
 }
-*/ .board {
+.board {
   display: flex;
   flex-wrap: wrap;
 }
@@ -131,6 +160,7 @@ input {
   flex: 1;
   margin: 10px;
   padding: 10px;
+  width:240px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #e1f5fe;

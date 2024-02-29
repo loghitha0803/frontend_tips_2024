@@ -11,8 +11,11 @@ const dashboard = document.getElementById('dashboard');
 const loginForm = document.getElementById('loginForm');
 const totalProjects = document.getElementsByClassName('total-pro');
 const ProjectsCompleted = document.getElementsByClassName('completed-pro');
+const projectNameInput = document.getElementById('project-name-input'); // Input field for project name
+const teamNameInput = document.getElementById('team-name-input');
 export {
   logOutBtn,
+  projectNameInput, teamNameInput,
   projectList,
   todoTasks,
   inprogressTasks,

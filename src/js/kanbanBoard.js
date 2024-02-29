@@ -1,5 +1,4 @@
-let allowedTransitions;
-
+import { allowedTransitions } from './script.js';
 export class KanbanBoard {
   constructor () {
     this.tasks = [];
@@ -43,8 +42,8 @@ export class KanbanBoard {
         );
 
         const addCommentsBtn = document.createElement('button');
-        const keenlyWatchEmoji = String.fromCodePoint(0x1f440); // Unicode value for the keenly watch emoji
-        addCommentsBtn.textContent = `✍️ Comments ${keenlyWatchEmoji}`; // Including the emoji in the button text content
+        // const keenlyWatchEmoji = String.fromCodePoint(0x1f440); // Unicode value for the keenly watch emoji
+        addCommentsBtn.textContent = '✍️ Comments👆'; // Including the emoji in the button text content
         addCommentsBtn.addEventListener('click', () => {
           commentsElement.style.display = 'block';
         });
@@ -103,19 +102,7 @@ export class KanbanBoard {
     const toColumnId = ev.currentTarget.id; // get the target column id
 
     // Define the allowed transitions
-    const currentUser = document.getElementById('username').value;
-    if (currentUser === 'admin' || currentUser === 'lead') {
-      allowedTransitions = {
-        todo: ['inProgress'],
-        inProgress: ['review'],
-        review: ['inProgress', 'done']
-      };
-    } else {
-      allowedTransitions = {
-        todo: ['inProgress'],
-        inProgress: ['review']
-      };
-    }
+    // const currentUser = document.getElementById('username').value;
 
     if (
       allowedTransitions[fromColumnId] &&
