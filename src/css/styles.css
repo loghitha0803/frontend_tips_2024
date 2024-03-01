@@ -2,25 +2,26 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.board {
-  display: flex;
-}
 h2 {
   text-align: center;
   color: #333;
 }
+
 .dashboard {
   display: flex;
   max-width: 800px;
+
   /* margin: 50px auto; */
   padding: 20px;
   background-color: #e1f5fe;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
+
 .sidebar {
   padding: 20px;
 }
+
 .logout-btn {
   height: min-content;
 }
@@ -28,15 +29,18 @@ h2 {
 .back-btn {
   margin:10vh 43vw
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
-.projectStats {
+
+.project-stats {
   font-size: larger;
   font-weight: bold;
   padding-bottom: 25px;
 }
+
 li {
   margin-bottom: 10px;
   cursor: pointer;
@@ -58,14 +62,14 @@ li {
   cursor: pointer;
 }
 
-.loginPage {
+.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.loginForm {
+.login-form {
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 5px;
@@ -74,6 +78,7 @@ li {
 .label-details {
   font-weight: bold;
 }
+
 button {
   text-align: center;
     margin-top: 20px;
@@ -85,17 +90,20 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .flex-display {
   display: flex;
   gap: 15px;
   justify-content: center;
 }
+
 .task-input {
   height: 30px;
   width:20%;
   margin-left: 38vw;
   background-color: #fff;
 }
+
 .user-input {
   width: 100%;
   padding: 10px;
@@ -104,8 +112,9 @@ button {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 input {
-    margin: 0 auto 10px auto;
+    margin: 0 auto 10px;
     padding: 12px;
     border-radius: 25px;
     border: 2px solid #ddd;
@@ -113,6 +122,7 @@ input {
     font-size: 16px;
     transition: border-color 0.3s;
 }
+
 .submit {
   background-color: #4caf50;
   color: white;
@@ -124,16 +134,19 @@ input {
   width: 100%;
   font-size: 16px;
 }
+
 .panel {
   flex: 1;
   background-color: #f2f2f2;
   border-radius: 5px;
   padding: 10px;
 }
+
 .task-list {
   list-style-type: none;
   padding: 0;
 }
+
 .notification {
   text-align: center;
   display: flex;
@@ -142,19 +155,23 @@ input {
   font-size: medium;
   font-weight: bold;
 }
+
 .task-item {
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
+
 .task-item button {
   margin-left: 5px;
 }
+
 .board {
   display: flex;
   flex-wrap: wrap;
 }
+
 .column {
   flex: 1;
   margin: 10px;
@@ -164,6 +181,7 @@ input {
   border-radius: 5px;
   background-color: #e1f5fe;
 }
+
 .task {
   margin: 5px;
   padding: 10px;
@@ -172,6 +190,7 @@ input {
   background-color: #fff;
   cursor: grab;
 }
+
 .task textarea {
   margin-top: 5px;
   width: calc(100% - 20px);
