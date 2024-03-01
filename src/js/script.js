@@ -76,7 +76,7 @@ export class TeamMember extends User {
   assignallowedTransitons () {
     allowedTransitions = {
       ToDo: ['InProgress'],
-      InProgress: ['Review','ToDo']
+      InProgress: ['Review', 'ToDo']
     };
   }
 
@@ -89,6 +89,7 @@ export class TeamMember extends User {
 
   moveToRespectiveProject (listItem) {
     dashboard.style.display = 'none';
+    // eslint-disable-next-line no-unused-vars
     const workSpace = new Workenvironment(listItem);
   }
 
@@ -115,7 +116,7 @@ export class TeamLead extends TeamMember {
   changeAllowedTransitions () {
     allowedTransitions = {
       ToDo: ['InProgress'],
-      InProgress: ['Review','ToDo'],
+      InProgress: ['Review', 'ToDo'],
       Review: ['InProgress', 'Done']
     };
   }
@@ -149,8 +150,6 @@ export class Admin extends TeamLead {
     const notifiedObject = document.querySelector('.notification');
     if (notifiedObject) { notifiedObject.remove(); }
     const notification = '<div class=\'notification\'><div>To Mark the projects as complete checkout the checkbox </div><div class=\'notification\'>To delete the project Click on the project you need to delete and click the delete project Button</div><div class=\'notification\'>To move into the workpanel double click the project</div></div>';
-    // const notification = `<div class='notification'>To delete the project Click on the project you need to delete and click the delete project Button</div>`;
-    // const notification = `<div class='notification'>To move into the workpanel double click the project</div>`;
     this.projectList.insertAdjacentHTML('beforebegin', notification);
     for (const [key, value] of Object.entries(this.teams)) {
       const listItem = document.createElement('li');
@@ -257,5 +256,6 @@ export class Project {
   }
 }
 document.addEventListener('DOMContentLoaded', function () {
+  // eslint-disable-next-line no-unused-vars
   const user = new Admin('admin', 'admin123');
 });
