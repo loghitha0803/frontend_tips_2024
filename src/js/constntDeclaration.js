@@ -1,5 +1,5 @@
 const logOutBtn = document.querySelector('#logout-btn');
-const projectList = document.getElementById('project-stats');
+const projectList = document.getElementById('project-list');
 const todoTasks = document.getElementById('todoTasks');
 const inprogressTasks = document.getElementById('inprogressTasks');
 const reviewTasks = document.getElementById('reviewTasks');

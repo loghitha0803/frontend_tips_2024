@@ -74,7 +74,7 @@ export class Workenvironment {
   }
 
   setupBackButton () {
-    const backBtn = document.getElementById('backBtn');
+    const backBtn = document.getElementById('back-btn');
     backBtn.style.display = 'block';
     backBtn.addEventListener('click', () => {
       dashboard.style.display = 'block';
