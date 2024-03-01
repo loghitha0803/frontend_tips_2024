@@ -75,8 +75,8 @@ export class TeamMember extends User {
 
   assignallowedTransitons () {
     allowedTransitions = {
-      todo: ['inProgress'],
-      inProgress: ['review']
+      ToDo: ['InProgress'],
+      InProgress: ['Review','ToDo']
     };
   }
 
@@ -114,9 +114,9 @@ export class TeamLead extends TeamMember {
 
   changeAllowedTransitions () {
     allowedTransitions = {
-      todo: ['inProgress'],
-      inProgress: ['review'],
-      review: ['inProgress', 'done']
+      ToDo: ['InProgress'],
+      InProgress: ['Review','ToDo'],
+      Review: ['InProgress', 'Done']
     };
   }
 

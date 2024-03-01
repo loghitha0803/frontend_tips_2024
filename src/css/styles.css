@@ -105,7 +105,6 @@ button {
   box-sizing: border-box;
 }
 input {
-  width: calc(100% - 20px);
     margin: 0 auto 10px auto;
     padding: 12px;
     border-radius: 25px;
