@@ -6,49 +6,49 @@ export class KanbanBoard {
     this.render();
   }
 
-  render() {
+  render () {
     this.board.innerHTML = '';
     ['ToDo', 'InProgress', 'Review', 'Done'].forEach((status) => {
-        const column = document.createElement('div');
-        column.classList.add('column');
-        column.innerHTML = `<h3>${status.charAt(0).toUpperCase() + status.slice(1)}</h3>`;
-        column.addEventListener('drop', (e) => this.drop(e));
-        column.addEventListener('dragover', (e) => this.allowDrop(e));
-column.id = status;
-        const tasksForStatus = this.tasks.filter((task) => task.status === status);
-        tasksForStatus.forEach((task) => {
-            const taskElement = document.createElement('div');
-            taskElement.classList.add('task');
-            taskElement.setAttribute('draggable', true);
-            taskElement.addEventListener('dragstart', (e) => this.drag(e));
-taskElement.id = task.id;
-            const titleElement = document.createElement('div');
-            titleElement.textContent = `${task.title}`; // Display due date after task title
-            const duedate=document.createElement('div');
-            const dueDateInput = new Date(task.dueDate); // Parse the due date string into a Date object
-const formattedDueDate = `${dueDateInput.getDate()} ${dueDateInput.toLocaleString('default', { month: 'short' })} ${dueDateInput.getFullYear()}`; // Format the date
-            duedate.textContent = formattedDueDate;
-            titleElement.contentEditable = true;
-titleElement.addEventListener('blur', () => this.updateTaskTitle(task.id, titleElement.textContent));
-            const commentsElement = document.createElement('textarea');
-            commentsElement.value = task.comments;
-            commentsElement.placeholder = 'Add comments...';
-commentsElement.addEventListener('blur', () => this.updateTaskComments(task.id, commentsElement.value));
-            const addCommentsBtn = document.createElement('button');
-            const keenlyWatchEmoji = String.fromCodePoint(0x1f440); // Unicode value for the keenly watch emoji
-            addCommentsBtn.textContent = `✍️ Comments ${keenlyWatchEmoji}👁`; // Including the emoji in the button text content
-            addCommentsBtn.addEventListener('click', () => {
-commentsElement.style.display = 'block';
-            });
-            taskElement.appendChild(titleElement);
-            taskElement.appendChild(duedate)
-            taskElement.appendChild(commentsElement);
-            taskElement.appendChild(addCommentsBtn);
-            column.appendChild(taskElement);
+      const column = document.createElement('div');
+      column.classList.add('column');
+      column.innerHTML = `<h3>${status.charAt(0).toUpperCase() + status.slice(1)}</h3>`;
+      column.addEventListener('drop', (e) => this.drop(e));
+      column.addEventListener('dragover', (e) => this.allowDrop(e));
+      column.id = status;
+      const tasksForStatus = this.tasks.filter((task) => task.status === status);
+      tasksForStatus.forEach((task) => {
+        const taskElement = document.createElement('div');
+        taskElement.classList.add('task');
+        taskElement.setAttribute('draggable', true);
+        taskElement.addEventListener('dragstart', (e) => this.drag(e));
+        taskElement.id = task.id;
+        const titleElement = document.createElement('div');
+        titleElement.textContent = `${task.title}`; // Display due date after task title
+        const duedate = document.createElement('div');
+        const dueDateInput = new Date(task.dueDate); // Parse the due date string into a Date object
+        const formattedDueDate = `${dueDateInput.getDate()} ${dueDateInput.toLocaleString('default', { month: 'short' })} ${dueDateInput.getFullYear()}`; // Format the date
+        duedate.textContent = formattedDueDate;
+        titleElement.contentEditable = true;
+        titleElement.addEventListener('blur', () => this.updateTaskTitle(task.id, titleElement.textContent));
+        const commentsElement = document.createElement('textarea');
+        commentsElement.value = task.comments;
+        commentsElement.placeholder = 'Add comments...';
+        commentsElement.addEventListener('blur', () => this.updateTaskComments(task.id, commentsElement.value));
+        const addCommentsBtn = document.createElement('button');
+        const keenlyWatchEmoji = String.fromCodePoint(0x1f440); // Unicode value for the keenly watch emoji
+        addCommentsBtn.textContent = `✍️ Comments ${keenlyWatchEmoji}👁`; // Including the emoji in the button text content
+        addCommentsBtn.addEventListener('click', () => {
+          commentsElement.style.display = 'block';
         });
-        this.board.appendChild(column);
+        taskElement.appendChild(titleElement);
+        taskElement.appendChild(duedate);
+        taskElement.appendChild(commentsElement);
+        taskElement.appendChild(addCommentsBtn);
+        column.appendChild(taskElement);
+      });
+      this.board.appendChild(column);
     });
-}
+  }
 
   updateTaskTitle (taskId, newTitle) {
     const taskIndex = this.tasks.findIndex(
@@ -70,9 +70,9 @@ commentsElement.style.display = 'block';
       const newTask = {
         id: Date.now(),
         title: taskTitle,
-        dueDate:dueDate,
+        dueDate,
         comments: '',
-        status: 'ToDo',
+        status: 'ToDo'
       };
       this.tasks.push(newTask);
       this.render(newTask);
