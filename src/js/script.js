@@ -141,7 +141,7 @@ export class Admin extends TeamLead {
   updateDashboard () {
     console.log(this.teams);
     const totalProjects = Object.keys(this.teams).length;
-    const projectStatsElement = document.getElementById('projectStats');
+    const projectStatsElement = document.getElementById('project-stats');
     projectStatsElement.textContent = `Total Projects: ${totalProjects}, Completed: ${completedProjects}`;
   }
 
